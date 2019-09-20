@@ -4,6 +4,15 @@
  *   bits together to get a binary number. If we then count up from 0
  *   up to the value where all bits are 1, we have gone through all 
  *   possible combinations.
+ * if    then    else      : output
+ * 0       0       0       : 
+ * 1       0       0       : if
+ * 0       1       0       : then
+ * 1       1       0       : if then
+ * 0       0       1       : else
+ * 1       0       1       : if else
+ * 0       1       1       : then else
+ * 1       1       1       : if then else 
  */
 
 #include <iostream>
