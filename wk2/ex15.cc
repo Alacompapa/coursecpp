@@ -8,7 +8,8 @@
  *   Case "ror":
  *     check least sign bit (LSB) (num % 2 == 0)
  *     shift num right (num >> 1)
- *     xor num with result of LSB shifted left with as many places as bits in num -1
+ *     logical or num with result of LSB shifted left with as many places as bits in num -1
+ *       note that if the result of LSB is 0 we dont have to do anything
  *     That would give the correct answer
  *
  *     Example with 5 (101)
@@ -17,13 +18,13 @@
  *     now the hard part, bits in 5 = 3, 3-1=2
  *     LSB << 2 same as 1 << 2 same as 001 << 2 = 100 
  *     010 
- *     100 xor
+ *     100 or
  *     110
  *     which is what we expect
  *   Case "rol":
  *     check GSB
  *     shift left (num << 1)
- *     xor num with result shifted right as many...
+ *     logical or num with result shifted right as many...
  *
  *
  * Converting to Dec and Hex:
