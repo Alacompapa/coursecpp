@@ -41,22 +41,37 @@
  */
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 int main(int argc, char *argv[])
 {
   string binnumber = argv[1];
   size_t numbits = binnumber.length();
-  size_t intnumber = atoi(binnumber);
+  size_t value = stoi(binnumber);
+
+  size_t intvalue = 0;
+  // We now get the decimal value of the binary argument
+  for(size_t place = 0, valcpy = value; place < numbits; ++place, valcpy /= 10)
+  {
+    if(valcpy % 10 == 1) // Check if the least significant bit is 1 or 0
+    {
+      intvalue += 1 << place; // In binary every bit signifies 2^place
+    }
+  }
+  cout << intvalue << endl;
+
+
+
 
   if(argv[2] == "ror")
   {
-    if(intnumber % 10 == 1) // Check if the least significant digit is 1
+    if(value % 10 == 1) // Check if the least significant digit is 1
     {
-      intnumber = (intnumber * 10) - 1;
+      size_t newValue = (value / 10) + pow(10, numbits);
     } else 
     {
-      intnumber = intnumber / 10;
+      size_t newValue = value / 10;
     }
 
     for(size_t place = 1; place <= numbits; ++place)
