@@ -32,11 +32,11 @@ int main(int argc, char *argv[])
 
     // We now loop over every 'place' in the binary number, with each iteration we
     // bitshift countcpy to the right thereby getting a new least significant bit (LSB) 
-    for(size_t place = 1, countcpy = count; place <= numbits; ++place, countcpy >>= 1)
+    for(size_t place = 0, countcpy = count; place <= numbits; ++place, countcpy >>= 1)
     {
       if(countcpy % 2 == 1) // Check the value of the LSB, if it is 1 then add the arg to the output
       {
-        output += argv[place];
+        output += argv[place + 1];
         output += " ";
       } 
     }
