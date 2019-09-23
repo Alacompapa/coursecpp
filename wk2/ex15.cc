@@ -2,6 +2,9 @@
  * Here we will also need a good way to represent a binary number, being able to 
  *   manipulate it. But to my knowledge there is not a binary type in C++.
  *
+ * INPUT: integral value repr as binary : 01101
+ *        ror or rol
+ *
  * Note that we cannot use our self-defined functions yet in this exercise.
  *
  * Solution idea:
@@ -29,18 +32,38 @@
  *
  * Converting to Dec and Hex:
  *   Dec:
+ *     for(up to incl numbits)
+ *       check if bit@place is 1 (number % 10)
+ *       true then then total += 2^place (1 << place) 
  *   
  *   Hex:
  *     I think it's something to do with taking bits in groups of four (2^4 = 16)
  */
+#include <iostream>
+#include <string>
+using namespace std;
 
 int main(int argc, char *argv[])
 {
-  size_t value = argv[1];
+  string binnumber = argv[1];
+  size_t numbits = binnumber.length();
+  size_t intnumber = atoi(binnumber);
 
   if(argv[2] == "ror")
   {
-  } else
+    if(intnumber % 10 == 1) // Check if the least significant digit is 1
+    {
+      intnumber = (intnumber * 10) - 1;
+    } else 
+    {
+      intnumber = intnumber / 10;
+    }
+
+    for(size_t place = 1; place <= numbits; ++place)
+    {
+
+    }
+  } else if(argv[2] == "rol")
   {
   }
 }
