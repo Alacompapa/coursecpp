@@ -11,10 +11,13 @@ int main(int argc, char *argv[])
         // Count the number of lines
         int count = 0;
         string line;
+
         while (getline(cin, line))
             ++count;
+
         cout << count << '\n';
     }
+
     else
     {
         // No argument given, or argument is not "ok"
@@ -22,12 +25,14 @@ int main(int argc, char *argv[])
         // (and getting a result 1 greater than expected)
         int count = 0;
         string line;
+
         while (true)
         {
             ++count;
             if (not getline(cin,line))
                 break;
         }
+
         cout << count << '\n';
     }
 }
