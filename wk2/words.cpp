@@ -5,6 +5,13 @@ using namespace std;    //Use the std namespace
 
 int main()
 {
+    /*
+    while (getline(cin, line))
+    {
+
+    }
+    */
+
     string line;
     string space = " ";
     getline(cin, line);  //insert istream into line object
