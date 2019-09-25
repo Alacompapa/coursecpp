@@ -1,10 +1,19 @@
 #include "main.ih"
 
-int main(int argc, char **argv)
-try
+using namespace std;
+
+int main(int argc, char** argv)
 {
-}
-catch (...)
-{
-    return 1;
+    string addition;
+    for (size_t i = 1; i < argc; ++i)
+    {
+        if(argv[1].find("."))
+        {
+            sum(double decimal)
+        }
+        else{
+            sum(int integer)
+        }
+    }
+    cout << addition << "\n";
 }
