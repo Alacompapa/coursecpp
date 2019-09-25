@@ -11,3 +11,5 @@ namespace Icmbuild
 void usage(std::string const &progname);
 
 using namespace std;
+void sum(int integer);
+void sum(double decimal);
