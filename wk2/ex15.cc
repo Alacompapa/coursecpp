@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 {
     string binnumber = argv[1];                 // store the argument
     string direction = argv[2];
-    size_t numbits = binnumber.length();        
+    size_t numbits = binnumber.length();
     size_t value = stoi(binnumber, 0, 2);       // convert arg to binary
     size_t newValue;
 
@@ -25,20 +25,20 @@ int main(int argc, char *argv[])
         newValue = (value >> 1) + (value % 2 == 1 ? 1 << (numbits - 1) : 0);
     } else if (direction == "rol")
     {
-        newValue = 
-            (value << 1) + ((value >> (numbits - 1)) % 2 == 1 ? 1 : 0) - (1 << numbits); 
+        newValue =
+            (value << 1) + ((value >> (numbits - 1)) % 2 == 1 ? 1 : 0) - (1 << numbits);
     }
-    
+
     string binRepr;
     string hexRepr;
-                                                 
+
     for (size_t bitcount = numbits; bitcount--; )
         binRepr += (newValue >> bitcount) % 2 ? '1' : '0';
-                                                
+
                                                 // using integer division
-    for (size_t hexValue = newValue; hexValue != 0; hexValue /= 16)
+    for (size_t hexValue = newValue, hexRemain = hexValue % 16; hexValue != 0; hexValue /= 16)
     {
-        switch (size_t hexRemain = hexValue % 16; hexRemain)                             
+        switch (hexRemain)
         {                                       // in hex we have more than
             case 10:                            // 10 digits
                 hexRepr.insert(0, "a");
@@ -63,6 +63,6 @@ int main(int argc, char *argv[])
                 break;
         }
     }
-    
+
     cout << binRepr << ' ' << newValue << ' ' << hexRepr << '\n';
 }
