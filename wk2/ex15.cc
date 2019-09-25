@@ -21,13 +21,10 @@ int main(int argc, char *argv[])
     size_t newValue;
 
     if (direction == "ror")                     // rotate the binary numbers
-    {
         newValue = (value >> 1) + (value % 2 == 1 ? 1 << (numbits - 1) : 0);
-    } else if (direction == "rol")
-    {
+    else if (direction == "rol")
         newValue =
             (value << 1) + ((value >> (numbits - 1)) % 2 == 1 ? 1 : 0) - (1 << numbits);
-    }
 
     string binRepr;
     string hexRepr;
