@@ -1,5 +1,6 @@
 # Course programming C++
 
+- Should we stop writing: using namespace std?
 - Do we need a styleguide?
   - Maybe for naming the exercises or something
   - Let's always use the .cc extension
@@ -8,6 +9,3 @@
 - Which build tools are we going to use? I thought `icmake` looked nicest
   icmstart icmbuild - these two are important i think.
 - I'm not a master git user so I don't know how to add you so you can also accept pull requests
-
-
-## When does the One Function One File rule go into effect?
