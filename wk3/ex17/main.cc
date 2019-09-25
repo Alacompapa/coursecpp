@@ -1,18 +1,26 @@
 #include "main.ih"
 
-int main(int argc, char** argv)
+int main(int argc, char *argv[])
 {
-    string addition;
-    for (size_t i = 1; i < argc; ++i)
+    if (argc > 1)
     {
-        string condition = argv[1];
-        if(condition.find("."))
+        size_t dots = 0;
+        for (int counter = 0; counter < argc;++counter)
         {
-            sum(double decimal)
+            string str = argv[counter];
+            if (str.find("."))
+            {
+                ++dots;
+            }
         }
-        else{
-            sum(int integer)
+        if (dots == 0) {
+            int randomvalue = 0;
+            int summed = sum(argc, argv, randomvalue);
+            cout << summed << '\n';
+        } else {
+            double summed = sum(argc, argv);
+            cout << summed << '\n';
         }
+
     }
-    cout << addition << "\n";
 }

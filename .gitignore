@@ -1,4 +1,4 @@
-### icmake ###
+=### icmake ###
 **/icmconf
 **/tmp
 
@@ -35,3 +35,4 @@
 *.exe
 *.out
 *.app
+>>>>>>> fd88f62f03f0d6fc43b603807318daa8245a4ed4
