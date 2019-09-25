@@ -4,16 +4,17 @@ int main(int argc, char *argv[])
 {
     if (argc > 1)
     {
-        size_t dots = 0;
+        bool dots = false;
         for (int counter = 0; counter < argc;++counter)
         {
             string str = argv[counter];
             if (str.find("."))
             {
-                ++dots;
+                dots = true;
+                break;
             }
         }
-        if (dots == 0) {
+        if (dots == false) {
             int randomvalue = 0;
             int summed = sum(argc, argv, randomvalue);
             cout << summed << '\n';
