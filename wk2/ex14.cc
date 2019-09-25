@@ -12,15 +12,14 @@ int main(int argc, char *argv[])
 
                                                 // Each different combination
                                                 // has a unique countnumber
-    for(size_t count = 0; count < numcomb; ++count) 
+    for (size_t count = 0; count < numcomb; ++count) 
     {
         string output;
-
                                                 // Loop over every 'place' in the binary number, with each iteration we
                                                 // bitshift countcpy to the right thereby getting a new least significant bit (LSB) 
-        for(size_t pos = 0, countcpy = count; pos <= numbits; ++pos, countcpy >>= 1)
+        for (size_t pos = 0, countcpy = count; pos <= numbits; ++pos, countcpy >>= 1)
         {
-            if(countcpy % 2 == 1)               // Check the value of the LSB 
+            if (countcpy % 2 == 1)              // Check the value of the LSB 
             {                                   // if 1 then add the arg
                 output += argv[pos + 1];        // to the output
                 output += " ";
