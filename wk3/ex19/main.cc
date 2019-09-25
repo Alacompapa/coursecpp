@@ -4,27 +4,29 @@ int main(int argc, char **argv)
 try
 {
     if (argc == 1)
-        return 1;
-    
-    switch(argument = argv[1]; argument)
     {
-        case "-c":
+        usage("wc");
+        return 1;
+    }
+    
+    string argument = argv[1];
+    char option = argument[1];
+    size_t count = 0;
+    switch (option)
+    {
+        case 'c':
             countChars();
             break;
-        case "-w":
+        case 'w':
             countWords();
             break;
-        case "-l":
+        case 'l':
             countLines();
             break;
         default:
-            cout << "Please specify correct argument.\n"
-                << "-c for counting characters.\n"
-                << "-w for counting words.\n"
-                << "-l for counting lines.\n";
+            usage("wc");                    // no args given
             break;
     }
-break:
 }
 catch (...)
 {

@@ -1,9 +1,19 @@
 //                     usage.cc
+namespace {
+char const usageInfo[] = 
+R"(
+Should be called with appropriate arguments.
+1st arg:    Number of the argument requested.
+other args: Arguments which can be requested.
+)";
+}
 
 #include "main.ih"
 
 void usage(std::string const &progname)
 {
+    cout << usageInfo;
+    /*
     cout << "\n" <<
     progname << " by " << Icmbuild::author << "\n" <<
     progname << " V" << Icmbuild::version << " " << Icmbuild::years << "\n"
@@ -15,4 +25,5 @@ void usage(std::string const &progname)
     "      --version (-v)   - show version information and terminate\n"
     "   args   - explain additional arguments.\n"
     "\n";
+    */
 }
