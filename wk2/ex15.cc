@@ -1,3 +1,11 @@
+/*
+./ex15 1011110101011011 ror
+1101111010101101 57005 dead
+
+./ex15 1101111101110111 rol
+1011111011101111 48879 beef
+
+*/
 #include <iostream>
 #include <string>
 #include <cmath>
