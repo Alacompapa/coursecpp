@@ -1,38 +1,48 @@
 #include <iostream>
-#include <string.h>
-#include <stdio.h>
-#include <istream>
-using namespace std;    //Use the std namespace
+#include <string>
+
+using namespace std;  
 
 int main()
 {
     string line;
-    string space = " ";
-    getline(cin, line);  //insert istream into line object
-    int loop = 1;
-    while(loop == 1)
+    while (getline(cin, line))
     {
-        int firstspace;
-        int lastspace;
-        int count;
-        string word_initial;
-        string word_last;
-        if (line.find(space) == -1)
+                                                // look for start of first word
+        size_t posFirstWord = line.find_first_not_of(' ');
+        if (posFirstWord == string::npos)       // if no first word
         {
-            cout << line << "\n";
+            cout << '\n';                       // output blank line
+            continue;                           // get the next line
         }
-        else
-        {
-            firstspace = line.find(space);
-            word_initial.assign(line, 0, firstspace);
-            lastspace = line.find_last_of(space);
-            count = line.length();
-            word_last.assign(line, lastspace, count - 1);
-            line.erase(lastspace, count);
-            line.erase(0, firstspace + 1);
-            cout << word_last << " " << line << " " << word_initial;;
 
+        string whitespaces = " \n\t";           // look for end of first word
+        size_t posFirstWordEnd = 
+            line.find_first_of(whitespaces, posFirstWord) - 1;
+        if (posFirstWordEnd == string::npos)    // if no other words
+        {
+            cout << line;                       // output line
+            continue;                           // get next line 
         }
-        loop++;
+                                                // look for end of last word      
+        size_t posLastWordEnd = line.find_last_not_of(whitespaces);
+                                                // reverse find the start
+                                                // of last word
+        size_t posLastWord = line.rfind(' ', posLastWordEnd) + 1;
+
+                                                // calc lengths of words
+        size_t lenFirstWord = posFirstWordEnd - posFirstWord;
+        size_t lenLastWord = posLastWordEnd - posLastWord;
+                                                // copy the words
+        string firstWord = line.substr(posFirstWord, lenFirstWord + 1);
+        string lastWord = line.substr(posLastWord, lenLastWord + 1);
+
+        line.erase(posLastWord, lenLastWord + 1);   // reverse the words
+        line.insert(posLastWord, firstWord);        // in the sring
+
+        line.erase(posFirstWord, lenFirstWord + 1);
+        line.insert(posFirstWord, lastWord);
+
+        cout << line << '\n';                       // output final line
     }
 }
