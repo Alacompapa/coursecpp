@@ -18,6 +18,7 @@ try
             countLines();
             break;
         default:
+            // Use the usage func here!
             cout << "Please specify correct argument.\n"
                 << "-c for counting characters.\n"
                 << "-w for counting words.\n"
