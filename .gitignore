@@ -1,5 +1,6 @@
 ### icmake ###
-icmconf
+**/icmconf
+**/tmp
 
 ### C++ ###
 # Prerequisites
