@@ -33,9 +33,9 @@ int main(int argc, char *argv[])
         binRepr += (newValue >> bitcount) % 2 ? '1' : '0';
 
                                                 // using integer division
-    for (size_t hexValue = newValue, hexRemain = hexValue % 16; hexValue != 0; hexValue /= 16)
+    for (size_t hexValue = newValue; hexValue != 0; hexValue /= 16)
     {
-        switch (hexRemain)
+        switch (size_t hexRemain = hexValue % 16; hexRemain)
         {                                       // in hex we have more than
             case 10:                            // 10 digits
                 hexRepr.insert(0, "a");
