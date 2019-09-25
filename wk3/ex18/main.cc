@@ -5,8 +5,7 @@ try
 {
     if (argc == 1)
     {
-        // Use the usage func here!
-        cout << "Error; No arguments given.\n"; // No args given
+        usage("combining");
         return 1;
     }
     
