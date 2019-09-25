@@ -1,0 +1,5 @@
+struct ReturnValues {
+    bool ok;
+    size_t nr;
+    string value;
+};
