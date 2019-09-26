@@ -3,38 +3,39 @@
 
 using namespace std;
 
-    void sum(char** argv, size_t i, int INTaddition)
+    int sum(char** argv, size_t i, int INTaddition, int int_result)
     {
-        INTaddition + stod(argv[i]);
+        int_result = INTaddition + stoi(argv[i]);
+        return int_result;
     }
-    void sum(char** argv, size_t i, double DOUaddition)
+    double sum(char** argv, size_t i, double DOUaddition, double d_result)
     {
-        DOUaddition + stoi(argv[i]);
-
+        d_result = DOUaddition + stod(argv[i]);
+        return d_result;
     }
 int main(int argc, char** argv)
 {
-    double DOUaddition = 0;
-    int INTaddition;
+    double d_result = 0;
+    int int_result = 0;
     for (size_t i = 1; i < argc; ++i)
     {
         string condition = argv[1];
         if(condition.find("."))
         {
-
-            sum(argv, i, DOUaddition);
+            double DOUaddition = 0;
+            sum(argv, i, DOUaddition, d_result);
         }
         else{
-
-            sum(argv, i, INTaddition);
+            int INTaddition = 0;
+            sum(argv, i, INTaddition, int_result);
         }
     }
-    if (INTaddition > DOUaddition)
+    if (int_result > d_result)
     {
-        cout << INTaddition << "\n";
+        cout << int_result << "\n";
     }
     else
     {
-        cout << DOUaddition << "\n";
+        cout << d_result << "\n";
     }
 }
