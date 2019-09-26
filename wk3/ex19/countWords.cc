@@ -1,7 +1,5 @@
 #include "main.ih"
 
-#include "main.ih"
-
 void countWords()
 {
     size_t count = 0;
