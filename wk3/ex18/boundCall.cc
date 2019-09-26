@@ -2,5 +2,5 @@
 
 void boundCall(int argc, char **argv)
 {
-    // How to implement a func which doesnt define a struct ReturnValues itself?
+    cout << combine(argc, argv).nr << ' ' << combine(argc, argv).value << '\n';
 }
