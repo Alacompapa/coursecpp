@@ -1,4 +1,6 @@
-e Getopt::Std;
+#!/usr/bin/perl
+
+use Getopt::Std;
 
 my $version = "1.19.02";
 
