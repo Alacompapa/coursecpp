@@ -1,6 +1,6 @@
 #include "main.ih"
 
-int sum(int argc, char *argv[], int randomvalue)
+int sum(int argc, char *argv[])
 {
     char* end;
     size_t summed = 0;

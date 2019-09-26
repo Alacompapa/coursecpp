@@ -15,11 +15,11 @@ int main(int argc, char *argv[])
             }
         }
         if (dots == false) {
-            int randomvalue = 0;
-            int summed = sum(argc, argv, randomvalue);
+            int summed = sum(argc, argv);
             cout << summed << '\n';
         } else {
-            double summed = sum(argc, argv);
+            double argcount = static_cast<double>(argc);
+            double summed = sum(argcount, argv);
             cout << summed << '\n';
         }
 
