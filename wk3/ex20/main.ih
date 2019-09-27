@@ -15,5 +15,4 @@ namespace Icmbuild
 
 
 void usage(std::string const &progname);
-
-void quicksort(char** array, size_t leftpos, size_t rightpos);
+void quickSort();
