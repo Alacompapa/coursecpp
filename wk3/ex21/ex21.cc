@@ -1,50 +1,46 @@
-#include "main.ih"
-#include <string>
-
-
 // It is appropriate to use a string value parameter when you want to add an extra character array to an existing string.
 //In the code example this is illustrated because the string parameter gets another string appended and both of them are returned.
 main(int argc, char** argv){
-        string one = "Hello my";
-        string final = Addfriend(one);
-	cout <<  final;
+    string one = "Hello my";
+    string final = Addfriend(one);
+    cout <<  final;
 }
 
 string addfriend(string parameter){
-	return parameter + "friends";
+    return parameter + "friends";
 }
 
 
-// It is appropriate to use a const reference to an int-type parameter when you want to use the value of the 
+// It is appropriate to use a const reference to an int-type parameter when you want to use the value of the
 //int-type  but don't want to change its definition. In the code example this is illustrated because prefix "++" will not change the int parameter.
 static int x = 7;
 
 int main(int argc, char** argv)
 {
-	 addvalue(x);
-} 
+    addvalue(x);
+}
 
 int addvalue(const int &parameter)
 {
-	++parameter;
-	return parameter + 3;
+    ++parameter;
+    return parameter + 3;
 }
 
 
 
-// It is appropriate to use a const reference to a string value parameter when you want to do something with a 
+// It is appropriate to use a const reference to a string value parameter when you want to do something with a
 //a string but dont want to store it or change it.  In the code example this is illustrated because the string
 //parameter is appended to another string but its value doesnt change and no copy is stored
 
 string hello = "hello";
 int main(int argc, char** argv)
 {
-	 addstrings(hello)
+    addstrings(hello)
 }
 
 string addstrings(const string &parameter)
 {
-	return "Hey, you haven't said " + parameter; 
+    return "Hey, you haven't said " + parameter;
 }
 
 
@@ -55,13 +51,13 @@ string addstrings(const string &parameter)
 
 int main(int argc, char** argv)
 {
-	int age = 57;
-	cout <<  age << "in dog years is" << dog_years(age);
+    int age = 57;
+    cout <<  age << "in dog years is" << dog_years(age);
 }
 
 int dog_years(int &parameter)
 {
-	return parameter * 7;
+    return parameter * 7;
 }
 
 
@@ -72,13 +68,13 @@ int dog_years(int &parameter)
 
 int main(int argc, char** argv)
 {
-	string menu = "Soup, meatballs and";
-	Add_desert(menu);
+    string menu = "Soup, meatballs and";
+    Add_desert(menu);
 }
- 
+
 string Add_desert(string &parameter)
 {
-        return parameter + "chocolate ice cream";
+    return parameter + "chocolate ice cream";
 }
 
 
@@ -88,12 +84,12 @@ string Add_desert(string &parameter)
 // be later deployed in cout.
 int Addition(const int &parameter1,const int &parameter2)
 {
-	return parameter1 + parameter2;
+    return parameter1 + parameter2;
 }
 int main(int argc, char** argv)
 {
-	&&add_result = Addition (3 , 4)
-	cout << add_result;
+    &&add_result = Addition (3 , 4)
+    cout << add_result;
 }
 
 
@@ -102,18 +98,18 @@ int main(int argc, char** argv)
 // final_sentence through an rvalue-reference.
 string full_sentence(const string &parameter1, const string &parameter2)
 {
-        return parameter1 + parameter2;
+    return parameter1 + parameter2;
 }
 string final_sentence(const string &parameter1, const string &parameter2)
 {
-        return parameter1 + parameter2;
+    return parameter1 + parameter2;
 }
 
 int main(int argc, char** argv)
 {
-        &&sentence = full_sentence("I am" ,"tired");
-        &&output = final_sentence(sentence, "today");
-        cout << output;
+    &&sentence = full_sentence("I am" ,"tired");
+    &&output = final_sentence(sentence, "today");
+    cout << output;
 }
 
 
@@ -134,7 +130,7 @@ int main(int argc, char **argv)
 }
 int multiplication(int parameter1, int parameter2)
 {
- return parameter1 * parameter2;
+    return parameter1 * parameter2;
 }
 
 
@@ -146,7 +142,7 @@ int main(int argc, char **argv)
 }
 string sentence(string parameter1, string parameter2)
 {
- return parameter1 * parameter2;
+    return parameter1 * parameter2;
 }
 
 
@@ -175,7 +171,7 @@ int main(int argc, char **argv)
 string sentence(string parameter1, string parameter2)
 {
     string const output = parameter1 + parameter2;
- return &output;
+    return &output;
 }
 
 
@@ -187,7 +183,7 @@ int main(int argc, char **argv)
 }
 int multiplication(int parameter1, int parameter2)
 {
- return &parameter1 * &parameter2;
+    return &parameter1 * &parameter2;
 }
 
 
@@ -219,10 +215,3 @@ string sentence(string parameter1, string parameter2)
 
 
 // It is appropriate to use a return an rvalue-reference to an  string
-
-
-
-
-
-
-
