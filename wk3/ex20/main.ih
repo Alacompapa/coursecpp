@@ -1,5 +1,10 @@
 #include <iostream>
 #include <string>
+#include <list>
+
+extern char **environ;
+
+using namespace std;
 
 namespace Icmbuild
 {
@@ -8,8 +13,6 @@ namespace Icmbuild
     extern char author[];
 };
 
+
 void usage(std::string const &progname);
-
-void quicksort(std::string toSort[], size_t left, size_t right);
-
-using namespace std;
+void quickSort();
