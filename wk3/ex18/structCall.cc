@@ -3,7 +3,7 @@
 bool structCall(int argc, char **argv)
 {
     ReturnValues retVals = combine(argc, argv);
-    if (!retVals.ok)
+    if (!retVals.ok)                            // requested arg doesnt exist
     {
         usage("combining");
         return false;

@@ -18,8 +18,8 @@ struct ReturnValues {
     string value;
 };
 
-ReturnValues combine(int argc, char **argv);    // combine
+ReturnValues combine(int argc, char **argv);    
 
-bool structCall(int argc, char **argv);         // structCall
+bool structCall(int argc, char **argv);         
 
-void boundCall(int argc, char **argv);          // boundCall
+void boundCall(int argc, char **argv);          
