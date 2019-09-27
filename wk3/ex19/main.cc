@@ -8,10 +8,9 @@ try
         usage("wc");
         return 1;
     }
-    
+
     string argument = argv[1];
     char option = argument[1];
-    size_t count = 0;
     switch (option)
     {
         case 'c':

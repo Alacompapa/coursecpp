@@ -7,20 +7,16 @@ void countWords()
     string line;
     while (getline(cin, line))
     {
-        size_t word = line.find_first_not_of(whitespaces, 0);
-        size_t wordEnd = line.find_first_of(whitespaces, word);
-        
-        if (word == string::npos and wordEnd == string::npos)
-            continue;
-
-        while (wordEnd != string::npos)
+        size_t posWordEnd = 0;
+        size_t posWordStart = 0;
+        while (posWordEnd != string::npos)
         {
-            word = line.find_first_not_of(whitespaces, wordEnd);
-            wordEnd = line.find_first_of(whitespaces, word);
-
-            ++count;
+            cout << "word" << '\n';
+            posWordStart = line.find_first_not_of(whitespaces, posWordEnd);
+            posWordEnd = line.find_first_of(whitespaces, posWordStart);
+            count++;
         }
     }
-    
+
     cout << count << " words in stream.\n";
 }
