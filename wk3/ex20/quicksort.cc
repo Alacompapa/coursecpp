@@ -7,13 +7,13 @@ void quickSort(string arr[], int left, int right) {
 
     /* partition */
     int pivot = 0;
-    while (i != j)
+    while (left != right)
     {
         while (arr[left] < pivot)
-            i++;
+            left++;
 
         while (arr[right] > pivot)
-            j--;
+            right--;
 
         if (left <= right)
         {
