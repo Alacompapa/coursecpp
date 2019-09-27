@@ -2,10 +2,10 @@
 
 void quickSort(string array[], int left, int right) {
 
-    int tmp;
+    string tmp;
 
     // Partition
-    int pivot = 0;
+    string pivot = array[0];
     while (left != right)
     {
         while (array[left] < pivot)
@@ -17,7 +17,7 @@ void quickSort(string array[], int left, int right) {
         if (left <= right)
         {
             tmp = array[left];
-            array[left] = arr[right];
+            array[left] = array[right];
             array[right] = tmp;
             ++left;
             --right;

@@ -1,16 +1,11 @@
 #include "main.ih"
 
-int main(int argc, char **argv, char **envp)
-try
+int main(int argc, char **argv)
 {
-    // test code for printing all environment variables
-    for (char **env = envp; *env != 0; env++)
-    {
-        char *thisEnv = *env;
-        cout << thisEnv << '\n';
+    char *s = *environ;
+
+    for (int i = 0; s; i++) {
+      printf("%s\n", s);
+      s = *(environ+i);
     }
-}
-catch (...)
-{
-    return 1;
 }
