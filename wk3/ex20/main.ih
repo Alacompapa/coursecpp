@@ -1,7 +1,10 @@
 #include <iostream>
 #include <string>
+#include <list>
 
 extern char **environ;
+
+using namespace std;
 
 namespace Icmbuild
 {
@@ -13,6 +16,4 @@ namespace Icmbuild
 
 void usage(std::string const &progname);
 
-void quicksort(std::string toSort[], size_t left, size_t right);
-
-using namespace std;
+void quicksort(char** array, size_t leftpos, size_t rightpos);

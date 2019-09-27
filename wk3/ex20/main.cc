@@ -2,10 +2,10 @@
 
 int main(int argc, char **argv)
 {
-    char *s = *environ;
-
-    for (int i = 0; s; i++) {
-      printf("%s\n", s);
-      s = *(environ+i);
+    size_t left = 0;
+    size_t right = 0;
+    quicksort(environ, left, right);
+    for (size_t i = 0; environ[i]; ++i) {
+        cout << environ[i] << '\n';
     }
 }
