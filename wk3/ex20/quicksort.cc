@@ -1,31 +1,33 @@
 #include "main.ih"
 
-void quickSort(int arr[], int left, int right) {
+void quickSort(string arr[], int left, int right) {
 
-      int i = left, j = right;
-      int tmp;
-      int pivot = 0;
+    int tmp;
 
-       /* partition */
-      while (i <= j) {
-            while (arr[i] < pivot)
-                  i++;
 
-            while (arr[j] > pivot)
-                  j--;
+    /* partition */
+    int pivot = 0;
+    while (i != j)
+    {
+        while (arr[left] < pivot)
+            i++;
 
-            if (i <= j) {
-                  tmp = arr[i];
-                  arr[i] = arr[j];
-                  arr[j] = tmp;
-                  i++;
-                  j--;
-            }
-      };
+        while (arr[right] > pivot)
+            j--;
 
-       /* recursion */
-      if (left < j)
-            quickSort(arr, left, j);
-      if (i < right)
-            quickSort(arr, i, right);
+        if (left <= right)
+        {
+            tmp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = tmp;
+            left++;
+            right--;
+        }
+    };
+
+    /* recursion */
+    if (left < j)
+        quickSort(arr, left, j);
+    if (i < right)
+        quickSort(arr, i, right);
 }
