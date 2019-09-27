@@ -1,7 +1,31 @@
 #include "main.ih"
 
-void quicksort(string toSort[], size_t left, size_t right) 
-{
-    // look @ the Annos to find what logical operators are defined for 
-    // strings (like >= or < or ==)
+void quickSort(int arr[], int left, int right) {
+
+      int i = left, j = right;
+      int tmp;
+      int pivot = 0;
+
+       /* partition */
+      while (i <= j) {
+            while (arr[i] < pivot)
+                  i++;
+
+            while (arr[j] > pivot)
+                  j--;
+
+            if (i <= j) {
+                  tmp = arr[i];
+                  arr[i] = arr[j];
+                  arr[j] = tmp;
+                  i++;
+                  j--;
+            }
+      };
+
+       /* recursion */
+      if (left < j)
+            quickSort(arr, left, j);
+      if (i < right)
+            quickSort(arr, i, right);
 }
