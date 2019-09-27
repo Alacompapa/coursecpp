@@ -11,7 +11,6 @@ void countWords()
         size_t posWordStart = 0;
         while (posWordEnd != string::npos)
         {
-            cout << "word" << '\n';
             posWordStart = line.find_first_not_of(whitespaces, posWordEnd);
             posWordEnd = line.find_first_of(whitespaces, posWordStart);
             count++;
