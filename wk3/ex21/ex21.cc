@@ -1,3 +1,14 @@
+// It is appropriate to use an int-value parameter when you want to add an extra int to an existing one.
+//In the code example this is illustrated because the int a parameter gets it value increased by one.
+main(){
+    int a = 4;
+    int b = addOne(a);
+    cout << b;
+}
+int addOne(int parameter)
+{
+    return parameter + 1;
+}
 // It is appropriate to use a string value parameter when you want to add an extra character array to an existing string.
 //In the code example this is illustrated because the string parameter gets another string appended and both of them are returned.
 main(int argc, char** argv){
