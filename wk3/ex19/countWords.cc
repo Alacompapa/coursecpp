@@ -9,11 +9,11 @@ void countWords()
     {
         size_t posWordEnd = 0;
         size_t posWordStart = 0;
-        while (posWordEnd != string::npos)
+        while ((posWordEnd != string::npos) and (not line.empty()))
         {
             posWordStart = line.find_first_not_of(whitespaces, posWordEnd);
             posWordEnd = line.find_first_of(whitespaces, posWordStart);
-            count++;
+            ++count;
         }
     }
 
