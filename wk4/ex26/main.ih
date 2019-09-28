@@ -1,0 +1,6 @@
+#include <iostream>
+#include <string>
+
+void usage(std::string const &progname);
+
+using namespace std;
