@@ -1,0 +1,11 @@
+What does the -O2 flag do?
+
+What does the -O1 flag do?
+
+What does the -O3 flag do?
+- inline functions
+- aggressive optimization?
+
+What are differences in results between optimization flags? (What if no flag is used?)
+
+Implications of the results for the way the functions were defined, in particular what you can learn from it when defining your own function parameters.
