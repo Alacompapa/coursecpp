@@ -9,3 +9,7 @@ What does the -O3 flag do?
 What are differences in results between optimization flags? (What if no flag is used?)
 
 Implications of the results for the way the functions were defined, in particular what you can learn from it when defining your own function parameters.
+
+
+Take a look at:
+https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
