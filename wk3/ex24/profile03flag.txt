@@ -1,0 +1,15 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ns/call  ns/call  name    
+ 63.72      0.29     0.29                             callValue(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+ 24.59      0.40     0.11 10000000    11.07    11.07  fun(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+ 12.30      0.45     0.06 10000000     5.53     5.53  fun2(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00      0.45     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z3funNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+  0.00      0.45     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z4fun2RKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+  0.00      0.45     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z5usageRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+  0.00      0.45     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z7callRefRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+  0.00      0.45     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z9callValueRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+  0.00      0.45     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN8Icmbuild7versionE
+  0.00      0.45     0.00        1     0.00     0.00  _GLOBAL__sub_I_main
