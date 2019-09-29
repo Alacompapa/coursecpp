@@ -2,6 +2,9 @@
 **/icmconf
 **/tmp
 
+### vim ###
+*.swp
+
 ### C++ ###
 # Prerequisites
 *.d
