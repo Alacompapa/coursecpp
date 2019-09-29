@@ -10,4 +10,11 @@ namespace Icmbuild
 
 void usage(std::string const &progname);
 
+void combis(size_t idx, bool bits[]);       // Generates all combinations
+
+void show(bool bits[], size_t size);              // Shows which bits in array are true
+
+extern size_t nTotal;                       // Global vars defined in
+extern size_t nRequired;                    // data.cc
+
 using namespace std;
