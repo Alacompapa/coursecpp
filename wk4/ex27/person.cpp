@@ -42,7 +42,11 @@ void Person::setMass(size_t mass)
 {
   d_mass = mass;
 }
-void Person::setInsert()
+string const Person::setInsert(string d_name, string d_address, string d_phone, size_t d_mass) const;
 {
-
+  cout << "Your details:" << "\n";
+  cout << "Your name is:" << d_name << "\n";
+  cout << "Your address is:" << d_address << "\n";
+  cout << "Your phone is:" << d_phone << "\n";
+  cout << "Your mass is:" << d_mass << "\n";
 }

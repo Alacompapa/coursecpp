@@ -16,7 +16,7 @@ public:
     void setAddress(std::string const &address);
     void setPhone(std::string const &phone);
     void setMass(size_t mass);
-    void setInsert(std__string const &insert);
+    void setInsert(string d_name, string d_address, string d_phone, size_t d_mass);
     void setExtract(std_string const &extract);
 
     std::string const &name()     const;
