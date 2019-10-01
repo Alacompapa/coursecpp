@@ -2,11 +2,10 @@
 
 int sum(int argc, char *argv[])
 {
-    char* end;
     size_t summed = 0;
-    for (int i = 1, base = 10;(i < argc);++i)
+    for (int i = 1;(i < argc);++i)
     {
-        size_t num = strtol(argv[i], &end, base);
+        int num = stol(argv[i]);
         summed += num;
     }
     return summed;
