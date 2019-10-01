@@ -2,11 +2,11 @@
 
 int sum(int argc, char *argv[])
 {
-    size_t summed = 0;
-    for (int i = 1;(i < argc);++i)
+    int summed = 0;
+    for (int idx = 1; idx < argc; ++idx)    // Loop for amount of args
     {
-        int num = stol(argv[i]);
-        summed += num;
+        int num = stoi(argv[idx]);          // convert the arg to int
+        summed += num;                      // Add to sum
     }
     return summed;
 }

@@ -9,8 +9,7 @@ int main(int argc, char *argv[])
     {
     string str = argv[counter];         // Take a string from argv
     if (str.find("."))                  // If we find dots in it
-        {
-                                        // Convert argc to double
+    {                                   // Convert argc to double
             double argcount = static_cast<double>(argc);
                                         // Get the sum of the doubles
             double summed = sum(argcount, argv);
@@ -18,8 +17,7 @@ int main(int argc, char *argv[])
             return 0;
         }
     }
-                                        // This part will only run if we
-                                        // didn't find a dot
-int summed = sum(argc, argv);           // Get the sum of all elements in argc
-    cout << summed << '\n';
+                                        // Runs if no dots
+    int summed = sum(argc, argv);           // Get the sum of all elements in
+    cout << summed << '\n';                 // argc
 }
