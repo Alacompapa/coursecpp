@@ -3,11 +3,18 @@
 int main(int argc, char **argv)
 {
 
-    string test[] = { "def", "abc", "abb", "abd", "zq" };
-    quickSort(test, 0, 4);
-
+    string test[] = { "abceded", "hey", "butter", "xenophobic", "mantisse", "ape" };
+    size_t length = sizeof(test)/sizeof(test[0]);
+    cout << "Unordered" << '\n';
     for (size_t idx = 0; idx < size(test); ++idx)
-        cout << "Uiteindelijke array " << test[idx] << '\n';
+        cout << test[idx] << ' ';
+    cout << '\n';
+    quickSort(test, 0, length);
+
+    cout << "Ordered:" << '\n';
+    for (size_t idx = 0; idx < size(test); ++idx)
+        cout << test[idx] << ' ';
+    cout << '\n';
 
 /*
     for (size_t idx = 1; environ[idx]; ++idx)
