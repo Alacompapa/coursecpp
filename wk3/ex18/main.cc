@@ -1,7 +1,6 @@
 #include "main.ih"
 
 int main(int argc, char **argv)
-try
 {
     if (argc == 1)                              
     {
@@ -13,8 +12,4 @@ try
         return 0;
 
     boundCall(argc, argv);
-}
-catch (...)
-{
-    return 1;
 }
