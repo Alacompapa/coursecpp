@@ -16,4 +16,4 @@ namespace Icmbuild
 
 void usage(std::string const &progname);
 void quickSort(string toSort[], size_t left, size_t right);
-void partition();
+size_t partition(string array[], size_t left, size_t right);
