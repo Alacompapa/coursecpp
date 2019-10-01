@@ -1,7 +1,6 @@
 #include "main.ih"
 
 int main(int argc, char **argv)
-try
 {
     if (argc == 1)
     {
@@ -10,7 +9,7 @@ try
     }
 
     string argument = argv[1];
-    char option = argument[1];
+    char option = argument[1];              // Select the letter in the arg
     switch (option)
     {
         case 'c':
@@ -23,11 +22,7 @@ try
             countLines();
             break;
         default:
-            usage("wc");                    // no args given
+            usage("wc");                    // no correct args given
             break;
     }
-}
-catch (...)
-{
-    return 1;
 }

@@ -1,11 +1,13 @@
 #include "main.ih"
 
-void countLines()
+void countChars()
 {
     size_t count = 0;
     string line;
     while (getline(cin, line))
-        ++count;
+        for (size_t idx = 0; idx != line.length(); ++idx)
+            if (isalnum(line[idx]))             // all alphanumeric chars are 
+               ++count;                         // counted
 
-    cout << count << " lines in stream.\n";
+    cout << count << " characters in stream.\n";
 }
