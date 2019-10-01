@@ -5,15 +5,13 @@ void quickSort()
     size_t i;
     for (i = 1; environ[i]; ++i)
     {
-        cout << environ[i] << '\n';
+        // cout << environ[i] << '\n';
     }
-
-    char** env[] = { environ }
+    size_t last_pos = i;
     string tmp;
     size_t first_pos = 0;
-    string* left = environ[first_pos]
-    string* right = environ[1:i]
-    size_t last_pos = i;
+    char *left[2] = { environ[1] };
+    cout << left;
     size_t pivot_pos = 0;
 }
 //
