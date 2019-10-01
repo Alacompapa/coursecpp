@@ -8,7 +8,7 @@ size_t partition(string array[], size_t left, size_t right)
     for (size_t idx = left; idx < right; ++idx)
     {
         cout << "in loop \n" << " array[idx] " << array[idx] << '\n';
-        if (array[idx] <= pivot)
+        if (array[idx] > pivot)
         {
             string tmp = array[idx];
             array[idx] = array[idx + 1];
