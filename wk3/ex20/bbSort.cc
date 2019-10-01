@@ -2,6 +2,11 @@
 
 void quickSort(string toSort[], size_t left, size_t right)
 {
+    cout << "quickSort called \n on array ";
+    for (size_t idx = 0; idx < 5; ++idx)
+       cout << toSort[idx];
+    cout << '\n'; 
+
     if (left >= right)                      // Stopping condition
         return;
 
