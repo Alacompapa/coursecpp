@@ -1,15 +1,8 @@
 #include <iostream>
 #include <string>
-#include <stdlib.h>
-namespace Icmbuild
-{
-    extern char version[];
-    extern char years[];
-    extern char author[];
-};
-
-void usage(std::string const &progname);
 
 using namespace std;
+
 int sum(int argc, char *argv[]);
+
 double sum(double argc, char *argv[]);
