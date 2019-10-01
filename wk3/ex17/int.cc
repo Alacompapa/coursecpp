@@ -3,10 +3,8 @@
 int sum(int argc, char *argv[])
 {
     int summed = 0;
-    for (int idx = 1; idx < argc; ++idx)    // Loop for amount of args
-    {
-        int num = stoi(argv[idx]);          // convert the arg to int
-        summed += num;                      // Add to sum
-    }
+    for (size_t idx = 1; idx != argc; ++idx)    // Loop for amount of args
+        summed += stoi(argv[idx]);              // Add to sum
+
     return summed;
 }

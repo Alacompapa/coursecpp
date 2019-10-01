@@ -1,11 +1,11 @@
 //                     usage.cc
 namespace {
-char const usageInfo[] = 
-R"(
+    char const usageInfo[] = 
+        R"(
 Should be called with appropriate arguments.
-1st arg:    Number of the argument requested.
-other args: Arguments which can be requested.
-)";
+    1st arg:    Number of the argument requested.
+    other args: Arguments which can be requested.
+        )";
 }
 
 #include "main.ih"
