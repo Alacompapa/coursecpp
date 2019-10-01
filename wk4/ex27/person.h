@@ -1,7 +1,8 @@
-#ifndef PERSON_H
-#define PERSON_H
 #include <iostream>
 #include <string>
+#ifndef PERSON_H
+#define PERSON_H
+
 
 class Person
 {
@@ -28,3 +29,4 @@ public:
 };
 
 #endif // PERSON_H
+using namespace std;

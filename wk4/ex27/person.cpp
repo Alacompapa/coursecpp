@@ -24,15 +24,18 @@ switch (1) {
 void Person::setName(string const &name)
 {
   d_name = name;
+  return d_name;
 }
 void Person::setAddress(string const &address)
 {
   d_address = address;
+  return d_address;
 }
 void Person::setPhone(string const &phone)
 {
   if (phone.find_first_not_of("0123456789") == string::npos)
       d_phone = phone;
+      return d_phone;
   else if (phone.empty())
       d_phone = "- not available -"
   else
@@ -41,6 +44,7 @@ void Person::setPhone(string const &phone)
 void Person::setMass(size_t mass)
 {
   d_mass = mass;
+  return d_mass;
 }
 string const Person::setInsert(string d_name, string d_address, string d_phone, size_t d_mass) const;
 {
