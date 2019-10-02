@@ -59,7 +59,7 @@ int dog_years(int &parameter)
 }
 int main(int argc, char** argv)
 {
-    int age = 57;
+    int age = 4;
     cout <<  age << "in dog years is" << dog_years(age);
 }
 
@@ -75,47 +75,61 @@ int main(int argc, char** argv)
     string menu = "Soup, meatballs and";
     Add_desert(menu);
 }
-7.// It is appropriate to use a const rvalue-reference to an int-type parameter if the output of a function wants to be stored.
+7.// It is appropriate to use a const rvalue-reference to an int-type parameter if the output of a function wants to be stored and not altered.
 // In the code example this is illustrated because the output of function Addition is stored in an rvalue-reference so it can
-// be later deployed in cout.
-int Addition(const int &parameter1,const int &parameter2)
+// be later deployed in cout. (MAYBE NEVER)
+int Display(const int &&parameter1,const int &&parameter2)
 {
-    return parameter1 + parameter2;
+    size_t firstNumber = parameter1;
+    size_t secondNumber = parameter2;
+    cout << "The numbers you typed are:" << firstNumber << "and" << secondNumber << "\n";
 }
 int main(int argc, char** argv)
 {
-    &&add_result = Addition (3 , 4)
-    cout << add_result;
+     Display(3 , 4);
 }
 
-8.// It is appropriate to use a const rvalue-reference to a string parameter if the output of a function wants to be stored.
+8.// It is appropriate to use a const rvalue-reference to a string parameter if the output of a function wants to be stored and not altered..
 // In the code example this is illustrated because the output of function full_sentence is fed as input to function
-// final_sentence through an rvalue-reference.
-string full_sentence(const string &parameter1, const string &parameter2)
+// final_sentence through an rvalue-reference. (MAYBE NEVER)
+string full_sentence(const string &&parameter1, const string &&parameter2)
 {
-    return parameter1 + parameter2;
+    string first_part = parameter1;
+    string last_part = parameter2;
+    cout << first_part << last_part << "\n";
 }
-string final_sentence(const string &parameter1, const string &parameter2)
+
+int main(int argc, char** argv)
 {
-    return parameter1 + parameter2;
+    full_sentence("I am" ,"tired");
+}
+
+9.// It is appropriate to use an rvalue-reference to an int parameter if one wants to extend the lifespan of a temporary int
+// and being able to modify it. In the code example this is illustrated because the result from function Return_one is stored temporarily
+// , changed from 43 to 1 and returned.
+void Return_one( int &&parameter1)
+{
+    parameter1 = 1;
+    return parameter1 ;
 }
 int main(int argc, char** argv)
 {
-    &&sentence = full_sentence("I am" ,"tired");
-    &&output = final_sentence(sentence, "today");
-    cout << output;
+   Return_one(43);
+
 }
+10.// It is appropriate to use an rvalue-reference to a string parameter if one wants to extend the lifespan of a temporary string.
+//In the code example this is illustrated because the string "Erase me" is cleared and given a new value.
+void Erase( string &&parameter1)
+{
+    parameter1.clear();
+    parameter1 = "Erased"
+    return parameter1 ;
+}
+int main(int argc, char** argv)
+{
+   Erase("Erase me");
 
-
-
-9.// It is appropriate to use an rvalue-reference to an int parameter
-
-
-
-10.// It is appropriate to use an rvalue-reference to a string parameter
-
-
-
+}
 11.// It is appropriate to use a return int-type value to be able to modify the output of a given function.  In the code example this
 // is illustrated because the output of multiplication is changed in the cout statement.
 int multiplication(int parameter1, int parameter2)
@@ -128,7 +142,7 @@ int main(int argc, char **argv)
 }
 
 12.// It is appropriate to use a return string value to be able to modify the output of a given function.  In the code example this is
-//illustrated because
+//illustrated because the returned string "hello friend" gets "Bye" added and all is included in cout.
 string sentence(string parameter1, string parameter2)
 {
     return parameter1 * parameter2;
@@ -147,7 +161,7 @@ int multiplication(int parameter1, int parameter2)
 }
 int main(int argc, char **argv)
 {
-    ++multiplication(3, 4);
+    multiplication(3, 4);
 }
 
 14.// It is appropriate to use a return const reference to an string if the output of the function should not be altered.
@@ -155,7 +169,7 @@ int main(int argc, char **argv)
 // of output is still the same.
 string sentence(string parameter1, string parameter2)
 {
-    string const output = parameter1 + parameter2;
+     const string output = parameter1 + parameter2;
     return &output;
 }
 int main(int argc, char **argv)
@@ -175,8 +189,9 @@ int main(int argc, char **argv)
     cout << multiplication(3, 4) + 8;
 }
 
-16.// It is appropriate to use a return non const reference to a string if the output wants to be modified but the original value of the
-// parameters will remain unchanged. In the code example this is illustrated because &output is modified in main but the original content of output is the same.
+16.// It is appropriate to use a return non const reference to a string if the output
+// wants to be modified but the original value of the parameters will remain unchanged.
+// In the code example this is illustrated because &output is modified in main but the original content of output is the same.
 string sentence(string parameter1, string parameter2)
 {
     string output = parameter1 + parameter2;
@@ -188,16 +203,19 @@ int main(int argc, char **argv)
     cout << answer + ", I modified this sentence.";
 }
 
-17.// It is appropriate to use a return a const rvalue-reference to an int
+17.// It is NOT appropriate to use a return a const rvalue-reference to an int because
+//returning temporaries or function local variables still creates a dangling reference, just like with lvalue references.
 
 
 
-18.// It is appropriate to use a return a const rvalue-reference to a string
+18.// It is NOT appropriate to use a return a const rvalue-reference to a string because
+//returning temporaries or function local variables still creates a dangling reference, just like with lvalue references.
 
 
 
-19.// It is appropriate to use a return an rvalue-reference to an int
+19.// It is NOT appropriate to use a return an rvalue-reference to an int because
+//returning temporaries or function local variables still creates a dangling reference, just like with lvalue references.
 
 
-
-20.// It is appropriate to use a return an rvalue-reference to an  string
+20.// It is appropriate to use a return an rvalue-reference to a string
+// because returning temporaries or function local variables still creates a dangling reference, just like with lvalue references.
