@@ -13,12 +13,14 @@ class Person
   std::string d_extract;
   size_t      d_mass;
 public:
-    void setName(string const &name);
-    void setAddress(string const &address);
-    void setPhone(string const &phone);
-    void setMass(size_t mass);
-    void setInsert(string d_name, string d_address, string d_phone, size_t d_mass);
-    void setExtract(string const &extract);
+	Person();
+
+    void setName(std::string const);
+    void setAddress(std::string const);
+    void setPhone(std::string const);
+    void setMass(size_t);
+    void setInsert(std::string , std::string , std::string , size_t);
+    void setExtract(std::string const);
 
     std::string const &name()     const;
     std::string const &address()  const;
