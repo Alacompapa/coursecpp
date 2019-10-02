@@ -1,9 +1,13 @@
-string sentence(string parameter1, string parameter2)
+#include <iostream>
+
+using namespace std;
+
+string greetHarry(string greeting)
 {
-    return parameter1 * parameter2;
+    return greeting + " Harry!\n";
 }
 
 int main(int argc, char **argv)
 {
-    cout << sentence("hello", "friend") + "Bye";
+    cout << greetHarry("Hello");
 }
