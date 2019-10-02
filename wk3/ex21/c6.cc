@@ -1,10 +1,14 @@
-string Add_desert(string &parameter)
+#include <iostream>
+
+using namespace std;
+
+string addDesert(string &parameter)
 {
-    return parameter + "chocolate ice cream";
+    return parameter + "chocolate ice cream\n";
 }
 
 int main(int argc, char** argv)
 {
-	string menu = "Soup, meatballs and";
-	Add_desert(menu);
+	string menu = "Soup, meatballs and ";
+	cout << addDesert(menu);
 }

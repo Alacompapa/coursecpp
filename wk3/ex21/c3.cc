@@ -1,12 +1,14 @@
-int addvalue(const int &parameter)
+#include <iostream>
+
+using namespace std;
+
+void printValue(const int &parameter)
 {
-	++parameter;
-	return parameter + 3;
+	cout << parameter << '\n';
 }
 
 int main(int argc, char** argv)
 {
-    static int x = 7;
-	addvalue(x);
-} 
-
+    int x = 7;
+	printValue(x);
+}

@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 int addOne(int parameter)
 {
     return parameter + 1;
@@ -9,4 +12,3 @@ int main()
     int b = addOne(a);
     cout << b;
 }
-
