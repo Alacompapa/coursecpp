@@ -29,6 +29,5 @@ public:
     std::string const &insert()   const;
     std::string const &extract()  const;
 };
-
 #endif // PERSON_H
 using namespace std;
