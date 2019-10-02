@@ -21,6 +21,7 @@ int main(int argc, char **argv)
     cout << getpwent()->pw_dir << '\n';
     cout << getpwent()->pw_shell << '\n';
 */
+
     User test;
     
 }

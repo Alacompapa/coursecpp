@@ -1,9 +1,7 @@
 #include <iostream>
 #include <string>
-#include <pwd.h>
-#include <sys/types.h>
 
-#include <user.h>
+#include "user/user.ih"
 
 using namespace std;
 

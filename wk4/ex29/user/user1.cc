@@ -1,4 +1,4 @@
-#include "user.h"
+#include "user.ih"
 
 using namespace std;
 
@@ -11,4 +11,12 @@ User::User()
     d_shell = shell;
     d_groupId = gid;
     d_userId = uid;
+
+    cout << "Constructor User::User() called \n";
+
+    cout << d_name << '\n';
+    cout << d_realName << '\n';
+    cout << d_shell << '\n';
+    cout << d_groupId << '\n';
+    cout << d_userId << '\n';
 }

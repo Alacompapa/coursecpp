@@ -1,7 +1,7 @@
 #ifndef _INCLUDED_USER_H
 #define _INCLUDED_USER_H
 
-#include "main.ih"
+#include <string>
 
 class User
 {
