@@ -4,10 +4,10 @@ using namespace std;
 
 void Person::setExtract(string const &extract)
 {
-  int x = 0;
-  while (x != 4) {
+  int idx = 0;
+  while (idx != 4) {
     getline(cin, extract, ",");
-    ++x;
+    ++idx;
 }
 switch (1) {
   case 1 : size_t blank = extract.find_first_of(" ");
