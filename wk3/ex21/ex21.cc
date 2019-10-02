@@ -107,14 +107,14 @@ int main(int argc, char** argv)
 9.// It is appropriate to use an rvalue-reference to an int parameter if one wants to extend the lifespan of a temporary int
 // and being able to modify it. In the code example this is illustrated because the result from function Return_one is stored temporarily
 // , changed from 43 to 1 and returned.
-void Return_one( int &&parameter1)
+void Return_one(int &&parameter1)
 {
     parameter1 = 1;
-    return parameter1 ;
+    return parameter1;
 }
 int main(int argc, char** argv)
 {
-   Return_one(43);
+   cout << Return_one(43);
 
 }
 10.// It is appropriate to use an rvalue-reference to a string parameter if one wants to extend the lifespan of a temporary string.
