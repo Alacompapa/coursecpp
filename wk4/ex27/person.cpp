@@ -4,10 +4,10 @@ using namespace std;
 
 void Person::setExtract(string const &extract)
 {
-  int x = 0;
-  while (x != 4) {
+  int idx = 0;
+  while (idx != 4) {
     getline(cin, extract, ",");
-    ++x;
+    ++idx;
 }
 switch (1) {
   case 1 : size_t blank = extract.find_first_of(" ");
@@ -46,7 +46,9 @@ void Person::setMass(size_t mass)
   d_mass = mass;
   return d_mass;
 }
-string const Person::setInsert(string d_name, string d_address, string d_phone, size_t d_mass) const;
+
+}
+void Person::setInsert(string d_name, string d_address, string d_phone, size_t d_mass) const;
 {
   cout << "Your details:" << "\n";
   cout << "Your name is:" << d_name << "\n";
