@@ -75,33 +75,12 @@ int main(int argc, char** argv)
     string menu = "Soup, meatballs and";
     Add_desert(menu);
 }
-7.// It is appropriate to use a const rvalue-reference to an int-type parameter if the output of a function wants to be stored and not altered.
-// In the code example this is illustrated because the output of function Addition is stored in an rvalue-reference so it can
-// be later deployed in cout. (MAYBE NEVER)
-int Display(const int &&parameter1,const int &&parameter2)
-{
-    size_t firstNumber = parameter1;
-    size_t secondNumber = parameter2;
-    cout << "The numbers you typed are:" << firstNumber << "and" << secondNumber << "\n";
-}
-int main(int argc, char** argv)
-{
-     Display(3 , 4);
-}
+7.// It is not appropriate to use a const rvalue-reference to an int-type parameter because an rvalue reference used 
+// to modify the int but adding the const will defy the purpose. A const lvalue reference is preferred.
 
-8.// It is appropriate to use a const rvalue-reference to a string parameter if the output of a function wants to be stored and not altered..
-// In the code example this is illustrated because the output of function full_sentence is fed as input to function
-// final_sentence through an rvalue-reference. (MAYBE NEVER)
-string full_sentence(const string &&parameter1, const string &&parameter2)
-{
-    string first_part = parameter1;
-    string last_part = parameter2;
-    cout << first_part << last_part << "\n";
-}
+8.// It is not appropriate  to use a const rvalue-reference to a string parameter  because of the same reason as 
+//the exercise above. Placing a const restriction on an rvalue defies the purpose of moving the object. 
 
-int main(int argc, char** argv)
-{
-    full_sentence("I am" ,"tired");
 }
 
 9.// It is appropriate to use an rvalue-reference to an int parameter if one wants to extend the lifespan of a temporary int
