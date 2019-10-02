@@ -1,11 +1,14 @@
-string addfriend(string parameter)
+#include <iostream>
+using namespace std;
+
+string addFriend(string parameter)
 {
 	return parameter + "friends";
 }
 
-main(int argc, char** argv)
+int main(int argc, char** argv)
 {
-    string one = "Hello my";
-    string final = Addfriend(one);
-	cout << final;
+    string one = "Hello my ";
+    string final = addFriend(one);
+	cout << final << '\n';
 }

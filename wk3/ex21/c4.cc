@@ -1,10 +1,14 @@
-string addstrings(const string &parameter)
+#include <iostream>
+
+using namespace std;
+
+string addStrings(const string &parameter)
 {
-    return "Hey, you haven't said " + parameter; 
+    return "Hey, you haven't said " + parameter + '\n';
 }
 
 int main(int argc, char** argv)
 {
     string hello = "hello";
-	addstrings(hello);
+	cout << addStrings(hello);
 }

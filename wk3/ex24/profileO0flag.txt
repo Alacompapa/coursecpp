@@ -1,0 +1,78 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 17.37      4.13     4.13 380000008     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const
+ 16.07      7.94     3.82 350000000     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::length() const
+  9.70     10.25     2.30 160000000     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator[](unsigned long) const
+  7.34     11.99     1.74 10000000     0.00     0.00  fun2(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  7.04     13.66     1.67 160000000     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator[](unsigned long)
+  6.87     15.29     1.63 10000000     0.00     0.00  fun(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+  2.34     15.85     0.56 10000000     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  1.69     16.25     0.40 10000000     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)
+  1.60     16.63     0.38 10000002     0.00     0.00  __gnu_cxx::new_allocator<char>::allocate(unsigned long, void const*)
+  1.29     16.94     0.31        1     0.31     0.31  _GLOBAL__sub_I__Z9callValueRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+  1.22     17.23     0.29 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long)
+  1.16     17.50     0.28 10000000     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars(char*, char*, char*)
+  1.10     17.76     0.26 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long)
+  1.08     18.02     0.26 10000000     0.00     0.00  std::allocator_traits<std::allocator<char> >::select_on_container_copy_construction(std::allocator<char> const&)
+  1.05     18.27     0.25 20000004     0.00     0.00  __gnu_cxx::new_allocator<char>::max_size() const
+  1.03     18.51     0.25 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long)
+  1.01     18.75     0.24        2     0.12     0.18  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+  0.93     18.97     0.22 20000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_get_allocator() const
+  0.86     19.18     0.21 10000002     0.00     0.00  std::char_traits<char>::copy(char*, char const*, unsigned long)
+  0.86     19.38     0.21 10000002     0.00     0.00  std::allocator_traits<std::allocator<char> >::deallocate(std::allocator<char>&, char*, unsigned long)
+  0.80     19.57     0.19 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::max_size() const
+  0.80     19.76     0.19 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_destroy(unsigned long)
+  0.80     19.95     0.19 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()
+  0.80     20.14     0.19 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::~_Alloc_hider()
+  0.78     20.33     0.19 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const
+  0.74     20.51     0.18 10000000     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char>&&)
+  0.72     20.68     0.17 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_capacity(unsigned long)
+  0.63     20.83     0.15 20000004     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_get_allocator()
+  0.63     20.98     0.15 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data(char*)
+  0.63     21.13     0.15 10000000     0.00     0.00  __gnu_cxx::__alloc_traits<std::allocator<char>, char>::_S_select_on_copy(std::allocator<char> const&)
+  0.61     21.27     0.15 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()
+  0.61     21.42     0.15 10000002     0.00     0.00  char* std::addressof<char>(char&)
+  0.59     21.56     0.14 10000002     0.00     0.00  std::char_traits<char>::assign(char&, char const&)
+  0.59     21.70     0.14 10000000     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct_aux<char*>(char*, char*, std::__false_type)
+  0.57     21.83     0.14 10000002     0.00     0.00  std::allocator_traits<std::allocator<char> >::allocate(std::allocator<char>&, unsigned long)
+  0.55     21.96     0.13 10000002     0.00     0.00  std::pointer_traits<char const*>::pointer_to(char const&)
+  0.53     22.09     0.13 10000000     0.00     0.00  std::iterator_traits<char*>::difference_type std::__distance<char*>(char*, char*, std::random_access_iterator_tag)
+  0.51     22.21     0.12 10000002     0.00     0.00  char const* std::__addressof<char const>(char const&)
+  0.46     22.32     0.11 10000002     0.00     0.00  char const* std::addressof<char const>(char const&)
+  0.46     22.43     0.11 10000000     0.00     0.00  std::remove_reference<std::allocator<char>&>::type&& std::move<std::allocator<char>&>(std::allocator<char>&)
+  0.44     22.53     0.11 10000000     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*)
+  0.44     22.64     0.11 10000000     0.00     0.00  std::iterator_traits<char*>::difference_type std::distance<char*>(char*, char*)
+  0.42     22.74     0.10 10000002     0.00     0.00  char* std::__addressof<char>(char&)
+  0.42     22.84     0.10        1     0.10     0.11  _GLOBAL__sub_I__Z4fun2RKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+  0.38     22.93     0.09 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() const
+  0.38     23.02     0.09 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_length(unsigned long)
+  0.36     23.10     0.09 10000002     0.00     0.00  std::allocator_traits<std::allocator<char> >::max_size(std::allocator<char> const&)
+  0.34     23.18     0.08 10000002     0.00     0.00  __gnu_cxx::new_allocator<char>::deallocate(char*, unsigned long)
+  0.34     23.26     0.08 10000002     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data()
+  0.34     23.34     0.08 10000000     0.00     0.00  bool __gnu_cxx::__is_null_pointer<char>(char*)
+  0.34     23.42     0.08        2     0.04     0.06  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct_aux<char const*>(char const*, char const*, std::__false_type)
+  0.34     23.50     0.08        1     0.08    15.27  callValue(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.27     23.57     0.07 10000000     0.00     0.00  std::iterator_traits<char*>::iterator_category std::__iterator_category<char*>(char* const&)
+  0.25     23.63     0.06 10000002     0.00     0.00  std::pointer_traits<char*>::pointer_to(char&)
+  0.13     23.66     0.03        2     0.02     0.02  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars(char*, char const*, char const*)
+  0.13     23.69     0.03        1     0.03     0.03  _GLOBAL__sub_I__Z3funNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+  0.08     23.71     0.02        1     0.02     7.66  callRef(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.06     23.73     0.02                             __gnu_cxx::char_traits<char>::eq(char const&, char const&)
+  0.04     23.74     0.01        1     0.01     0.01  __static_initialization_and_destruction_0(int, int)
+  0.02     23.74     0.01        2     0.00     0.00  std::char_traits<char>::length(char const*)
+  0.02     23.75     0.01        2     0.00     0.06  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*)
+  0.02     23.75     0.01        2     0.00     0.00  std::iterator_traits<char const*>::difference_type std::__distance<char const*>(char const*, char const*, std::random_access_iterator_tag)
+  0.00     23.75     0.00        2     0.00     0.00  bool __gnu_cxx::__is_null_pointer<char const>(char const*)
+  0.00     23.75     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char> const&)
+  0.00     23.75     0.00        2     0.00     0.02  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+  0.00     23.75     0.00        2     0.00     0.00  std::iterator_traits<char const*>::iterator_category std::__iterator_category<char const*>(char const* const&)
+  0.00     23.75     0.00        2     0.00     0.00  std::iterator_traits<char const*>::difference_type std::distance<char const*>(char const*, char const*)
+  0.00     23.75     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z7callRefRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+  0.00     23.75     0.00        1     0.00     0.00  _GLOBAL__sub_I_main
+  0.00     23.75     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     23.75     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     23.75     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     23.75     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
