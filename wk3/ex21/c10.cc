@@ -2,7 +2,7 @@
 
 using namespace std;
 
-string Erase(string &&parameter1)
+string erase(string &&parameter1)
 {
     parameter1.clear();
     parameter1 = "Erased\n";
@@ -11,5 +11,5 @@ string Erase(string &&parameter1)
 
 int main(int argc, char** argv)
 {
-   cout << Erase("Erase me");
+   cout << erase("Erase me");
 }
