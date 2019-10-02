@@ -1,4 +1,7 @@
-#include <string>
+#ifndef _INCLUDED_USER_H
+#define _INCLUDED_USER_H
+
+#include "main.ih"
 
 class User
 {
@@ -20,3 +23,4 @@ class User
         std::string shell()     const;
         size_t userId()         const;
 };
+#endif
