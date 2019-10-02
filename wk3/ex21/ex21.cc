@@ -131,31 +131,18 @@ int main(int argc, char **argv)
     cout << sentence("hello", "friend") + "Bye";
 }
 
-13.// It is appropriate to use a return const reference to an int if the output of the function should not be altered.
-// In the code example this is illustrated because the return value of multiplication is included in cout unmodified.
-int multiplication(int parameter1, int parameter2)
+13.// It is not appropriate to use a return const reference to an int in most cases, except when all alterations to an object have
+//been done and no more will be done. An advanced example is shown below. 
+std::ostream & operator<<(std::ostream &out, const object &obj)
 {
-    const int result = parameter1 * parameter2;
-    return &result;
-}
-int main(int argc, char **argv)
-{
-    multiplication(3, 4);
+   out << obj.data();
+   return out;
 }
 
-14.// It is appropriate to use a return const reference to an string if the output of the function should not be altered.
-// In the code example this is illustrated because the output of function sentences is appended to first_word but the value
-// of output is still the same.
-string sentence(string parameter1, string parameter2)
-{
-     const string output = parameter1 + parameter2;
-    return &output;
-}
-int main(int argc, char **argv)
-{
-    string first_word = "hello";
-    first_word + sentence("my", "friend");
-}
+
+14.// It is not appropriate to use a return const reference to an string for the same reason as explained in ex13. It might be useful
+//to return const reference of a string but the object cannot be defined inside the function. If the string is defined and const outside 
+//the function, it makes no sense to return that value.
 
 15.// It is appropriate to use a return  non const reference to an int if the output wants to be modified but the original value of the
 // parameters will remain unchanged. In the code example this is illustrated because the original value of parameter1 remains the same.
