@@ -12,11 +12,11 @@ int main(int argc, char *argv[])
             continue;
                                                  // Convert argc to double
                                                  // Get the sum of the doubles
-        double summed = sum(static_cast<double>(argc), argv);
+        double summed = sum(argc, argv, counter);
         cout << summed << '\n';
         return 0;
     }
-                                                 
+
     int summed = sum(argc, argv);                // Runs if no dots
-    cout << summed << '\n';                
+    cout << summed << '\n';
 }

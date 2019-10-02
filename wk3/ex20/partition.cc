@@ -2,35 +2,36 @@
 
 size_t partition(string array[], size_t left, size_t right)
 {
-  	size_t pivot = left;
-    
-    cout << "pivot " << pivot << '\n';
-    size_t length = sizeof(array);
-    for (size_t idx = 0; array[left] == array[right]; ++idx)
+    // implement the partition function so that its pivot element is the leftmost element
+    size_t pivot = left;
+;
+    cout << "running" << "\n";
+    for (size_t idx = left, length = right; idx < length-1; ++idx)
     {
-        cout << "in loop \n" << " array[idx] " << array[idx] << '\n';
+        cout << left << pivot << right << '\n';
+
         if (array[idx] > array[pivot])
         {
-          	// Alle elements to appear after the pivot element are swapped with the last element, reducing right before the swap.
-          	--right;
+        // Alle elements to appear after the pivot element are swapped with the last element, reducing right before the swap.
+            --right;
             string tmp = array[idx];
-            array[idx] = array[length-1];
-            array[length-1] = tmp;
+            array[idx] = array[right];
+            array[right] = tmp;
         }
-      			// Likewise, array[left] elements to appear before the pivot element can be swapped with the pivot element.
-				if (array[left] <= array[pivot])
+        // Likewise, array[left] elements to appear before the pivot element can be swapped with the pivot element.
+        if (array[left] < array[pivot])
         {
-          	if (array[left] < array[pivot])
-            		array[left]; 
-          	pivot = left;
-          	++left;
+            string tmp = array[left];
+            array[left] = array[pivot];
+            array[pivot] = tmp;
         }
-
+        if (array[left] <= array[pivot])
+        {
+            pivot = left;
+            ++left;
+        }
     }
 
-    string tmp = array[left];
-    array[left] = pivot;
-    array[right] = tmp;
-
+    // The partition function returns the pivot index.
     return pivot;
 }
