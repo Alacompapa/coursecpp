@@ -1,15 +1,6 @@
 #include <iostream>
 #include <string>
 
-void usage(std::string const &progname);
-
-namespace Icmbuild
-{
-    extern char version[];
-    extern char years[];
-    extern char author[];
-};
-
 using namespace std;
 
 void fun(string s);
