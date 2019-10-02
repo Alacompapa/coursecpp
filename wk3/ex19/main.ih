@@ -8,9 +8,9 @@ namespace Icmbuild
     extern char author[];
 };
 
-void usage(std::string const &progname);
-
 using namespace std;
+
+void usage(string const &progname);
 
 void countChars();
 void countWords();
