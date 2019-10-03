@@ -5,7 +5,9 @@
 
 class User
 {
-    std::string d_name;
+    bool const d_valid;
+
+    std::string d_name;                         // Data members
     std::string d_realName;
     std::string d_shell;
     size_t d_groupId;
