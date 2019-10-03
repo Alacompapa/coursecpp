@@ -1,16 +1,8 @@
 #include "main.ih"
 
-using namespace std;
-
 int main()
 {
-    /*
-	 Person p;
-	 p.setExtract();
-	 p.setName();
-	 p.setAddress();
-	 p.setPhone();
-	 p.setMass();
-	 p.setInsert;
-     */
+    Person rick{ "Rick James", "Funkytown 12", "123456789", 80 };
+    rick.insert(std::cout);
+    rick.extract(std::cin);
 }
