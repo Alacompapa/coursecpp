@@ -1,25 +1,28 @@
 #ifndef PERSON_H
 #define PERSON_H
 
+#include "person.ih"
 
 class Person
 {
     std::string d_name;
     std::string d_address;
     std::string d_phone;
-    std::string d_insert;
-    std::string d_extract;
     size_t      d_mass;
 
 public:
 	Person();
+    Person(std::string const &name,
+        std::string const &address = "--unknown--",
+        std::string const &phone = "--unknown--",
+        size_t mass = 0);
 
-    void setName(std::string const);
-    void setAddress(std::string const);
-    void setPhone(std::string const);
+    void setName(const std::string&);
+    void setAddress(const std::string&);
+    void setPhone(const std::string&);
     void setMass(size_t);
-    void setInsert(std::string , std::string , std::string , size_t);
-    void setExtract(std::string const);
+    void insert(std::ostream&);
+    void extract(std::istream&);
 
     std::string const &name()     const;
     std::string const &address()  const;
