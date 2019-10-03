@@ -6,12 +6,13 @@
 
 class Person
 {
-  std::string d_name;
-  std::string d_address;
-  std::string d_phone;
-  std::string d_insert;
-  std::string d_extract;
-  size_t      d_mass;
+    std::string d_name;
+    std::string d_address;
+    std::string d_phone;
+    std::string d_insert;
+    std::string d_extract;
+    size_t      d_mass;
+
 public:
 	Person();
 
