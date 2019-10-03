@@ -67,11 +67,13 @@ void Person::insert(std::ostream &stream) {
 }
 
 void Person::extract(std::istream &stream) {
-    char value[50];
-
-    while(stream.get(value, 256, ','))
+    string value;
+    while(std::getline(std::cin, value, ',')) 
     {
         cout << value << '\n';
+
+        if (std::cin.eof())
+            break;
     }
 }
 
