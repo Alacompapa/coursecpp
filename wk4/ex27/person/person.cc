@@ -60,10 +60,10 @@ size_t Person::mass() const {
 }
 
 void Person::insert(std::ostream &stream) {
-    stream << d_name << '\n';
-    stream << d_address << '\n';
-    stream << d_phone << '\n';
-    stream << d_mass << '\n';
+    stream << d_name << '\n' << 
+              d_address << '\n' << 
+              d_phone << '\n' << 
+              d_mass << '\n';
 }
 
 void Person::extract(std::istream &stream) {
