@@ -2,11 +2,11 @@
 
 void writePersonInfo(Person array[], size_t size)
 {
-    for (auto &element: array)
+    for (size_t idx = 0; idx != size; ++idx)
     {
-        cout << element.name() << '\n'
-            << element.address() << '\n'
-            << element.phone() << '\n'
-            << element.mass(); 
+        cout << array[idx].name() << '\n'
+             << array[idx].address() << '\n'
+             << array[idx].phone() << '\n'
+             << array[idx].mass(); 
     }
 }

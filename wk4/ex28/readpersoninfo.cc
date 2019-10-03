@@ -2,11 +2,13 @@
 
 void readPersonInfo(Person array[], size_t size)
 {
-    for (auto &element: array)
+    for (size_t idx = 0; idx != size; ++idx)
     {
-        cout << "? ";                       // Prompt
         string input;
-        cin >> input;                       // How to get the data from stream
-                                            // wrap in for loop?
+        do
+        {
+            cout << "? ";                       // Prompt
+                               // How to get the data from stream
+        } while (cin >> input);              // wrap in for loop?
     }
 }
