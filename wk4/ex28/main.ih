@@ -5,4 +5,5 @@ using namespace std;
 
 void usage(string const &progname);
 
-void readPersonInfo(Person array[], size_t size);
+void readPersonInfo(Person array[], size_t size);   // read data from stream
+void writePersonInfo(Person array[], size_t size);  // write data to stream
