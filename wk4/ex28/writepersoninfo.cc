@@ -1,6 +1,6 @@
 #include "main.ih"
 
-void writePersonInfo.cc(Person array[], size_t size)
+void writePersonInfo(Person array[], size_t size)
 {
     for (auto &element: array)
     {

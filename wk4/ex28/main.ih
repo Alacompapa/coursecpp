@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+#include "person/person.h"
 
-void usage(string const &progname);
+using namespace std;
 
 void readPersonInfo(Person array[], size_t size);   // read data from stream
 void writePersonInfo(Person array[], size_t size);  // write data to stream
