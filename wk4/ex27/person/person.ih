@@ -1,7 +1,7 @@
 #include "person.h"
 
-#include "../xerr.ih"
-
+#include <iostream>
+#include <string>
 
 using namespace std;
 

@@ -1,10 +1,10 @@
-
-#include "person.h"
+#include "main.ih"
 
 using namespace std;
 
 int main()
 {
+    /*
 	 Person p;
 	 p.setExtract();
 	 p.setName();
@@ -12,4 +12,5 @@ int main()
 	 p.setPhone();
 	 p.setMass();
 	 p.setInsert;
+     */
 }

@@ -1,5 +1,3 @@
-#include <iostream>
-#include <string>
 #ifndef PERSON_H
 #define PERSON_H
 
@@ -31,4 +29,3 @@ public:
     std::string const &extract()  const;
 };
 #endif // PERSON_H
-using namespace std;
