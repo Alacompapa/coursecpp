@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 
-//#include "user/user.ih"
+#include "user/user.ih"
 
 using namespace std;
-

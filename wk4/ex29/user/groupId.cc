@@ -1,6 +1,6 @@
 #include "user.ih"
 
-size_t groupId() const
+size_t User::groupId() const;
 {
     return d_groupId;
 }
