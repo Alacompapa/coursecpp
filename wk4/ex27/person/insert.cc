@@ -1,8 +1,8 @@
 #include "person.ih"
 
 void Person::insert(ostream &stream) {
-    stream << d_name << '\n' << 
-              d_address << '\n' << 
-              d_phone << '\n' << 
-              d_mass << '\n';
+    stream << "name: " << d_name << '\n' <<
+              << "address: " << d_address << '\n' <<
+              << "phone: " << d_phone << '\n' <<
+              << "mass: " << d_mass << '\n';
 }
