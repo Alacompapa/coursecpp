@@ -6,4 +6,5 @@ int main(int argc, char **argv)
     Person array[nrPersons];
 
     readPersonInfo(array, nrPersons);
+    writePersonInfo(array, nrPersons);
 }
