@@ -1,7 +1,9 @@
-#ifndef PERSON_H
-#define PERSON_H
+#ifndef _INCLUDED_PERSON_H
+#define _INCLUDED_PERSON_H
 
-#include "person.ih"
+#include <iostream>
+#include <string>
+#include <sstream>
 
 class Person
 {

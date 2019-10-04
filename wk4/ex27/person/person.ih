@@ -1,5 +1,3 @@
-#include <iostream>
-#include <string>
-#include <sstream>
+#include "person.h"
 
 using namespace std;

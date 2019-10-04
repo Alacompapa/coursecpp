@@ -1,6 +1,4 @@
-#include "person.h"
-
-using namespace std;
+#include "person.ih"
 
 // void Person::setExtract(string const &extract)
 // {
@@ -59,20 +57,20 @@ size_t Person::mass() const {
     return d_mass;
 }
 
-void Person::insert(std::ostream &stream) {
+void Person::insert(ostream &stream) {
     stream << d_name << '\n' << 
               d_address << '\n' << 
               d_phone << '\n' << 
               d_mass << '\n';
 }
 
-void Person::extract(std::istream &stream) {
+void Person::extract(istream &stream) {
     string value;
-    while(std::getline(std::cin, value, ',')) 
+    while(getline(istream, value, ',')) 
     {
         cout << value << '\n';
 
-        if (std::cin.eof())
+        if (istream.eof())
             break;
     }
 }
