@@ -4,15 +4,13 @@ void Person::extract(istream &stream) {
     enum datamember { NAME, ADDRESS, PHONE, MASS };
     datamember members[4] = { NAME, ADDRESS, PHONE, MASS };
 
-    size_t idx = 0;
     string value;
-    while (getline(stream, value, ',')) 
+    for (size_t idx = 0; 
+            getline(stream, value, ',') or idx != 4;
+            ++idx)
     {
         switch (members[idx])
         {
-            default:
-                idx++;
-
             case NAME:
                 setName(value);
                 break;
@@ -29,8 +27,5 @@ void Person::extract(istream &stream) {
                 setMass(stoi(value));
                 break;
         }
-
-        if (stream.eof())
-            break;
     }
 }
