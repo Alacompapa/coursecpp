@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <tuple>
-
+                                            // Creates tuple from cmd line args
 std::tuple<size_t, double, double, size_t> argGen(int argc, char **argv);
 
 using namespace std;
