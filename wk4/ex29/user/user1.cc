@@ -9,7 +9,6 @@ User::User()
     d_shell = shell;
     d_groupId = gid;
     d_userId = uid;
-    d_valid = valid();
 
 // REMOVE BEFORE HANDING IN
     cout << "Constructor User::User() called \n";

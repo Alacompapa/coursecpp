@@ -2,6 +2,7 @@
 
 int main(int argc, char **argv)
 {
+    /*
     auto [n,p,u,g,gec,dir,sh] = *getpwent();
 
     cout << n << '\n';
@@ -19,7 +20,7 @@ int main(int argc, char **argv)
     cout << getpwent()->pw_gecos << '\n';
     cout << getpwent()->pw_dir << '\n';
     cout << getpwent()->pw_shell << '\n';
-
-//    User test;
+*/
+    User test;
     
 }
