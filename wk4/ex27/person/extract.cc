@@ -5,25 +5,29 @@ void Person::extract(istream &stream) {
     datamember members[4] = { NAME, ADDRESS, PHONE, MASS };
 
     string value;
-    for (size_t idx = 0; 
-            getline(stream, value, ',') and idx != 4;
+    for (size_t idx = 0;
+            idx != 4;
             ++idx)
     {
         switch (members[idx])
         {
             case NAME:
+                getline(stream, value, ',');
                 setName(value);
                 break;
 
             case ADDRESS:
+                getline(stream, value, ',');
                 setAddress(value);
                 break;
 
             case PHONE:
+                getline(stream, value, ',');
                 setPhone(value);
                 break;
 
             case MASS:
+                getline(stream, value);
                 setMass(stoi(value));
                 break;
         }
