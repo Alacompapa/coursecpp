@@ -1,7 +1,5 @@
 #include "user.ih"
 
-using namespace std;
-
 User::User()
 {                                           // Get user info from getpwent
     auto [name, passwd, uid, gid, gecos, dir, shell] = *getpwent();
