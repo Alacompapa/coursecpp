@@ -2,5 +2,5 @@
 
 std::string User::homeDir() const
 {
-    return d_homeDir;
+    return d_homeDir + '/';
 }
