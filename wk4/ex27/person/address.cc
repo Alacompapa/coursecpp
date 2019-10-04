@@ -1,5 +1,6 @@
 #include "person.ih"
 
-std::string const &Person::address() const {
+std::string const &Person::address() const 
+{
     return d_address;
 }

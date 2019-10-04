@@ -1,6 +1,7 @@
 #include "person.ih"
 
-void Person::extract(istream &stream) {
+void Person::extract(istream &stream) 
+{
     enum datamember { NAME, ADDRESS, PHONE, MASS };
     datamember members[4] = { NAME, ADDRESS, PHONE, MASS };
 
