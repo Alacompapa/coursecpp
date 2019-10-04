@@ -30,7 +30,5 @@ class Person
         std::string const &address()  const;
         std::string const &phone()    const;
         size_t mass()                 const;
-        std::string const &insert()   const;
-        std::string const &extract()  const;
 };
 #endif // PERSON_H
