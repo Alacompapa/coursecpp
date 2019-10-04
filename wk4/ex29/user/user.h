@@ -5,8 +5,6 @@
 
 class User
 {
-    bool const d_valid;
-
     std::string d_name;                         // Data members
     std::string d_realName;
     std::string d_shell;
