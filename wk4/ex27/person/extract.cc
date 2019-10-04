@@ -6,7 +6,7 @@ void Person::extract(istream &stream) {
 
     string value;
     for (size_t idx = 0; 
-            getline(stream, value, ',') or idx != 4;
+            getline(stream, value, ',') and idx != 4;
             ++idx)
     {
         switch (members[idx])
