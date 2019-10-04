@@ -20,7 +20,7 @@ class User
         std::string homeDir()   const;
         bool inGroup(size_t gid) const;
         std::string name()      const;
-        std::string realName(); const
+        std::string realName() const;
         std::string shell()     const;
         size_t userId()         const;
 };
