@@ -1,0 +1,4 @@
+size_t User::userId() const
+{
+    return d_userId;
+}

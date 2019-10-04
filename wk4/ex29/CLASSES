@@ -1,6 +1,6 @@
 # This file contains the names of all subdirectories containing sources to
 # compile. Each directory should be specified on a line of its own. Initial
-# blanks are ok. Compilation is 1-level deep. 
+# blanks are ok. Compilation is 1-level deep.
 
 # Lines starting with # or with // are ignored, as are empty lines.
 
@@ -9,16 +9,16 @@
 # If a class Y depends on class X as in:
 #   class Y: public X
 # or:
-#   class Y 
-#   { 
-#       X d_y; 
+#   class Y
+#   {
+#       X d_y;
 #   };
 # then specify the dependency here using the form
 #   y   x
 # where x and y are the directories holding the resp. class sources. Multiple
 #   dependencies are OK. Then, when altering X's data organization, do 'touch
-#   x/a', followed by 'icmbuild program': x's sources as well as the sources in 
-#   directories (in)directly depending on x (e.g., y) are then automatically 
+#   x/a', followed by 'icmbuild program': x's sources as well as the sources in
+#   directories (in)directly depending on x (e.g., y) are then automatically
 #   recompiled by icmbuild.
 
 user
