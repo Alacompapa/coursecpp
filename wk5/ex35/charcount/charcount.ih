@@ -2,3 +2,8 @@
 
 using namespace std;
 
+struct CharInfo
+{
+ //   struct Char *ptr;
+   // size_t nCharObj;
+};

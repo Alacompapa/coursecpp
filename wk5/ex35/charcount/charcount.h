@@ -5,6 +5,8 @@
 class charcount
 {
     public:
+        size_t count(std::istream); // const    and    const?
+
 
     private:
 };
