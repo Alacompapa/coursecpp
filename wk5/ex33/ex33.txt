@@ -1,0 +1,21 @@
+Exercise 33.
+
+Basic exercise
+
+Purpose: acquire some familiarization with the pointer concept.
+
+Describe in your own words (use Dutch if you're Dutch).
+
+Be concise:
+just mention the, in your opinion, essential difference(s).
+
+- what differences exist between pointer variables and arrays;
+
+- what differences exist between pointer variables and reference variables;
+
+- how element [3][2] is reached (submit a clear drawing)
+Your drawing should clearly show how the memory is accessed by array and pointer
+It should also show what is meant by "pointer arithmetic"
+
+        a: for the variable `int array[20][30]'
+        b: for the variable `int *pointer[20]'.
