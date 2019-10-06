@@ -2,6 +2,7 @@
 #define INCLUDED_CHARCOUNT_
 
 #include <iostream>
+#include <tuple>
 
 struct Char
 {
@@ -15,7 +16,7 @@ struct CharInfo
     struct Char ptr[];              // array of Char objects
 };
 
-enum Actions { APPEND, INSERT, INC };
+enum Action { APPEND, INSERT, INC };
 
 class CharCount
 {
@@ -28,9 +29,7 @@ class CharCount
         struct CharInfo const &info();
 
     private:
-        Actions locate(char ch); // should maybe also return index of where char
-                          //   was found?
-                          //
+        std::tuple<Action, size_t> locate(char ch); // Can we already use tuples? 
 };
         
 #endif
