@@ -7,12 +7,10 @@ Actions CharCount::locate(char ch)
     {
         if (ch == d_CharInfo.ptr[index].ch)       // check if char already seen
             return INC; // Increment char at ???? index how to return that?
-        elif ch less than char at index
-            return INSERT at that index
-        elif larger than largest
-            break and return APPEND
+        else if (ch > d_CharInfo.ptr[index].ch) // ch not seen and should be
+                                                // placed before this larger char
+            return INSERT; // INSERT at index - 1
     }
 
-
-    
+    return APPEND; // ch not seen and is larger than any other seen
 }
