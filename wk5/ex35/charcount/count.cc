@@ -1,6 +1,6 @@
 #include "charcount.ih"
 
-size_t count(std::istream)
+size_t CharCount::count(std::istream)
 {
     return -1;
 }
