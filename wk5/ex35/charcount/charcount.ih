@@ -4,14 +4,12 @@ using namespace std;
 
 struct Char
 {
-    char ch;
-    size_t count;
+    char ch;                        // character seen
+    size_t count;                   // frequency of character
 };
 
 struct CharInfo
 {
-    struct Char ptr[];
-    size_t nCharObj;
+    size_t nCharObj;                // size of array
+    struct Char ptr[];              // array of Char objects
 };
-
-enum Actions { APPEND, INSERT, INC };

@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+enum Actions { APPEND, INSERT, INC };
+
 class CharCount
 {
                                     // data members
@@ -10,8 +12,8 @@ class CharCount
         size_t count(std::istream); // const    and    const?
         struct CharInfo const &info();
 
-
     private:
+        Actions locate();
 };
         
 #endif
