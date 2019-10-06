@@ -1,15 +1,3 @@
 #include "charcount.h"
 
 using namespace std;
-
-struct Char
-{
-    char ch;                        // character seen
-    size_t count;                   // frequency of character
-};
-
-struct CharInfo
-{
-    size_t nCharObj;                // size of array
-    struct Char ptr[];              // array of Char objects
-};
