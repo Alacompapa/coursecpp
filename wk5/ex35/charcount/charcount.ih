@@ -2,8 +2,16 @@
 
 using namespace std;
 
+struct Char
+{
+    char ch;
+    size_t count;
+};
+
 struct CharInfo
 {
- //   struct Char *ptr;
-   // size_t nCharObj;
+    struct Char *ptr;
+    size_t nCharObj;
 };
+
+enum Actions { APPEND, INSERT, INC };
