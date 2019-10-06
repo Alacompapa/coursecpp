@@ -1,0 +1,16 @@
+#include "charcount.ih"
+
+Actions CharCount::locate(char ch)
+{   // HOW TO RETURN AN ACTION AND AN INDEX?? ~~~~~~~~~~~~~~~~~ 
+    size_t index = 0;
+    for (; index != d_CharInfo.nCharObj; ++index) // loop over array
+    {
+        if (ch == d_CharInfo.ptr[index].ch)       // check if char already seen
+            return INC; // Increment char at ???? index how to return that?
+        else if (ch > d_CharInfo.ptr[index].ch) // ch not seen and should be
+                                                // placed before this larger char
+            return INSERT; // INSERT at index - 1
+    }
+
+    return APPEND; // ch not seen and is larger than any other seen
+}
