@@ -10,7 +10,7 @@ struct Char
 
 struct CharInfo
 {
-    struct Char *ptr;
+    struct Char ptr[];
     size_t nCharObj;
 };
 
