@@ -1,0 +1,43 @@
+----------------------------------------------------------------------------
+  definition:         rewrite: 
+----------------------------------------------------------------------------
+  int x[8];           x[3] = x[2];
+
+pointer notation:	*(x + 3) = *(x + 2);
+       semantics:	x + 3 and x + 2 point to the 3rd and 2nd int beyond x.
+			The value of element 3 is reached with the deference operator (*)
+			and equated to the value of element 2.
+----------------------------------------------------------------------------
+  char *argv[8];      cout << argv[2];
+
+pointer notation:	cout << *(argv + 2);
+       semantics:	argv + 2 is used to select the location of element 2 of the array
+			and the value of the element is reached using the deference operator(*).
+----------------------------------------------------------------------------
+  int x[8];           &x[10] - &x[3];
+ 
+pointer notation:	&(*(x+10) - *(x+3));
+       semantics:	x + 10 and x + 3 point to the 10th and 3rd int beyond x.
+			A deference operator will point to the value of each corresponding element.
+			The Bitwise operator (&) is used to get the location of the resulting value.
+----------------------------------------------------------------------------
+  main's argv;        argv[0]++;
+
+pointer notation:	*(argv + 1);
+       semantics:
+----------------------------------------------------------------------------
+  main's argv;        argv++[0];
+
+pointer notation:
+       semantics:
+----------------------------------------------------------------------------
+  main's argv;        ++argv[0];
+
+pointer notation:
+       semantics:
+----------------------------------------------------------------------------
+  main's argv;        ++argv[0][2];
+
+pointer notation:
+       semantics:
+----------------------------------------------------------------------------
