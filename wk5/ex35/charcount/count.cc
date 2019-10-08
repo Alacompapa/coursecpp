@@ -9,6 +9,7 @@ size_t CharCount::count(std::istream& stream)
         ++counter;
 
         auto [ action, index ] = locate(ch);
+        cout << action << " at " << index << '\n';
         switch (action)
         { // inserting and appending is kinda the same thing so we can probably use fallthrough
             case INC:
@@ -22,6 +23,9 @@ size_t CharCount::count(std::istream& stream)
                 // insert another Char entry in ptr array
                 d_CharInfo.ptr = insert(d_CharInfo.ptr, d_CharInfo.nCharObj, ch, index);
                 ++d_CharInfo.nCharObj;
+                ++d_CharInfo.ptr[index].count;
+                cout << d_CharInfo.nCharObj << '\n' << 
+                    d_CharInfo.ptr[index].ch << '\n';
                 break;
         }
     }

@@ -25,6 +25,8 @@ class CharCount
     struct CharInfo d_CharInfo;
 
     public:
+
+
         size_t count(std::istream& stream); // const    and    const?
                                     // count() should handle 
         struct CharInfo const &info();

@@ -3,11 +3,11 @@
 std::tuple<Action, size_t> CharCount::locate(unsigned char ch)
 {   
     size_t index = 0;
-    for (; index != info().nCharObj; ++index) // loop over array
+    for (; index != d_CharInfo.nCharObj; ++index) // loop over array
     {
-        if (ch == info().ptr[index].ch)       // check if char already seen
+        if (ch == d_CharInfo.ptr[index].ch)       // check if char already seen
             return std::make_tuple(INC, index); 
-        else if (ch < info().ptr[index].ch) // ch not seen and should be
+        else if (ch < d_CharInfo.ptr[index].ch) // ch not seen and should be
                                                 // placed before this larger char
             return  std::make_tuple(INSERT, index); // INSERT at index 
     }
