@@ -20,7 +20,7 @@ enum Action { APPEND, INSERT, INC };
 
 class CharCount
 {
-    struct Char d_Char;
+    struct Char d_Char; // Is this object necessary?
     struct CharInfo d_CharInfo;
 
     public:
