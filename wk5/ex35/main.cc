@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 
     CharCount charCounter;
 
-    size_t amountOfChars = charCounter.count(cin);
+    size_t amountOfChars = charCounter.count(cin); 
     cout << amountOfChars << '\n';
 }
 

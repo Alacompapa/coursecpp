@@ -12,7 +12,7 @@ struct Char
 
 struct CharInfo
 {
-    size_t nCharObj;                // size of array
+    size_t nCharObj = 1;                // size of array
     Char *ptr = new Char[1]();        // dyn array of Char objs init to zero
     //struct Char ptr[];              // array of Char objects
 };
