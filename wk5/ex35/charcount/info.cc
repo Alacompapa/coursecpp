@@ -2,5 +2,5 @@
 
 struct CharInfo const & CharCount::info()
 {
-    return *d_CharInfo;
+    return d_CharInfo;
 }
