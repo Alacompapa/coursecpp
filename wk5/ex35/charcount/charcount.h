@@ -13,7 +13,8 @@ struct Char
 struct CharInfo
 {
     size_t nCharObj;                // size of array
-    struct Char ptr[];              // array of Char objects
+    Char *ptr = new Char[1]();        // dyn array of Char objs init to zero
+    //struct Char ptr[];              // array of Char objects
 };
 
 enum Action { APPEND, INSERT, INC };
@@ -24,7 +25,7 @@ class CharCount
     struct CharInfo d_CharInfo;
 
     public:
-        size_t count(std::istream stream); // const    and    const?
+        size_t count(std::istream& stream); // const    and    const?
                                     // count() should handle 
         struct CharInfo const &info();
 
