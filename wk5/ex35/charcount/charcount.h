@@ -6,7 +6,7 @@
 
 struct Char
 {
-    char ch;                        // character seen
+    unsigned char ch;                        // character seen
     size_t count;                   // frequency of character
 };
 
@@ -31,6 +31,8 @@ class CharCount
 
     private:
         std::tuple<Action, size_t> locate(unsigned char ch); 
+                                    // inserts ch at index in new array
+        Char *insert(Char *old, size_t oldsize, unsigned char ch, size_t index);
 };
         
 #endif

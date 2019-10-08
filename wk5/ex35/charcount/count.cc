@@ -10,14 +10,17 @@ size_t CharCount::count(std::istream& stream)
 
         auto [ action, index ] = locate(ch);
         switch (action)
-        {
-            case APPEND:
-                // append ch at end of `Char ptr[]`
-            case INSERT:
-                // insert another Char entry in ptr array
+        { // inserting and appending is kinda the same thing so we can probably use fallthrough
             case INC:
                 // increment ptr[index].count
                 ++d_CharInfo.ptr[index].count;
+                break;
+            case APPEND:
+                // append ch at end of `Char ptr[]`
+                ++index;
+            case INSERT:
+                // insert another Char entry in ptr array
+                break;
         }
     }
 
