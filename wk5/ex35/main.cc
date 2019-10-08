@@ -10,5 +10,12 @@ int main(int argc, char **argv)
 
     size_t amountOfChars = charCounter.count(cin); 
     cout << amountOfChars << '\n';
+
+    for (size_t idx = 0; 
+         idx != charCounter.info().nCharObj;
+         ++idx)
+    {
+        showChar(charCounter.info().ptr[idx].ch);
+    }
 }
 

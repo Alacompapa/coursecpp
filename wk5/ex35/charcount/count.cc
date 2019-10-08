@@ -20,6 +20,8 @@ size_t CharCount::count(std::istream& stream)
                 ++index;
             case INSERT:
                 // insert another Char entry in ptr array
+                d_CharInfo.ptr = insert(d_CharInfo.ptr, d_CharInfo.nCharObj, ch, index);
+                ++d_CharInfo.nCharObj;
                 break;
         }
     }
