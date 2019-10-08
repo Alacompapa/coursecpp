@@ -6,11 +6,11 @@ std::tuple<Action, size_t> CharCount::locate(char ch)
     for (; index != d_CharInfo.nCharObj; ++index) // loop over array
     {
         if (ch == d_CharInfo.ptr[index].ch)       // check if char already seen
-            return { INC, index }; // Increment char at ???? index how to return that?
+            return std::make_tuple(INC, index); // Increment char at ???? index how to return that?
         else if (ch > d_CharInfo.ptr[index].ch) // ch not seen and should be
                                                 // placed before this larger char
-            return { INSERT, index }; // INSERT at index - 1
+            return  std::make_tuple(INSERT, index); // INSERT at index - 1
     }
 
-    return { APPEND, index }; // ch not seen and is larger than any other seen
+    return std::make_tuple(APPEND, index); // ch not seen and is larger than any other seen
 }
