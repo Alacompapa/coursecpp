@@ -24,12 +24,12 @@ class CharCount
     struct CharInfo d_CharInfo;
 
     public:
-        size_t count(std::istream); // const    and    const?
+        size_t count(std::istream stream); // const    and    const?
                                     // count() should handle 
         struct CharInfo const &info();
 
     private:
-        std::tuple<Action, size_t> locate(char ch); // Can we already use tuples? 
+        std::tuple<Action, size_t> locate(unsigned char ch); 
 };
         
 #endif
