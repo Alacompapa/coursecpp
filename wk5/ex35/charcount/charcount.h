@@ -12,7 +12,7 @@ struct Char
 
 struct CharInfo
 {
-    size_t nCharObj = 1;                // size of array
+    size_t nCharObj = 0;                // size of array
     Char *ptr = new Char[1]();        // dyn array of Char objs init to zero
     //struct Char ptr[];              // array of Char objects
 };
@@ -28,13 +28,13 @@ class CharCount
 
 
         size_t count(std::istream& stream); // const    and    const?
-                                    // count() should handle 
+                                    // count() should handle
         struct CharInfo const &info();
 
     private:
-        std::tuple<Action, size_t> locate(unsigned char ch); 
+        std::tuple<Action, size_t> locate(unsigned char ch);
                                     // inserts ch at index in new array
         Char *insert(Char *old, size_t oldsize, unsigned char ch, size_t index);
 };
-        
+
 #endif
