@@ -5,7 +5,8 @@
 
 class User
 {
-    std::string d_name;                         // Data members
+    bool d_valid;                               // Data members
+    std::string d_name;                         
     std::string d_realName;
     std::string d_shell;
     std::string d_homeDir;
@@ -15,12 +16,12 @@ class User
     public:
         User();
 
-        bool valid()            const;
+        bool valid()            const;          
         size_t groupId()        const;
         std::string homeDir()   const;
         bool inGroup(size_t gid) const;
         std::string name()      const;
-        std::string realName() const;
+        std::string realName()  const;
         std::string shell()     const;
         size_t userId()         const;
 };
