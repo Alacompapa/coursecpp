@@ -1,3 +1,7 @@
 #include "person.h"
 
 using namespace std;
+
+#include <iosfwd>
+#include <string>
+#include <sstream>
