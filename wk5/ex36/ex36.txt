@@ -16,28 +16,35 @@ pointer notation:	cout << *(argv + 2);
 ----------------------------------------------------------------------------
   int x[8];           &x[10] - &x[3];
  
-pointer notation:	&(*(x+10) - *(x+3));
+pointer notation:	(x + 10) - (x + 3)
        semantics:	x + 10 and x + 3 point to the 10th and 3rd int beyond x.
-			A deference operator will point to the value of each corresponding element.
-			The Bitwise operator (&) is used to get the location of the resulting value.
+			The result is 7 which is the element distance between element
+			3 and 10. 
+			
 ----------------------------------------------------------------------------
   main's argv;        argv[0]++;
 
-pointer notation:	*(argv + 1);
-       semantics:
+pointer notation:	(*argv)++;
+       semantics:	*argv is a pointer to the value of the first element of the array argv.
+			The postfix increment operator(++) will then increment value of element 1
+			by 1.  
 ----------------------------------------------------------------------------
   main's argv;        argv++[0];
 
-pointer notation:
-       semantics:
+pointer notation:	*(argv++)
+       semantics:	argv++ makes reference to the element 0 of the array getting 
+			incremented by 1. The post(++) operators has a higher priority
+			 over (*)The pointer (*) will point to the element value of 
+			argv[1].
 ----------------------------------------------------------------------------
   main's argv;        ++argv[0];
 
-pointer notation:
-       semantics:
+pointer notation:	(*argv)
+       semantics:	*argv is a pointer to the first element of the array argv. 
+			Th
 ----------------------------------------------------------------------------
   main's argv;        ++argv[0][2];
 
-pointer notation:
+pointer notation:	++(*(*argv) + 2)
        semantics:
 ----------------------------------------------------------------------------
