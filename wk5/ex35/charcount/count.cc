@@ -3,7 +3,7 @@
 size_t CharCount::count(std::istream& stream)
 {
     unsigned char ch;
-    while(stream >> ch)
+    while(stream >> std::noskipws >> ch)
     {
         auto [ action, index ] = locate(ch);
 
