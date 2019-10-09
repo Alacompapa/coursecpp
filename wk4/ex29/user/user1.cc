@@ -5,7 +5,7 @@ User::User()
 
     passwd *pw = getpwent();
 
-    if (pw != NULL){
+    if (pw != 0){
         d_name = pw->pw_name;
         d_realName = pw->pw_gecos;
         d_shell = pw->pw_shell;
