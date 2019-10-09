@@ -11,7 +11,6 @@ class Person
     size_t      d_mass = 0;
 
     public:
-        Person();
         Person(std::string d_name,
             std::string d_address,
             std::string d_phone,
