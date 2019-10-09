@@ -8,10 +8,11 @@ int main(int argc, char **argv)
 
     CharCount charCounter;
 
-    size_t amountOfChars = charCounter.count(cin);
-
-    for (size_t idx = 0;
+    size_t amountOfChars = charCounter.count(cin); 
+    
+    for (size_t idx = 0; 
          idx != amountOfChars;
          ++idx)
         showChar(charCounter.info().ptr[idx].ch);
 }
+
