@@ -1,6 +1,6 @@
 #include "person.ih"
 
-void Person::setPhone(string &phone)
+void Person::setPhone(string const &phone)
 {
     if (phone.find_first_not_of("0123456789") == string::npos)
         d_phone = phone;
