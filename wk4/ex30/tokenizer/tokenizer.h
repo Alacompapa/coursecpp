@@ -5,7 +5,7 @@
 
 class Tokenizer
 {
-    std::istream d_instream;
+    std::istream &d_instream;
     std::string d_token;
 
     public:
