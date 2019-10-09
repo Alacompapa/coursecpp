@@ -1,6 +1,6 @@
 #include "person.ih"
 
-void Person::setAddress(string const &address) 
+void Person::setAddress(string &address) 
 {
     d_address = address;
 }
