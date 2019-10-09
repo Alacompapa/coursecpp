@@ -7,12 +7,10 @@ std::tuple<Action, size_t> CharCount::locate(unsigned char ch)
     {
         if (ch == d_CharInfo.ptr[index].ch)       // check if char already seen
         {
-            cout << d_CharInfo.ptr[index].ch;
             return std::make_tuple(INC, index);
         }
         else if (ch < d_CharInfo.ptr[index].ch) // ch not seen and should be
         {                                     // placed before this larger char
-            cout << d_CharInfo.ptr[index].ch;
             return  std::make_tuple(INSERT, index); // INSERT at index
         }
     }
