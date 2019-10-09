@@ -1,5 +1,6 @@
 #include "tokenizer.ih"
 
-size_t Tokenizer::lineNr()
+size_t Tokenizer::lineNr() const
 {
+    return d_lineNr;
 }
