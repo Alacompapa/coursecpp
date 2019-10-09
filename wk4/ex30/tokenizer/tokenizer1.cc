@@ -1,7 +1,7 @@
-//#define XERR
 #include "tokenizer.ih"
 
-Tokenizer::Tokenizer()
-//:
+Tokenizer::Tokenizer(std::istream instream)
+:
+    d_instream{ instream }
 {
 }
