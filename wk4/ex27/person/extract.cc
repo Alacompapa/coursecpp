@@ -12,5 +12,4 @@ void Person::extract(istream &stream)
     setPhone(value);
     getline(stream, value);
     setMass(stoul(value));
-
 }
