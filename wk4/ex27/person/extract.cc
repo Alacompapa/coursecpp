@@ -29,7 +29,7 @@ void Person::extract(istream &stream)
 
             case MASS:
                 getline(stream, value);
-                setMass(stoi(value));
+                setMass(stoul(value));
                 break;
         }
     }
