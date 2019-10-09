@@ -7,7 +7,7 @@ void Person::extract(istream &stream)
 
     string value;
     for (size_t idx = 0;
-            idx != sizeof(members); 
+            idx != 4; 
             ++idx)
     {
         switch (members[idx])
