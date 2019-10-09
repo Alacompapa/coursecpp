@@ -8,9 +8,11 @@ class Person
     std::string d_name;
     std::string d_address = "--unknown--";
     std::string d_phone = "--unknown--";
-    size_t      d_mass = 0;
+    size_t      d_mass;
 
     public:
+
+        Person();
         Person(std::string d_name,
             std::string d_address,
             std::string d_phone,
