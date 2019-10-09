@@ -34,17 +34,21 @@ pointer notation:	(*argv)++;
 pointer notation:	*(argv++)
        semantics:	argv++ makes reference to the element 0 of the array getting 
 			incremented by 1. The post(++) operators has a higher priority
-			 over (*)The pointer (*) will point to the element value of 
+			over (*). The pointer (*) will point to the element value of 
 			argv[1].
 ----------------------------------------------------------------------------
   main's argv;        ++argv[0];
 
-pointer notation:	(*argv)
+pointer notation:	++(*argv)
        semantics:	*argv is a pointer to the first element of the array argv. 
-			Th
+			The prefix increment operator (++) will increment the value of
+			element 0 of the array by 1. 
 ----------------------------------------------------------------------------
   main's argv;        ++argv[0][2];
 
 pointer notation:	++(*(*argv) + 2)
-       semantics:
+       semantics:	*argv is a pointer to the first element of the array argv.
+			By using a pointer on the first element of array argv and incrementing 
+			by 2 *(*argv) + 2, we are pointing to the second element in the first element of argv.
+			The prefix increment operators will add (+1) to the (0 , 2)th element.
 ----------------------------------------------------------------------------
