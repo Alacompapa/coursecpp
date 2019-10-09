@@ -2,12 +2,7 @@
 
 User::User()
 {                                           // Get user info from getpwent
-    auto [name, passwd, uid, gid, gecos, dir, shell] = *getpwent();
+    passwd pw = *getpwent();
 
-    d_name = name;                          // Initialize data members
-    d_realName = gecos;
-    d_shell = shell;
-    d_groupId = gid;
-    d_homeDir = dir;
-    d_userId = uid;
+    auto [d_name, passwd, d_realName, d_shell, d_groupId, d_homeDir, d_userId] = pw;
 }
