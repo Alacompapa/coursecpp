@@ -14,14 +14,14 @@ class Person
 
     public:
         Person();
-        Person(std::string const &name,
-            std::string const &address = "--unknown--",
-            std::string const &phone = "--unknown--",
-            size_t mass = 0);
+        Person(std::string const d_name,
+            std::string const d_address = "--unknown--",
+            std::string const d_phone = "--unknown--",
+            size_t d_mass = 0);
 
-        void setName(const std::string&);
-        void setAddress(const std::string&);
-        void setPhone(const std::string&);
+        void setName(std::string& const);
+        void setAddress(std::string& const);
+        void setPhone(std::string& const);
         void setMass(size_t);
         void insert(std::ostream&);
         void extract(std::istream&);
