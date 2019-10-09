@@ -2,35 +2,15 @@
 
 void Person::extract(istream &stream)
 {
-    enum datamember { NAME, ADDRESS, PHONE, MASS };
-    datamember members[4] = { NAME, ADDRESS, PHONE, MASS };
-
     string value;
-    for (size_t idx = 0;
-            idx != 4;
-            ++idx)
-    {
-        switch (members[idx])
-        {
-            case NAME:
-                getline(stream, value, ',');
-                setName(value);
-                break;
 
-            case ADDRESS:
-                getline(stream, value, ',');
-                setAddress(value);
-                break;
+    getline(stream, value, ',');
+    setName(value);
+    getline(stream, value, ',');
+    setAddress(value);
+    getline(stream, value, ',');
+    setPhone(value);
+    getline(stream, value);
+    setMass(stoul(value));
 
-            case PHONE:
-                getline(stream, value, ',');
-                setPhone(value);
-                break;
-
-            case MASS:
-                getline(stream, value);
-                setMass(stoul(value));
-                break;
-        }
-    }
 }
