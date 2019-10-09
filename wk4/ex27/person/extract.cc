@@ -7,7 +7,7 @@ void Person::extract(istream &stream)
 
     string value;
     for (size_t idx = 0;
-            idx != 4;
+            idx != sizeof(datamember)/sizeof(datamember[0]);
             ++idx)
     {
         switch (members[idx])
@@ -29,7 +29,7 @@ void Person::extract(istream &stream)
 
             case MASS:
                 getline(stream, value);
-                setMass(stoi(value));
+                setMass(stoul(value));
                 break;
         }
     }
