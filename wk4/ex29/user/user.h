@@ -5,13 +5,13 @@
 
 class User
 {
-    std::string d_name;                         // Data members
+    bool d_valid;                               // Data members
+    std::string d_name;                         
     std::string d_realName;
     std::string d_shell;
     std::string d_homeDir;
     size_t d_groupId;
     size_t d_userId;
-    bool d_valid;
 
     public:
         User();
