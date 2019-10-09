@@ -6,9 +6,8 @@ void Person::extract(istream &stream)
     datamember members[4] = { NAME, ADDRESS, PHONE, MASS };
 
     string value;
-    for (size_t idx = 0;
-            idx != sizeof(datamember)/sizeof(datamember[0]);
-            ++idx)
+    size_t idx = 0;
+    while (idx != 4)
     {
         switch (members[idx])
         {
@@ -32,5 +31,6 @@ void Person::extract(istream &stream)
                 setMass(stoul(value));
                 break;
         }
+	idx++;
     }
 }
