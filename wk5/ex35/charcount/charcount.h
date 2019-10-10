@@ -6,15 +6,14 @@
 
 struct Char
 {
-    unsigned char ch;                        // character seen
-    size_t count;                   // frequency of character
+    unsigned char ch;                   // character seen
+    size_t count;                       // frequency of character
 };
 
 struct CharInfo
 {
     size_t nCharObj = 0;                // size of array
-    Char *ptr = new Char[1]();        // dyn array of Char objs init to zero
-    //struct Char ptr[];              // array of Char objects
+    Char *ptr = new Char[1]();          // dyn array of Char objs init to zero
 };
 
 enum Action { APPEND, INSERT, INC };
@@ -25,10 +24,7 @@ class CharCount
     struct CharInfo d_CharInfo;
 
     public:
-
-
-        size_t count(std::istream& stream); // const    and    const?
-                                    // count() should handle
+        size_t const count(std::istream& stream);         
         struct CharInfo const &info();
 
     private:
