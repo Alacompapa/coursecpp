@@ -41,7 +41,7 @@ argv[0]++
 pointer notation:   *(argv++);  // same result as *argv
        semantics:
 EXPLANATION(bb):
-argv+[0]
+argv++[0]
 <-> (by associativity LTR of [] and (post)++ operators)
 *(argv++)
 <->
@@ -62,11 +62,11 @@ EXPLANATION(bb):
 ++(*argv)
 <-> (by associativity RTL of ++(pre) and * operators)
 ++*argv
-  that which argv points to gets incremented by 1
+  that which *argv points to gets incremented by 1
 ----------------------------------------------------------------------------
   main's argv;        ++argv[0][2];
 
-pointer notation:   ++(*(*argv) + 2)   
+pointer notation:   ++*((*argv) + 2)
        semantics:
 EXPLANATION(bb):
 ++argv[0][2]

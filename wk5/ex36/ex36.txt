@@ -11,8 +11,9 @@ pointer notation:	*(x + 3) = *(x + 2);
   char *argv[8];      cout << argv[2];
 
 pointer notation:	cout << *(argv + 2);
-       semantics:	argv + 2 is used to select the location of element 2 of the array
-			and the value of the element is reached using the deference operator(*).
+       semantics:	argv + 2 is used to select the location of element 2 of 
+            the array and the value of the element is reached using the 
+            deference operator(*).
 ----------------------------------------------------------------------------
   int x[8];           &x[10] - &x[3];
  
@@ -20,35 +21,35 @@ pointer notation:	(x + 10) - (x + 3)
        semantics:	x + 10 and x + 3 point to the 10th and 3rd int beyond x.
 			The result is 7 which is the element distance between element
 			3 and 10. 
-			
 ----------------------------------------------------------------------------
   main's argv;        argv[0]++;
 
 pointer notation:	(*argv)++;
-       semantics:	*argv is a pointer to the value of the first element of the array argv.
-			The postfix increment operator(++) will then increment value of element 1
-			by 1.  
+       semantics:	*argv is a pointer to the value of the first element of 
+            the array argv.	The postfix increment operator(++) will return 
+            the value of argv[0] and then increment value of element 0 by one.  
 ----------------------------------------------------------------------------
   main's argv;        argv++[0];
 
 pointer notation:	*(argv++)
-       semantics:	argv++ makes reference to the element 0 of the array getting 
-			incremented by 1. The post(++) operators has a higher priority
-			over (*). The pointer (*) will point to the element value of 
-			argv[1].
+       semantics:	Due to operator precedence the postfix increment operator
+            will first be evaluated. Yielding (argv++)[0], the postfix will
+            return argv, hence argv++[0] returns argv[0]. After this argv will
+            be incremented by one, moving the location argv points to one
+            NTBS further in memory.
 ----------------------------------------------------------------------------
   main's argv;        ++argv[0];
 
-pointer notation:	++(*argv)
-       semantics:	*argv is a pointer to the first element of the array argv. 
-			The prefix increment operator (++) will increment the value of
-			element 0 of the array by 1. 
+pointer notation:	++*argv
+       semantics:	That which *argv points to gets incremented by one.
+            Note that *argv points to a NTBS, hence the incrementation will 
+            have the effect of pointing to the next character in the string.
 ----------------------------------------------------------------------------
   main's argv;        ++argv[0][2];
 
-pointer notation:	++(*(*argv) + 2)
-       semantics:	*argv is a pointer to the first element of the array argv.
-			By using a pointer on the first element of array argv and incrementing 
-			by 2 *(*argv) + 2, we are pointing to the second element in the first element of argv.
-			The prefix increment operators will add (+1) to the (0 , 2)th element.
+pointer notation:	++*((*argv) + 2);
+       semantics:	Due to operator precedence the subscript operators are
+            evaluated first. What happens is we take the location argv points
+            to, take the pointer that is in that location and increase it by
+            two. Which in the case of NTBS implies a char type is incremented.
 ----------------------------------------------------------------------------
