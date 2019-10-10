@@ -5,8 +5,8 @@
 
 pointer notation:	*(x + 3) = *(x + 2);
        semantics:	x + 3 and x + 2 point to the 3rd and 2nd int beyond x.
-			The value of element 3 is reached with the deference operator (*)
-			and equated to the value of element 2.
+            The value of element 3 is reached with the deference operator (*)
+            and equated to the value of element 2.
 ----------------------------------------------------------------------------
   char *argv[8];      cout << argv[2];
 
@@ -19,8 +19,8 @@ pointer notation:	cout << *(argv + 2);
  
 pointer notation:	(x + 10) - (x + 3)
        semantics:	x + 10 and x + 3 point to the 10th and 3rd int beyond x.
-			The result is 7 which is the element distance between element
-			3 and 10. 
+            The result is 7 which is the element distance between element
+            3 and 10. 
 ----------------------------------------------------------------------------
   main's argv;        argv[0]++;
 
