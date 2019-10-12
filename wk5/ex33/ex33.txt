@@ -10,30 +10,40 @@ Be concise:
 just mention the, in your opinion, essential difference(s).
 
 - what differences exist between pointer variables and arrays;
-// A static array size decides the number of variables it can store whereas a pointer variable can store the address of only one variable
-// Static array types are characterized by their element type and by the number of elements in the array. Pointers only characterize by their element type.
-// For example if we want to create a string, we first have to create an array of characters, and then we can point to it with a pointer. So the elements stored in an array can be accessed.
-// The value of a pointer is the location (address) of the other variable it is pointing to while the value of an array is the location of the first element of the array.
+// The value of an array is the address of the first element of the array, the value of a pointer is the address of the element it's pointing to.
+
+// At declaration of an array, the compiler gives you a block of memory, while at the declaration of a pointer, we don't know where the pointer points at (wild pointer).
+
 // A pointer variable can change the address its pointing to while an array's address is fixed.
+
 - what differences exist between pointer variables and reference variables;
-// Pointer VS Reference:
-// A reference variable is another name for an already existing variable. A reference, like a pointer, is also implemented by storing the address of an object. A pointer however has its own memory address and size on the stack, while a reference shares its memory address with the variable it’s referencing.
+
+// A reference variable is an alias for an already existing variable. A reference, like a pointer, is also implemented by storing the address of an object. A pointer however has its own memory address and size on the stack, while a reference shares its memory address with the variable it’s referencing.
+
 // A reference has automatic indirection (it always uses *), a pointer doesnt.
+
 // A pointer can be re-assigned after first assignment binding, but a reference cannot be re-assigned.
-// There's no "reference arithmetic", so you can’t do ref++, while pointers do support these.
+
+// There's no reference equivalent to pointer arithmetic, while pointers do support these.
+
 // You can't take the address of a reference like you can with pointers.
-// References offer one level of indirection, where references offer extra levels by being able to have a pointer to a pointer.
+
+// References offer one level of indirection, where pointers offer extra levels by being able to have a pointer to a pointer.
+
 // Pointers can be in an array, references cannot.
+
 // References can be bound to temporary values, pointer cannot.
 
 - how element [3][2] is reached (submit a clear drawing)
 Your drawing should clearly show how the memory is accessed by array and pointer
 
         a: for the variable `int array[20][30]'
+            See appendix 3a
         b: for the variable `int *pointer[20]'.
-
+            See appendix 3b
+            
 It should also show what is meant by "pointer arithmetic"
 
 // A pointer in C++ is an address, which is a number. Therefore, you can perform arithmetic operations on a pointer just as you can on a numeric value.
-// If you were to increment a pointer to an integer, like you would an integer, it would increase the address value by 4, because the size of an integer is four.
+// If you were to increment a int *pointer, like you would an integer, it would increase the address value by 4, because the size of an integer is four.
 // This way the pointer points to the next integer.
