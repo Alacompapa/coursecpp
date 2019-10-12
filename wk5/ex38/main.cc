@@ -20,10 +20,13 @@ int main(int argc, char **argv)
     int (*row)[10] = square;                // row is a ptr to 10 ints
 
     inv_identity(row);
+    /* 
+    // To test if matrix is correct, remove before handing in
     for (size_t idx = 0; idx != 100; ++idx)
     {
         if (idx % 10 == 0)
             cout << '\n';
         cout << *((*square) + idx);
     }
+    */
 }
