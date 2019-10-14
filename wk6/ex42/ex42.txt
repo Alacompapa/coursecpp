@@ -9,7 +9,8 @@ New
 		cout << friends[idx] << "\n";
 	}
 - operator new(SizeinBytes);
-
+	char *buf  = new char[sizeof(string)]; 
+	string *p = new (buf) string("hi");
 - Type *new(void *memory) Type{ arguments };
 
 - new type[N] {initializer, ..., initializerN}
