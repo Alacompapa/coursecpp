@@ -1,11 +1,15 @@
 Variants:
 New
 - new type;
-
+	int *age = new int;
+	cout << "Your age is\n" << age << "\n"; 
 - new type[];
-
+	string *friend = new string[4]
+	for(int idx = 0, idx != 4, idx++) {
+		cout << friends[idx] << "\n";
+	}
 - operator new(SizeinBytes);
 
 - Type *new(void *memory) Type{ arguments };
 
-- new type[N] {initializer, ..., initializerN
+- new type[N] {initializer, ..., initializerN}
