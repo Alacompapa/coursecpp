@@ -1,11 +1,11 @@
 Variants:
 New
-- new
+- new type;
 
--
+- new type[];
 
--
+- operator new(SizeinBytes);
 
--
+- Type *new(void *memory) Type{ arguments };
 
--
+- new type[N] {initializer, ..., initializerN
