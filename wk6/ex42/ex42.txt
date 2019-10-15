@@ -1,16 +1,22 @@
 Variants:
-New
-- new type;
-	int *age = new int;
-	cout << "Your age is\n" << age << "\n"; 
-- new type[];
-	string *friend = new string[4]
-	for(int idx = 0, idx != 4, idx++) {
-		cout << friends[idx] << "\n";
-	}
-- operator new(SizeinBytes);
+New							Delete
+- new type;						- delete type;
+	int *age = new int;					
+	cout << "Your age is\n" << age << "\n"; 		
+
+- new type[];						- delete type;
+	string *friend = new string[4]			
+	for(int idx = 0, idx != 4, idx++) {		
+		cout << friends[idx] << "\n";		
+	}						
+
+- operator new(SizeinBytes);				-
 	char *buf  = new char[sizeof(string)]; 
 	string *p = new (buf) string("hi");
-- Type *new(void *memory) Type{ arguments };
 
-- new type[N] {initializer, ..., initializerN}
+- Type *new(void *memory) Type{ arguments };		-
+  	char memory[sizeof(Person)];     
+  	void* place = memory;          
+	Person* f = new(place) Person();  
+
+- new type[N] {initializer, ..., initializerN}		-
