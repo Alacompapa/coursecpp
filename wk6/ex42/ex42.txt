@@ -1,38 +1,40 @@
 New										
 - new type:									
-	int *age = new int;												
+	int *age = new int;				//Create a memory allocation with the memory size of an int								
+	age = 69;					//and assign it to a pointer *age.
 	cout << "Your age is\n" << age << "\n"; 				
 -----------------------------------------------------------------------------------------
-- new type[]:						
-	string *friend = new string[2]{"Joe","Mark"}			
-	for(int idx = 0, idx != 2, idx++) {		
+- new type[]{initiliazer1, initializer2}:						
+	string *friend = new string[2]{"Joe","Mark"}    //Create memory	allocation for an array with memory size 		
+	for(int idx = 0, idx != 2, idx++) {		//for two string elements.
 		cout << friends[idx] << "\n";			
 	}									
 -----------------------------------------------------------------------------------------
 - operator new(SizeinBytes):				
-	char *buf  = new char[sizeof(string)]; 
-	string *p = new (buf) string("hi");
+	char *buf  = new char[sizeof(string)]; 		//Create memory allocation that can have the desired memory
+	string *p = new (buf) string("hi");		//in bytes chosen by the programmer.
 -----------------------------------------------------------------------------------------
 - Type *new(void *memory) Type{ arguments }:		
-  	char memory[sizeof(Person)];     
-  	void* place = memory;          
-	Person* f = new(place) Person();  
+  	char memory[sizeof(Person)];     		//Create memory allocation of size of Person object
+  	void* place = memory;          			//Create a pointer to the beginning of memory.
+	Person* f = new(place) Person();  		
 ------------------------------------------------------------------------------------------ 
 ------------------------------------------------------------------------------------------							
 Delete	
 
 - delete:
 
-int *age = new int;
+int *age = new int;					//Create a memory allocation with the memory size of an int
 cout << "Your age is\n" << age << "\n"; 		
-delete age;
+delete age;						//Erase the memory of age and return memory to the system. 
 ------------------------------------------------------------------------------------------
 - delete type[]:
 
-string *friends = new string[2]{"Joe","Mark"}
-for(int idx = 0, idx != 2, idx++) {
+string *friends = new string[2]{"Joe","Mark"}		//Create memory	allocation for an array with memory size
+for(int idx = 0, idx != 2, idx++) {			//for two string elements.
 cout << friends[idx] << "\n";
-delete friends[idx];
+delete friends[idx];					//Erase the memory of each element in the array.
 }
-delete[] friends;
+delete[] friends;					//Erase the memory of the array friends and return the memory
+							//to the system.
 ------------------------------------------------------------------------------------------
