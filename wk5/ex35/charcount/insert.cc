@@ -1,6 +1,6 @@
 #include "charcount.ih"
 
-Char* CharCount::insert(Char *old, size_t oldsize,
+CharCount::Char* CharCount::insert(Char *old, size_t oldsize,
                         unsigned char ch, size_t index)
 {
     size_t newsize = oldsize + 1;
