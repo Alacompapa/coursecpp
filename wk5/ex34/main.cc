@@ -7,14 +7,15 @@ extern char **environ;
 
 int main(int argc, char *argv[])
 {
-    
-    char **cpArgv = argv;                       // copy argv and argc
-    argv = environ;                             // switch to where argv
-    environ = cpArgv;                           // and environ point
+
 
     int envLen;
     for (envLen = 0; environ[envLen]; ++envLen)       // count nr elems environ
         continue;
+
+    char **cpArgv = argv;                       // copy argv and argc
+    argv = environ;                             // switch to where argv
+    environ = cpArgv;                           // and environ point
 
     cout << "Environment variables:" << '\n';
     for (char **begin = argv, **end = argv + envLen; begin != end; ++begin)    // shows environment vars
