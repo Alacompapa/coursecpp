@@ -2,10 +2,10 @@
 #define INCLUDED_DATA_
 
 #include <string>
-class DataImp;
 
 class Data
 {
+    class DataImp;
     DataImp *d_pimpl;
 
     public:
