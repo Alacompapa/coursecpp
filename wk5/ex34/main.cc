@@ -8,9 +8,8 @@ extern char **environ;
 int main(int argc, char *argv[])
 {
 
-
-    int envLen;
-    for (envLen = 0; environ[envLen]; ++envLen)       // count nr elems environ
+    int envLen = 0;
+    for (; environ[envLen]; ++envLen)       // count nr elems environ
         continue;
 
     char **cpArgv = argv;                       // copy argv and argc
