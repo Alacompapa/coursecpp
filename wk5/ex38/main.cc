@@ -1,6 +1,3 @@
-#include <iostream>
-using namespace std;
-
 void inv_identity(int (*rowStart)[10]);
 
 int main(int argc, char **argv)

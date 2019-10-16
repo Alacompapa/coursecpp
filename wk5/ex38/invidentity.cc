@@ -6,7 +6,7 @@ void inv_identity(int (*rowStart)[10])
         for (int *colStart = *rowPtr, *colPtr = *rowPtr; 
                 colPtr != colStart + 10;
                 ++colPtr)               // move colPtr 1 int up
+            *colPtr = (rowPtr - rowStart) == (colPtr - colStart) ? 0 : 1;
                                         // 'vertical' distance equal to 
                                         // 'horizontal' distance means diagonal
-            *colPtr = (rowPtr-rowStart)==(colPtr-colStart) ? 0 : 1;
 }
