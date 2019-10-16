@@ -1,6 +1,6 @@
 #include "charcount.ih"
 
-std::tuple<Action, size_t> CharCount::locate(unsigned char ch)
+std::tuple<CharCount::Action, size_t> CharCount::locate(unsigned char ch)
 {
     for (size_t index = 0; index != d_CharInfo.nCharObj; ++index) 
         if (ch == d_CharInfo.ptr[index].ch)     // check if char already seen
