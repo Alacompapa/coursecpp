@@ -47,7 +47,7 @@ pointer notation:	++*argv
 ----------------------------------------------------------------------------
   main's argv;        ++argv[0][2];
 
-pointer notation:	++*((*argv) + 2);
+pointer notation:	++*(*argv + 2);
        semantics:	Due to operator precedence the subscript operators are
             evaluated first. What happens is we take the location argv points
             to, take the pointer that is in that location and increase it by
