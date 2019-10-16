@@ -1,4 +1,4 @@
-#include "dataimp.h"
+#include "data.ih"
 
 bool Data::read()
 {   

@@ -1,4 +1,4 @@
-#include "dataimp.h"
+#include "data.ih"
 
 void Data::display() const
 {

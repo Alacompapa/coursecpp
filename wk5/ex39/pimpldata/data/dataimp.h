@@ -1,11 +1,11 @@
 #ifndef INCLUDED_DATAIMP_ 
 #define INCLUDED_DATAIMP_ 
 
-#include "data.ih"
+#include <string>
 
-class Data::DataImp
+class DataImp
 {
-    //std::string d_text;
+    std::string d_text;
     int d_value = 0;
 
     public:

@@ -1,6 +1,6 @@
-#include "dataimp.h"
+#include "dataimp.ih"
 
-void Data::DataImp::display() const
+void DataImp::display() const
 {
     cout << "value is: " << d_value << '\n';
 }
