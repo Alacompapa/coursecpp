@@ -8,14 +8,9 @@ Char* CharCount::insert(Char *old, size_t oldsize,
     Char charObj = { ch, 1 };
 
     for (size_t idx = 0; idx != newsize; ++idx)
-    {
-        if (idx < index)
-            tmp[idx] = old[idx];
-        else if (idx == index)
-            tmp[idx] = charObj;
-        else if (idx > index)
-            tmp[idx] = old[idx - 1];
-    }
+        tmp[idx] = idx < index  ? old[idx] :
+                   idx == index ? charObj  :
+                   old[idx - 1];
 
     delete[] old;
     return tmp;

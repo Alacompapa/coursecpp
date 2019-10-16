@@ -1,6 +1,6 @@
 #include "charcount.ih"
 
-size_t CharCount::count(std::istream& stream)
+size_t const CharCount::count(std::istream& stream)
 {
     unsigned char ch;
     while (stream >> std::noskipws >> ch)
