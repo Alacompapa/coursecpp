@@ -10,9 +10,9 @@ int main(int argc, char **argv)
 
     size_t amountOfChars = charCounter.count(cin); 
     
-    for (size_t idx = 0; 
-         idx != amountOfChars;
-         ++idx)
+    for (size_t idx = 0; idx != amountOfChars; ++idx)
         showChar(charCounter.info().ptr[idx].ch);
-}
 
+    cout << charCounter.capacity() << '\n';
+    cout << charCounter.rawCapacity() << '\n';
+}

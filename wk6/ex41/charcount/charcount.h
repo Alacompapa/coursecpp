@@ -34,8 +34,7 @@ class CharCount
     private:                                
                         // Needs to return a func ptr
         void locate(unsigned char ch);
-
-        CharCount::Char *rawCapacity(); // NEEDS IMPLEMENT
+        CharCount::Char *rawCapacity();
         CharCount::Char *enlarge(Char *old);
         // enlarge member function returns void
         // funcs() for INC, INSERT, APPEND
