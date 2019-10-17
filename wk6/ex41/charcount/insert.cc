@@ -3,6 +3,9 @@
 CharCount::Char* CharCount::insert(Char *old, size_t oldsize,
                         unsigned char ch, size_t index)
 {
+    // check if CharInfo.nCharObj == capacity
+    //      then enlarge, change capacity
+    // and insert at index
     size_t newsize = oldsize + 1;
     Char *tmp = new Char[newsize];
     Char charObj = { ch, 1 };
