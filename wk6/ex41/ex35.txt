@@ -1,0 +1,35 @@
+Learn to store an (apriori unknown) number of data elements in a class, by using pointers to enlarge the required memory at the point it's necessary.
+
+Create a program that determines the frequencies of when characters occur. It should be able to count characters in any filetype (pdf, txt, csv, etc.)
+
+Your program should use a class CharCount doing all the hard work. It offers a member count, expecting a std::istream (at this point it can only be std::cin) and returning the number of characters in the file (note that if you want to process a file you should use redirection, using a command like program < file).
+
+class Charcount
+{
+
+    struct CharInfo
+    {
+        Char *ptr; <- this will be a pointer to a list of pointers?
+        size_t nCharObj;
+    }
+
+    private:
+
+    size_t count(std::istream stream)
+    {
+        return number_of_characters
+    }
+
+    CharInfo& info()
+    {
+
+    }
+
+Internally it should define a struct CharInfo having a field ptr pointing to struct Char objects and a field nCharObj storing how many Char objects were stored. ^^^^
+
+
+struct Char
+{
+    char ch;
+    size_t count;
+}
