@@ -20,9 +20,10 @@ class CharCount
         Char *ptr = new Char[capacity]();   // dyn array of Char objs 
     };
 
-    enum Action { APPEND, INSERT, INC };
+    enum Action { INC, INSERT, APPEND };
 
     struct CharInfo d_CharInfo;
+
 
     public:
         size_t const count(std::istream& stream);         
@@ -32,16 +33,18 @@ class CharCount
 
     private:                                
                         // Needs to return a func ptr
-        std::tuple<CharCount::Action, size_t> locate(unsigned char ch);
+        void locate(unsigned char ch);
 
         CharCount::Char *rawCapacity(); // NEEDS IMPLEMENT
         CharCount::Char *enlarge(Char *old);
         // enlarge member function returns void
         // funcs() for INC, INSERT, APPEND
         // array of ptrs to those funcs
-                                            // inserts ch at index in new array
+        //
+        void increment(size_t index, unsigned char ch);
         void insert(size_t index, unsigned char ch);
-        void increment(size_t index); 
+        
+        static void (CharCount::*s_transform[])(size_t index, unsigned char ch);
 };
 
 #endif
