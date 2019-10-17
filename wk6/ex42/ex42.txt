@@ -19,6 +19,7 @@ New
   	void* place = memory;          			//Create a pointer to the beginning of memory.
 	Person* f = new(place) Person();  		
 ------------------------------------------------------------------------------------------ 
+NOTE(bb): Also placement new?
 ------------------------------------------------------------------------------------------							
 Delete	
 
