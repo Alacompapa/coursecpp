@@ -8,6 +8,7 @@ CharCount::Char *CharCount::enlarge(Char *old)
     for (Char *begin = old, *end = old + d_CharInfo.capacity;
             begin != end; ++begin, ++tmp)
         *tmp = *begin;
+    tmp -= d_CharInfo.capacity;
     
     d_CharInfo.capacity <<= 1;              // double capacity
     delete[] old;
