@@ -1,20 +1,21 @@
 #include "charcount.ih"
 
-CharCount::Char* CharCount::insert(Char *old, size_t oldsize,
-                        unsigned char ch, size_t index)
+void CharCount::insert(size_t index, unsigned char ch)
 {
     // check if CharInfo.nCharObj == capacity
     //      then enlarge, change capacity
     // and insert at index
-    size_t newsize = oldsize + 1;
-    Char *tmp = new Char[newsize];
-    Char charObj = { ch, 1 };
 
-    for (size_t idx = 0; idx != newsize; ++idx)
-        tmp[idx] = idx < index  ? old[idx] :
-                   idx == index ? charObj  :
-                   old[idx - 1];
+    if (d_CharInfo.nCharObj == d_CharInfo.capacity)
+        d_CharInfo.ptr = enlarge(d_CharInfo.ptr);
 
-    delete[] old;
-    return tmp;
+    if (index < d_CharInfo.nCharObj)
+        for (Char *end = d_CharInfo.ptr + d_CharInfo.nCharObj, 
+                *begin = d_CharInfo.ptr + index;
+                begin != end; --end)
+            *(end + 1) = *end;
+        // copy all Chars after index to one place to the right
+
+    d_CharInfo.ptr[index] = Char{ ch, 1 };
+    ++d_CharInfo.nCharObj;
 }

@@ -10,13 +10,11 @@ size_t const CharCount::count(std::istream& stream)
         switch (action)
         {
             case INC:
-                ++d_CharInfo.ptr[index].count;
+                increment(index);
                 break;
             case APPEND:                // appending ch at end of `Char ptr[]`
             case INSERT:                // is the same as inserting at end
-                d_CharInfo.ptr =
-                    insert(d_CharInfo.ptr, d_CharInfo.nCharObj, ch, index);
-                ++d_CharInfo.nCharObj;
+                insert(index, ch);
                 break;
         }
     }
