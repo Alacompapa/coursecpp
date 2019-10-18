@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------
-  definition:         rewrite: 
+  definition:         rewrite:
 ----------------------------------------------------------------------------
   int x[8];           x[3] = x[2];
 
@@ -11,27 +11,27 @@ pointer notation:	*(x + 3) = *(x + 2);
   char *argv[8];      cout << argv[2];
 
 pointer notation:	cout << *(argv + 2);
-       semantics:	argv + 2 is used to select the location of element 2 of 
-            the array and the value of the element is reached using the 
+       semantics:	argv + 2 is used to select the location of element 2 of
+            the array and the value of the element is reached using the
             deference operator(*).
 ----------------------------------------------------------------------------
   int x[8];           &x[10] - &x[3];
- 
+
 pointer notation:	(x + 10) - (x + 3)
        semantics:	x + 10 and x + 3 point to the 10th and 3rd int beyond x.
             The result is 7 which is the element distance between element
-            3 and 10. 
+            3 and 10.
 ----------------------------------------------------------------------------
   main's argv;        argv[0]++;
 
 pointer notation:	(*argv)++;
-       semantics:	*argv is a pointer to the value of the first element of 
-            the array argv.	The postfix increment operator(++) will return 
-            the value of argv[0] and then increment value of element 0 by one.  
+       semantics:	*argv is a pointer to the value of the first element of
+            the array argv.	The postfix increment operator(++) will return
+            the value of argv[0] and then increment value of element 0 by one.
 ----------------------------------------------------------------------------
   main's argv;        argv++[0];
 
-pointer notation:	*(argv++)
+pointer notation:	*argv++
        semantics:	Due to operator precedence the postfix increment operator
             will first be evaluated. Yielding (argv++)[0], the postfix will
             return argv, hence argv++[0] returns argv[0]. After this argv will
@@ -42,7 +42,7 @@ pointer notation:	*(argv++)
 
 pointer notation:	++*argv
        semantics:	That which *argv points to gets incremented by one.
-            Note that *argv points to a NTBS, hence the incrementation will 
+            Note that *argv points to a NTBS, hence the incrementation will
             have the effect of pointing to the next character in the string.
 ----------------------------------------------------------------------------
   main's argv;        ++argv[0][2];

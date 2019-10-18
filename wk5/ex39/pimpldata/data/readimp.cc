@@ -1,8 +1,8 @@
-#include "dataimp.h"
+#include "dataimp.ih"
 
-bool Data::DataImp::read()
+bool DataImp::read()
 {   
-    //d_text.clear();
+    d_text.clear();
     cin >> d_value;
     return cin.good();
 }
