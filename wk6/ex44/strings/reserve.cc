@@ -1,17 +1,14 @@
 #include "strings.ih"
 
-void reserve(size_t new_cap)
+void reserve(size_t newCap)
 {
-    // if new_cap > d_capacity 
-    // then
-    // reserve more in string **tmp
-    // copy pointers from d_str to tmp
-    // d_str = tmp
+    if (newCap <= d_capacity)               // do we need to reserve more?
+        return;
     
-    string **tmp = rawPointers(new_cap);
+    string **tmp = rawPointers(new_cap);    // get more raw memory
     for (string **begin = d_str, **end = d_str + d_size; 
-            begin != end, ++begin)
-        *tmp = *begin;
+            begin != end, ++begin) 
+        *tmp = *begin;                      // copy existing pointers
 
     d_str = tmp; 
 }
