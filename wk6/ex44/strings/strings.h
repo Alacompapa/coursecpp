@@ -32,7 +32,7 @@ class Strings
 
         void add(std::string const &next);          // add another element
 
-        void capacity() const;
+        size_t capacity() const;
         void reserve(size_t newCap);
         void resize(size_t newSize);
 
