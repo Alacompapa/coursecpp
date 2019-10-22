@@ -13,7 +13,7 @@ class Strings
         struct POD
         {
             size_t      size;
-            std::string *str;
+            std::string *str; // NOTE(bb): here also double pointer?
         };
 
         Strings();
@@ -36,7 +36,7 @@ class Strings
         void fill(char *ntbs[]);                    // fill prepared d_str
 
         std::string &safeAt(size_t idx) const;      // private backdoor
-        std::string **enlarge();
+        std::string *enlarge();
 
         static size_t count(char *environLike[]);   // # elements in env.like
 };
