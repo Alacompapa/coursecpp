@@ -35,6 +35,7 @@ class Strings
     private:
         void fill(char *ntbs[]);                    // fill prepared d_str
 
+        std::string **rawPointers(size_t numpointers);
         std::string &safeAt(size_t idx) const;      // private backdoor
         std::string **enlarge();
 
