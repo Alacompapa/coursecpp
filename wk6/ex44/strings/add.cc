@@ -2,7 +2,6 @@
 
 void Strings::add(string const &next)
 {
-    cout << d_size;
     string *tmp = enlarge();            // make room for the next string,
                                         // tmp is the new string *
 
