@@ -1,6 +1,6 @@
 #include "strings.ih"
 
-size_t String::capacity() const
+size_t Strings::capacity() const
 {
     return d_capacity;
 }
