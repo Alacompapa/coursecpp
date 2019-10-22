@@ -13,7 +13,7 @@ class Strings
         struct POD
         {
             size_t      size;
-            std::string *str; // NOTE(bb): here also double pointer?
+            std::string **str; // NOTE(bb): here also double pointer?
         };
 
         Strings();
@@ -24,7 +24,7 @@ class Strings
         void swap(Strings &other);
 
         size_t size() const;
-        std::string const *data() const;
+        /*std::string const *data() const;*/
         POD release();
 
         std::string const &at(size_t idx) const;
@@ -36,7 +36,7 @@ class Strings
         void fill(char *ntbs[]);                    // fill prepared d_str
 
         std::string &safeAt(size_t idx) const;      // private backdoor
-        std::string *enlarge();
+        std::string **enlarge();
 
         static size_t count(char *environLike[]);   // # elements in env.like
 };
@@ -45,11 +45,12 @@ inline size_t Strings::size() const         // potentially dangerous practice:
 {                                           // inline accessors
     return d_size;
 }
-
+/*
 inline std::string const *Strings::data() const
 {
     return d_str;
 }
+*/
 
 inline std::string const &Strings::at(size_t idx) const
 {
