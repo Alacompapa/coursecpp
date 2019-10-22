@@ -5,8 +5,9 @@
 
 class Strings
 {
-    size_t d_size;
-    std::string *d_str;
+    size_t d_size; // amount of strings pointed to 
+    std::string **d_str;    // use double pointer
+    size_t d_capacity; // max amount that can be pointed to
 
     public:
         struct POD
@@ -35,7 +36,7 @@ class Strings
         void fill(char *ntbs[]);                    // fill prepared d_str
 
         std::string &safeAt(size_t idx) const;      // private backdoor
-        std::string *enlarge();
+        std::string **enlarge();
 
         static size_t count(char *environLike[]);   // # elements in env.like
 };
