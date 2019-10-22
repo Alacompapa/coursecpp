@@ -5,7 +5,7 @@
 
 class Strings
 {
-    size_t d_size; // amount of strings pointed to 
+    size_t d_size; // amount of strings pointed to
     std::string **d_str;    // use double pointer
     size_t d_capacity; // max amount that can be pointed to
 
@@ -24,7 +24,7 @@ class Strings
         void swap(Strings &other);
 
         size_t size() const;
-        /*std::string const *data() const;*/
+        std::string **data() const;
         POD release();
 
         std::string const &at(size_t idx) const;
@@ -45,12 +45,11 @@ inline size_t Strings::size() const         // potentially dangerous practice:
 {                                           // inline accessors
     return d_size;
 }
-/*
-inline std::string const *Strings::data() const
+
+inline std::string **Strings::data() const
 {
     return d_str;
 }
-*/
 
 inline std::string const &Strings::at(size_t idx) const
 {
