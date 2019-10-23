@@ -19,8 +19,8 @@ class Strings
         Strings(int argc, char *argv[]);
         Strings(char *environLike[]);
         Strings(std::istream &in);
-
-        void swap(Strings &other);              
+        ~Strings();
+        void swap(Strings &other);
 
         size_t size() const;
         std::string const *data() const;
@@ -60,6 +60,5 @@ inline std::string &Strings::at(size_t idx)
     return safeAt(idx);
 }
 
-        
-#endif
 
+#endif

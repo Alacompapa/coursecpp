@@ -1,0 +1,20 @@
+-std::string const &at(size_t idx) const; (at is a size_t const reference to a const string)
+ Can be implemented if the reference to string or string itself are not modified or altered.
+ This one is used in the example main function.
+
+-std::string &at(size_t idx); (at is a size_t reference to string)
+ Can be implemented when the reference or contents of string are to be altered.
+Example:
+	int main()
+	{
+		strings strings{cin};
+		for (size_t idx = 0, end = string.size(); idx != end; ++idx)
+			switch(idx){
+			   case 0 : 
+			     strings.at(idx) = "Error 404";
+			     break;
+			   case 1 :
+			     string.at(idx) = "I think we solved it";
+			     break;
+			     }
+			cout << "line " << idx + 1 << ": " << strings.at(idx) << '/n';
