@@ -6,7 +6,7 @@
 
 class Sort
 {
-    void (*d_ordering)(std::string **first, std::string **second);
+    int (*d_ordering)(std::string **first, std::string **second);
 
     public:
         Sort(int (*ordering)(std::string **first, std::string **second));
