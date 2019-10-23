@@ -9,7 +9,7 @@ class Sort
     void (*d_ordering)(std::string **first, std::string **second);
 
     public:
-        Sort(void (*ordering)(std::string **first, std::string **second));
+        Sort(int (*ordering)(std::string **first, std::string **second));
 
     private:
         void sort(std::string **strings, size_t size);

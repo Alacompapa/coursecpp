@@ -2,6 +2,7 @@
 
 int main(int argc, char **argv)
 {
-    void (*order)(string **first, string **second);
+    int (*order)(string **first, string **second);
+    order = &increasing;
     Sort sortObj = Sort(order); // test code
 }

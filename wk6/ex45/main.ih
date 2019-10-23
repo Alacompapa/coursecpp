@@ -4,3 +4,6 @@
 #include "sort/sort.h"
 
 using namespace std;
+
+int increasing(std::string **first, std::string **second);
+int nocasedec(std::string **first, std::string **second);
