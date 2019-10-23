@@ -2,40 +2,58 @@ New
 - new type:									
 	int *age = new int;				//Create a memory allocation with the memory size of an int								
 	age = 69;					//and assign it to a pointer *age.
-	cout << "Your age is\n" << age << "\n"; 				
+	cout << "Your age is\n" << age << "\n"; 	
+Allocate dynamic memory to a pointer of type TYPE.
+The pointer never goes out of scope so its destructor needs to be called by the programmer.			
 -----------------------------------------------------------------------------------------
+-new type[]:
+	string *friends;				//Declare pointer to string friends
+	friends = new string[2];			//Define friends with memory allocation for 2 strings.
+	cout << "Your first friend's name is" << &friend[1] << '\n';
+Allocates memory to a pointer of type TYPE in the form of a dynamic array.
+Dynamic arrays never go out of scope so its destructor needs to be called by the programmer.
+-----------------------------------------------------------------------------------------
+Uses
 - new type[]{initiliazer1, initializer2}:						
 	string *friend = new string[2]{"Joe","Mark"}    //Create memory	allocation for an array with memory size 		
-	for(int idx = 0, idx != 2, idx++) {		//for two string elements.
-		cout << friends[idx] << "\n";			
-	}									
+	for(int idx = 0, idx != 2, idx++) {		//for two string elementsm and define them.
+		cout << friends[idx] << '\n';			
+	}			
+Allocates memory to a pointer of type TYPE and initializes the elements of the array.						
 -----------------------------------------------------------------------------------------
 - operator new(SizeinBytes):				
 	char *buf  = new char[sizeof(string)]; 		//Create memory allocation that can have the desired memory
 	string *p = new (buf) string("hi");		//in bytes chosen by the programmer.
+Allocates an raw memory and returns a void*. 
+Very rarely used.
+It can be assigned to a pointer of type TYPE but a cast has to be implemented.
 -----------------------------------------------------------------------------------------
 - Type *new(void *memory) Type{ arguments }:		
   	char memory[sizeof(Person)];     		//Create memory allocation of size of Person object
   	void* place = memory;          			//Create a pointer to the beginning of memory.
-	Person* f = new(place) Person();  		
+	Person* f = new(place) Person();  	
+Allows to construct an object on an already allocated memory.
+Can be used to increment the memory of a dynamically allocated array.
 ------------------------------------------------------------------------------------------ 
-NOTE(bb): Also placement new? (mj): Isn't placement new the one right above? It's on the annotations?
+
 ------------------------------------------------------------------------------------------							
 Delete	
 
 - delete:
-
-int *age = new int;					//Create a memory allocation with the memory size of an int
-cout << "Your age is\n" << age << "\n"; 		
-delete age;						//Erase the memory of age and return memory to the system. 
+	int *age = new int;					//Create a memory allocation with the memory size of an int
+	cout << "Your age is\n" << age << "\n"; 		
+	delete age;						//Erase the memory of age and return memory to the system. 
+Deletes the memory allocated to the pointer age. If a new type is used, a delete ptr has to be used.
 ------------------------------------------------------------------------------------------
 - delete type[]:
 
-string *friends = new string[2]{"Joe","Mark"}		//Create memory	allocation for an array with memory size
-for(int idx = 0, idx != 2, idx++) {			//for two string elements.
-cout << friends[idx] << "\n";
-delete friends[idx];					//Erase the memory of each element in the array.
-}
-delete[] friends;					//Erase the memory of the array friends and return the memory
-							//to the system.
+	string *friends = new string[2]{"Joe","Mark"}		//Create memory	allocation for an array with memory size
+	for(int idx = 0, idx != 2, idx++) {			//for two string elements.
+	cout << friends[idx] << "\n";
+	delete friends[idx];					//Erase the memory of each element in the array.
+	}
+	delete[] friends;					//Erase the memory of the array friends and return the memory
+								//to the system.
+Deletes the memory allocated to the pointer friends. 
+Note that the memory allocated for each elements of the dynamically allocated array has to be deleted explicitly.
 ------------------------------------------------------------------------------------------
