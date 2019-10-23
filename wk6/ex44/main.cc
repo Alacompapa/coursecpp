@@ -4,7 +4,7 @@ int main(int argc, char **argv)
 {
     Strings strings{ cin };
     
-    strings.resize(4);
+//    strings.resize(4);
 
     for (size_t idx = 0, end = strings.size();
             idx != end; ++idx)
