@@ -1,6 +1,6 @@
 #include "sort.ih"
 
-Sort::Sort(int (*ordering)(std::string **first, std::string **second))
+Sort::Sort(int (*ordering)(const void *first, const void *second))
 : d_ordering{ ordering }
 {
 }

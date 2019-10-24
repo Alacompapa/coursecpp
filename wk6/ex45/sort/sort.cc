@@ -1,6 +1,6 @@
 #include "sort.ih"
 
-void Sort::sort(std::string **strings, size_t size)
+void Sort::sort(std::string **strings, size_t nmemb)
 {
     // void qsort(void *base, size_t nmemb, size_t size,
     //              int (*compar)(const void *, const void *));
@@ -12,4 +12,7 @@ void Sort::sort(std::string **strings, size_t size)
     // this is not always possible hence we use ptrs to ptrs to strings
     //
     // We want to check the strings but swap the pointers
+
+cout << "sorting \n";
+    qsort(strings, nmemb, sizeof(std::string *), d_ordering);
 }

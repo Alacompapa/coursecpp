@@ -5,5 +5,5 @@
 
 using namespace std;
 
-int increasing(std::string **first, std::string **second);
-int nocasedec(std::string **first, std::string **second);
+int increasing(const void *first, const void *second);
+int nocasedec(const void *first, const void *second);

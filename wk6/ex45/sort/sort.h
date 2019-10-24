@@ -6,12 +6,10 @@
 
 class Sort
 {
-    int (*d_ordering)(std::string **first, std::string **second);
+    int (*d_ordering)(void const *first, void const *second);
 
     public:
-        Sort(int (*ordering)(std::string **first, std::string **second));
-
-    private:
+        Sort(int (*ordering)(void const *first, void const *second));
         void sort(std::string **strings, size_t size);
 };
         

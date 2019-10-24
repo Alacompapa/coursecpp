@@ -1,6 +1,6 @@
 #include "main.ih"
 
-int nocasedec(std::string **first, std::string **second)
+int nocasedec(void const *first, void const *second)
 {
     // returns <0 if first should go before second
     // returns 0 if first is equivalent to second
