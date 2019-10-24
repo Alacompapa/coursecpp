@@ -1,4 +1,4 @@
-#include "main.ih"
+#include "main.ih"                      // main.ih includes <strings.h> 
 
 int nocasedec(void const *first, void const *second)
 {
