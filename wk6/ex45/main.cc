@@ -1,13 +1,12 @@
 #include "main.ih"
-#include <cstdlib> //remove before handing in test code --------------------
 int main(int argc, char **argv)
 {
     int (*order)(void const *first, void const *second);
-    order = &increasing;
+    order = &nocasedec;
     Sort sortObj = Sort(order); // test code
 
 
-    srand(42069);  // set seed
+    srand(420);  // set seed
     size_t strarrsize = 10;
                                                         // get raw memory
     string **strings = static_cast<string **>(operator new(strarrsize * sizeof(string*)));
