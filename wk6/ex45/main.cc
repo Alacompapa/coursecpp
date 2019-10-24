@@ -42,4 +42,8 @@ int main(int argc, char **argv)
              << '\n';
     }
     strings -= strarrsize;
+    
+    for (string **begin = strings, **end = strings + strarrsize;
+            begin != end; ++begin, ++strings)
+        cout << **begin;
 }
