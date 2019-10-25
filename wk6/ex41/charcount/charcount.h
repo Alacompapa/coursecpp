@@ -25,19 +25,20 @@ class CharCount
     struct CharInfo d_CharInfo;
 
     public:
+        ~CharCount();
+
         size_t const count(std::istream& stream);
+
         CharCount::CharInfo const &info();
         size_t capacity() const; 
         CharCount::Char *rawCapacity();
-        ~CharCount();
 
     private:
-                        
         void locate(unsigned char ch);      // Now returns a func ptr
-
-        CharCount::Char *enlarge(Char *old);
         void increment(size_t index, unsigned char ch);
         void insert(size_t index, unsigned char ch);
+
+        CharCount::Char *enlarge(Char *old);
                                            // Array of action funcs
         static void (CharCount::*s_transform[])(size_t index, unsigned char ch);
 };
