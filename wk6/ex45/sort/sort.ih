@@ -1,4 +1,1 @@
 #include "sort.h"
-#include <iostream> // remove before handing in --------------------------
-
-using namespace std;

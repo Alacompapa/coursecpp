@@ -27,22 +27,18 @@ class CharCount
     public:
         size_t const count(std::istream& stream);
         CharCount::CharInfo const &info();
-        size_t capacity() const; // NEEDS IMPLEMENT
+        size_t capacity() const; 
         CharCount::Char *rawCapacity();
         ~CharCount();
 
     private:
-                        // Needs to return a func ptr
-        void locate(unsigned char ch);
+                        
+        void locate(unsigned char ch);      // Now returns a func ptr
 
         CharCount::Char *enlarge(Char *old);
-        // enlarge member function returns void
-        // funcs() for INC, INSERT, APPEND
-        // array of ptrs to those funcs
-        //
         void increment(size_t index, unsigned char ch);
         void insert(size_t index, unsigned char ch);
-
+                                           // Array of action funcs
         static void (CharCount::*s_transform[])(size_t index, unsigned char ch);
 };
 

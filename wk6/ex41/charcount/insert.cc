@@ -2,9 +2,6 @@
 
 void CharCount::insert(size_t index, unsigned char ch)
 {
-    // check if CharInfo.nCharObj == capacity
-    //      then enlarge, change capacity
-    // and insert at index
     if (d_CharInfo.nCharObj == d_CharInfo.capacity)
         d_CharInfo.ptr = enlarge(d_CharInfo.ptr);
 

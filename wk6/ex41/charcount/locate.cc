@@ -2,8 +2,6 @@
 
 void CharCount::locate(unsigned char ch)
 {
-    // change INC, INSERT, and APPEND to function pointers
-    //  index can be passed to function as param
     for (size_t index = 0; index != d_CharInfo.nCharObj; ++index) 
     {
         if (ch == d_CharInfo.ptr[index].ch)     // check if char already seen
