@@ -8,6 +8,9 @@ int main(int argc, char **argv)
     ofstream outfile{ "./tnabin" };
     humanToBin(infile, outfile);
 
+    outfile.close();
+    infile.close();
+
     ifstream ifs{ "./tnabin" };
     ofstream ofs{ "./tnahuman" };
     binToHuman(ifs, ofs);
