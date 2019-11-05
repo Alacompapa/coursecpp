@@ -1,15 +1,13 @@
 #ifndef INCLUDED_CHARCOUNT_
 #define INCLUDED_CHARCOUNT_
 
-#include <iostream>
-#include <tuple>
-
+#include <iosfwd>
 
 class CharCount
 {
     struct Char
     {
-        unsigned char ch;                   // character seen
+        char ch;                   // character seen
         size_t count;                       // frequency of character
     };
 
@@ -19,18 +17,23 @@ class CharCount
         size_t nCharObj = 0;                // size of array
         Char *ptr = new Char[capacity]();   // dyn array of Char objs
     };
+  private:
+      enum Action
+      {
+        INC,
+        INSERT,
+        APPEND
+      };
 
-    enum Action { INC, INSERT, APPEND };
-
-    struct CharInfo d_CharInfo;
+      CharInfo d_CharInfo;
 
     public:
+        CharCount();
         ~CharCount();
 
-        size_t const count(std::istream& stream);
-
-        CharCount::CharInfo const &info();
-        size_t capacity() const; 
+        size_t count(std::istream& stream);
+        CharInfo const &info() const;
+        size_t capacity() const;
         CharCount::Char *rawCapacity();
 
     private:
