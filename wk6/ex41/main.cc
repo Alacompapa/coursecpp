@@ -7,6 +7,5 @@ int main(int argc, char **argv)
     for (size_t idx = 0, size_t charNumber = charCounter.count(cin); idx != charNumber; ++idx)
         showChar(charCounter.info().ptr[idx].ch);
 
-    cout << charCounter.capacity() << '\n';
-    cout << charCounter.rawCapacity() << '\n';
+    cout << "Capacity" << '\n' << charCounter.capacity() << ", raw Capacity:" << charCounter.rawCapacity() << '\n';
 }
