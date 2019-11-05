@@ -2,4 +2,7 @@
 
 using namespace std;
 
-void humanToBin();
+enum BASES { A, C, G, T };
+
+void humanToBin(ifstream &infile, ofstream &outfile);
+void binToHuman(ifstream &infile, ofstream &outfile);

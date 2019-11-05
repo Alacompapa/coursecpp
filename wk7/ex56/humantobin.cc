@@ -1,16 +1,16 @@
 #include "main.ih"
 
-void humanToBin()
+void humanToBin(ifstream &infile, ofstream &outfile)
 {
-    ifstream infile{ "./dnahuman" };
-    ofstream outfile{ "./dnabin" };
-
-    enum BASES { A, C, G, T }; 
+    // CREATE OVERHEAD
+    char const overhead[] = "HUMANGENOME"; // NOTE(bb): define this in main.ih? to also use it in the other func
+    outfile.write(overhead, sizeof(overhead));
+    size_t paircount = 0;
+    outfile.write(reinterpret_cast<char const *>(&paircount), sizeof(size_t));
 
     unsigned char letter = 0;
-    unsigned char paircount = 0;
     unsigned char buffer = 0;
-
+    // CHECK FOR LETTERS (human readable can only contain letters!!!!)
     while (infile >> letter)
     {
         buffer <<= 2;
@@ -27,18 +27,24 @@ void humanToBin()
             case 'T':
                 buffer |= T; 
                 break;
-            default:
-                return 1;
+ //           default:
+ //               return 1;     // cant return anything in void func
         }
         ++paircount;
-        if (paircount == 4)
+        if (!(paircount % 4)) // NOTE(bb): whatabout paircount % 4 ?? then paircount can be 
+                            //  a size_t
+                            // if falsey buffer = 0, paircount doesnt have to 
+                            //  be set 
+                            // if truthy do nothing 
         {
             outfile << buffer;
-            paircount = 0;
             buffer = 0;
         }
     }
 
-    if (paircount != 0)
+    if (paircount % 4)     // then here also paircount % 4 -> truthy do smthng 
         outfile << buffer;
+
+    outfile.seekp(sizeof(overhead), ios::beg);
+    outfile.write(reinterpret_cast<char const *>(&paircount), sizeof(size_t));
 }
