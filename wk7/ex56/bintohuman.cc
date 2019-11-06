@@ -22,7 +22,7 @@ void binToHuman(ifstream &infile, ofstream &outfile)
 
     for (size_t idx = 0; idx != lettercount; ++idx) // loop over every letter
     {
-        char *letterquad;
+        char letterquad[1];
         if (!(idx % 4))
             infile.read(letterquad, 1);
 
@@ -38,15 +38,19 @@ void binToHuman(ifstream &infile, ofstream &outfile)
         switch (base)
         {
             case BASES::A:
+                outfile << 'A';
                 cout << 'A';
                 break;
             case BASES::C:
+                outfile << 'C';
                 cout << 'C';
                 break;
             case BASES::G:
+                outfile << 'G';
                 cout << 'G';
                 break;
             case BASES::T:
+                outfile << 'T';
                 cout << 'T';
                 break;
         }
