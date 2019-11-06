@@ -31,11 +31,7 @@ void humanToBin(istream &infile, ostream &outfile)
  //               return 1;     // cant return anything in void func
         }
         ++lettercount;
-        if (!(lettercount % 4)) // NOTE(bb): whatabout lettercount % 4 ?? then lettercount can be 
-                            //  a size_t
-                            // if falsey buffer = 0, lettercount doesnt have to 
-                            //  be set 
-                            // if truthy do nothing 
+        if (!(lettercount % 4))
         {
             outfile << buffer;
             buffer = 0;
