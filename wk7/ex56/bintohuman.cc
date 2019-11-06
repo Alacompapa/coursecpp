@@ -26,14 +26,14 @@ void binToHuman(ifstream &infile, ofstream &outfile)
         if (!(idx % 4))
             infile.read(letterquad, 1);
 
-cout << "lq " << (int)*letterquad << '\n';
+//cout << "lq " << (int)*letterquad << '\n';
 
         size_t shift = 6 - (idx % 4) * 2;
-cout << "sh " << (int)shift << '\n';
+//cout << "sh " << (int)shift << '\n';
 
         unsigned char mask = 3 << shift;
         unsigned char base = (*letterquad & mask) >> shift;
-cout << "ba " << (int)base << '\n';
+//cout << "ba " << (int)base << '\n';
 
         switch (base)
         {
@@ -50,7 +50,7 @@ cout << "ba " << (int)base << '\n';
                 cout << 'T';
                 break;
         }
-        cout << '\n' << '\n';
+        cout <<  '\n';
     }
 
 
