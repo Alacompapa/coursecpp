@@ -7,9 +7,9 @@ void binToHuman(ifstream &infile, ofstream &outfile)
     char overhead[12];
     infile.read(overhead, 12);
     // TODO: CHECK IF OVERHEAD == "HUMANGENOME"
-    cout << "overhead : " << overhead << '\n'; 
+//cout << "overhead : " << overhead << '\n'; 
 
-    // NOTE(bb): this only works for a certain endianness, we need a better 
+    // NOTE(bb): this only works for little endian machines, we need a better 
     // solution
     size_t tmpcount = 0;
     size_t lettercount = 0;
@@ -18,7 +18,8 @@ void binToHuman(ifstream &infile, ofstream &outfile)
         tmpcount = infile.get();
         lettercount += (tmpcount << 8*idx);
     }
-    cout << "lettercount : "  << setbase(16) << lettercount << '\n';
+//cout << "lettercount : "  << setbase(16) << lettercount << '\n';
+
 
     for (size_t idx = 0; idx != lettercount; ++idx) // loop over every letter
     {
@@ -39,22 +40,21 @@ void binToHuman(ifstream &infile, ofstream &outfile)
         {
             case BASES::A:
                 outfile << 'A';
-                cout << 'A';
+//cout << 'A';
                 break;
             case BASES::C:
                 outfile << 'C';
-                cout << 'C';
+//cout << 'C';
                 break;
             case BASES::G:
                 outfile << 'G';
-                cout << 'G';
+//cout << 'G';
                 break;
             case BASES::T:
                 outfile << 'T';
-                cout << 'T';
+//cout << 'T';
                 break;
         }
-        cout <<  '\n';
     }
 
 
