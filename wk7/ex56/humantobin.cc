@@ -1,6 +1,6 @@
 #include "main.ih"
 
-void humanToBin(ifstream &infile, ofstream &outfile)
+void humanToBin(istream &infile, ostream &outfile)
 {
     // CREATE OVERHEAD
     char const overhead[] = "HUMANGENOME"; // NOTE(bb): define this in main.ih? to also use it in the other func
@@ -19,13 +19,13 @@ void humanToBin(ifstream &infile, ofstream &outfile)
             case 'A': // bij A hoeft je niks te doen
                 break;
             case 'C':
-                buffer |= BASES::C; 
+                buffer |= Bases::C; 
                 break;
             case 'G':
-                buffer |= BASES::G; 
+                buffer |= Bases::G; 
                 break;
             case 'T':
-                buffer |= BASES::T; 
+                buffer |= Bases::T; 
                 break;
  //           default:
  //               return 1;     // cant return anything in void func

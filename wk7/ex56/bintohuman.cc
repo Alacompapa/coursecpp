@@ -1,8 +1,6 @@
 #include "main.ih"
 
-#include <iostream>
-#include <iomanip>
-void binToHuman(ifstream &infile, ofstream &outfile)
+void binToHuman(istream &infile, ostream &outfile)
 {
     char overhead[12];
     infile.read(overhead, 12);
@@ -38,19 +36,19 @@ void binToHuman(ifstream &infile, ofstream &outfile)
 
         switch (base)
         {
-            case BASES::A:
+            case Bases::A:
                 outfile << 'A';
 //cout << 'A';
                 break;
-            case BASES::C:
+            case Bases::C:
                 outfile << 'C';
 //cout << 'C';
                 break;
-            case BASES::G:
+            case Bases::G:
                 outfile << 'G';
 //cout << 'G';
                 break;
-            case BASES::T:
+            case Bases::T:
                 outfile << 'T';
 //cout << 'T';
                 break;

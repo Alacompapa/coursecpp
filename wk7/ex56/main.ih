@@ -1,8 +1,13 @@
 #include <fstream>
+#include <iostream>
 
 using namespace std;
 
-enum BASES { A, C, G, T };
+enum Bases { A, C, G, T };
 
-void humanToBin(ifstream &infile, ofstream &outfile);
-void binToHuman(ifstream &infile, ofstream &outfile);
+enum Options { USAGE, HUMANTOBIN, BINTOHUMAN };
+Options option(int argc, char **argv);
+
+void usage(char *program);
+void humanToBin(istream &infile, ostream &outfile);
+void binToHuman(istream &infile, ostream &outfile);
