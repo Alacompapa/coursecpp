@@ -5,12 +5,12 @@ void humanToBin(ifstream &infile, ofstream &outfile)
     // CREATE OVERHEAD
     char const overhead[] = "HUMANGENOME"; // NOTE(bb): define this in main.ih? to also use it in the other func
     outfile.write(overhead, sizeof(overhead));
-    size_t paircount = 0;
+    size_t paircount = 0; // NOTE: shouldnt paircount be called quadcount as we count per 4 letters
     outfile.write(reinterpret_cast<char const *>(&paircount), sizeof(size_t));
 
     unsigned char letter = 0;
     unsigned char buffer = 0;
-    // CHECK FOR LETTERS (human readable can only contain letters!!!!)
+    // TODO: CHECK FOR LETTERS (human readable can only contain letters!!!!)
     while (infile >> letter)
     {
         buffer <<= 2;
