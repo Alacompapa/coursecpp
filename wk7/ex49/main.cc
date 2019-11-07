@@ -8,7 +8,7 @@ using namespace std;
 // This all takes time. Not much time but when we do a large number of repetitions this adds up.
 
 // Rule of thumb:
-// The insertion operator's failbit is useful for not inserting sequences to an output stream. If the insertion operator has to be called a large amount of times on the same stream, including an if-statement to check for the failbit before using the insertion operator increases performance significantly.
+// The insertion operator's failbit is useful for not inserting sequences to an output stream. If the insertion operator has to be called a large amount of times on the same stream, you can increase performance significantly by including an if-statement to check for the failbit before using the insertion operator .
 
 int main(int argc, char **argv)
 {
@@ -18,7 +18,7 @@ int main(int argc, char **argv)
     ostream out(cout.rdbuf());
     out.setstate(ios::failbit);
 
-    for (size_t count = 0; count != stoul(argv[1]); ++count) 
-        if (out.good())
+    for (size_t count = 0; count != stoul(argv[1]); ++count)
+      if (out.good())
     		out << "Nr. of command line arguments " << argc << '\n';
 }
