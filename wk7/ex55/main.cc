@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 
 
     size_t posSignal = 4;
-    size_t sizeSignal = 4;
+    size_t sizeSignal = 2;
     size_t posName = 64 - 16;
     size_t sizeName = 16;
 
@@ -63,7 +63,9 @@ int main(int argc, char **argv)
         cout << ' ';
 
         for (char *begin = bufferacct + posSignal, *end = begin + sizeSignal; begin != end; ++begin)
-           cout << setbase(16) << (int)*begin; 
+            cout << setbase(16) << (unsigned int)*begin; 
+
+        cout << ' ';
 
         cout << '\n';
     }

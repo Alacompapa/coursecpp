@@ -3,7 +3,7 @@
 
 using namespace std;
 
-ostream &now(ostream &stream)
+ostream &now(ostream &stream)       // manipulator for human readable time
 {
     time_t tm {time(0)};
     return stream << put_time(localtime(&tm), "%c");

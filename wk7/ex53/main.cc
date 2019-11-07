@@ -21,7 +21,7 @@ int main()
             << "'\n"
          << "3 digits         " 
             << '\'' 
-            << setw(15) << setiosflags(ios::fixed) << setprecision(1)<< value   
+            << setw(15) << setiosflags(ios::fixed) << setprecision(1) << value   
             << "'\n"
          << "4-digit fraction " 
             << '\'' 

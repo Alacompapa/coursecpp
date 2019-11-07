@@ -1,0 +1,8 @@
+// more code
+
+    istr.str(argv[2]);
+    istr.seekg(0);
+    size_t no2 = 0;
+    istr >> no2;
+
+// more code
