@@ -7,6 +7,6 @@ using namespace std;
 
 data::Options option(int argc, char **argv);
 
-void usage(char *program);
+void usage(char const *program);
 int humanToBin(istream &infile, ostream &outfile);
 int binToHuman(istream &infile, ostream &outfile);
