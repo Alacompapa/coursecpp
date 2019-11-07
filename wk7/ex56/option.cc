@@ -1,15 +1,15 @@
 #include "main.ih"
 
-Options option(int argc, char **argv)
+data::Options option(int argc, char **argv)
 {
     if (argc == 3)
-        return BINTOHUMAN;
+        return data::BINTOHUMAN;
     
     if (argc == 4)
     {
         string request{ argv[3] };
-        return request == "-b" ? HUMANTOBIN : USAGE;
+        return request == "-b" ? data::HUMANTOBIN : data::USAGE;
     }
 
-    return USAGE;
+    return data::USAGE;
 }

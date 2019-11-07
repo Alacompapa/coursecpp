@@ -1,13 +1,12 @@
 #include <fstream>
 #include <iostream>
 
+#include "data.cc"
+
 using namespace std;
 
-enum Bases { A, C, G, T };
-
-enum Options { USAGE, HUMANTOBIN, BINTOHUMAN };
-Options option(int argc, char **argv);
+data::Options option(int argc, char **argv);
 
 void usage(char *program);
-void humanToBin(istream &infile, ostream &outfile);
-void binToHuman(istream &infile, ostream &outfile);
+int humanToBin(istream &infile, ostream &outfile);
+int binToHuman(istream &infile, ostream &outfile);

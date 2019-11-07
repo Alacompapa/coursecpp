@@ -1,23 +1,21 @@
 #include "main.ih"
 
-void binToHuman(istream &infile, ostream &outfile)
+int binToHuman(istream &infile, ostream &outfile)
 {
-    char overhead[12];
+    char overhead[12];                  
     infile.read(overhead, 12);
-    // TODO: CHECK IF OVERHEAD == "HUMANGENOME"
+    if (overhead != data::overhead)     // our files have this as header
+        return 1;
 
-    // NOTE(bb): this only works for little endian machines, we need a better 
-    // solution
-    size_t tmpcount = 0;
-    size_t lettercount = 0;
-    for (size_t idx = 0; idx != sizeof(size_t); ++idx)
-    {
+    size_t lettercount = 0;             // header then contains lettercount            
+    for (size_t idx = 0, tmpcount = 0; idx != sizeof(size_t); ++idx)
+    {                                   // read in little endian order bytes 
         tmpcount = infile.get();
         lettercount += (tmpcount << 8*idx);
     }
 
 
-    for (size_t idx = 0; idx != lettercount; ++idx) // loop over every letter
+    for (size_t idx = 0; idx != lettercount; ++idx) 
     {
         char letterquad[1];
         if (!(idx % 4))
@@ -30,18 +28,20 @@ void binToHuman(istream &infile, ostream &outfile)
 
         switch (base)
         {
-            case Bases::A:
+            case data::A:
                 outfile << 'A';
                 break;
-            case Bases::C:
+            case data::C:
                 outfile << 'C';
                 break;
-            case Bases::G:
+            case data::G:
                 outfile << 'G';
                 break;
-            case Bases::T:
+            case data::T:
                 outfile << 'T';
                 break;
         }
     }
+
+    return 0;
 }

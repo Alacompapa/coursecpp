@@ -1,49 +1,51 @@
 #include "main.ih"
 
-void humanToBin(istream &infile, ostream &outfile)
+int humanToBin(istream &infile, ostream &outfile)
 {
-    // CREATE OVERHEAD
-    char const overhead[] = "HUMANGENOME"; // NOTE(bb): define this in main.ih? to also use it in the other func
-    outfile.write(overhead, sizeof(overhead));
-    size_t lettercount = 0; // NOTE: shouldnt lettercount be called quadcount as we count per 4 letters
+                                    // our files have this as header
+    outfile.write(data::overhead, sizeof(data::overhead));
+    size_t lettercount = 0;         // make room for a size_t in header
     outfile.write(reinterpret_cast<char const *>(&lettercount), sizeof(size_t));
 
     unsigned char letter = 0;
     unsigned char buffer = 0;
-    // TODO: CHECK FOR LETTERS (human readable can only contain letters!!!!)
     while (infile >> letter)
     {
-        buffer <<= 2;
-        switch (letter)
+        buffer <<= 2;               // make room for next bitpair
+        switch (letter)             // and place bitpair in buffer 
         {
-            case 'A': // bij A hoeft je niks te doen
+            case 'A': 
                 break;
             case 'C':
-                buffer |= Bases::C; 
+                buffer |= data::C; 
                 break;
             case 'G':
-                buffer |= Bases::G; 
+                buffer |= data::G; 
                 break;
             case 'T':
-                buffer |= Bases::T; 
+                buffer |= data::T; 
                 break;
- //           default:
- //               return 1;     // cant return anything in void func
+            default:
+                return 1; 
         }
         ++lettercount;
-        if (!(lettercount % 4))
-        {
+
+        if (!(lettercount % 4))     // every 4 letters (1 byte) we write buffer
+        {                           // and reset buffer for more letters 
             outfile << buffer;
             buffer = 0;
         }
     }
 
-    if (lettercount % 4)     // then here also lettercount % 4 -> truthy do smthng 
-    {
-        buffer <<= (4 - (lettercount % 4)) * 2;            // to make sure letters written at right position
+    if (lettercount % 4)            // any letter left in buffer? 
+    {                               // place letter at right position in file
+        buffer <<= (4 - (lettercount % 4)) * 2;            
         outfile << buffer;
     }
 
-    outfile.seekp(sizeof(overhead), ios::beg);
+                                    // write lettercount in header
+    outfile.seekp(sizeof(data::overhead), ios::beg);
     outfile.write(reinterpret_cast<char const *>(&lettercount), sizeof(size_t));
+
+    return 0;
 }

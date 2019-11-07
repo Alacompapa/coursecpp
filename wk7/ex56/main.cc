@@ -6,18 +6,18 @@ int main(int argc, char **argv)
     ofstream outfile;
     switch (option(argc, argv))
     {
-        case USAGE:
+        case data::HUMANTOBIN:
+            infile.open(argv[1]); 
+            outfile.open(argv[2]);
+            return humanToBin(infile, outfile);
+            break;
+        case data::BINTOHUMAN:
+            infile.open(argv[1]); 
+            outfile.open(argv[2]);
+            return binToHuman(infile, outfile);
+            break;
+        case data::USAGE:
+        default:
             usage(argv[0]);
-            break;
-        case HUMANTOBIN:
-            infile.open(argv[1]); 
-            outfile.open(argv[2]);
-            humanToBin(infile, outfile);
-            break;
-        case BINTOHUMAN:
-            infile.open(argv[1]); 
-            outfile.open(argv[2]);
-            binToHuman(infile, outfile);
-            break;
     }
 }
