@@ -3,13 +3,14 @@
 int binToHuman(istream &infile, ostream &outfile)
 {
     char overhead[12];                  
-    infile.read(overhead, 12);
-    if (overhead != data::overhead)     // our files have this as header
-        return 1;
+    infile.read(overhead, 12);     // our files have this header
+    for (size_t idx = 0; idx != sizeof(data::overhead); ++idx)
+        if (overhead[idx] != data::overhead[idx])
+            return 1;
 
-    size_t lettercount = 0;             // header then contains lettercount            
+    size_t lettercount = 0;         // header then contains lettercount            
     for (size_t idx = 0, tmpcount = 0; idx != sizeof(size_t); ++idx)
-    {                                   // read in little endian order bytes 
+    {                              // read in little endian order bytes 
         tmpcount = infile.get();
         lettercount += (tmpcount << 8*idx);
     }

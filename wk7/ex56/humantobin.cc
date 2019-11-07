@@ -33,6 +33,7 @@ int humanToBin(istream &infile, ostream &outfile)
         if (!(lettercount % 4))     // every 4 letters (1 byte) we write buffer
         {                           // and reset buffer for more letters 
             outfile << buffer;
+cout << "written \n";
             buffer = 0;
         }
     }
