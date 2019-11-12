@@ -1,0 +1,33 @@
+Purpuse of this exercise: understand the need for using the default keyword.
+We distinguish four constructors categories: default, copy, move, and other constructors (considered a single category in this exercise).
+
+Likewise we distinguish three categories of assignment operators:: the copy-assignment operator, the move assignment operator, and all other assignment operators (also considered a single category in this exercise).
+
+Fill out the entries in the following table: the row labels specify what you have defined. Consider each row by itself: the row element specifies the only member that you defined. Then, for each row
+
+put a - in the cells where the column element is NOT provided by the compiler (e.g., when you define the default constructor then the compiler doesn't provide the default constructor, and so there's a - in that row/column element);
+put CC in the cells where the compiler uses the copy constructor instead of the column element;
+put MC in the cells where the compiler uses the move constructor instead of the column element;
+put C= in the cells where the compiler uses the copy assignment instead of the column element;
+put M= in the cells where the compiler uses the move assignment instead of the column element;
+Put a + in all other cases (meaning: the compiler provides a default implementation of the column element)
+Hint: not all of the above indicators are used.
+
+
+-----------------------------------------------------------
+                        constructors        assignment ops.
+                     ------------------     ---------------  
+define:              default copy move        copy    move   
+-----------------------------------------------------------
+no constructor:                                            
+default cons:           
+copy cons (CC):         
+move cons (MC):         
+other cons:             
+                        
+no assignment:          
+copy assignmnt (C=):    
+move assignmnt (M=):    
+other assignmnt:                                             
+-------------------------------------------------------------
+    
