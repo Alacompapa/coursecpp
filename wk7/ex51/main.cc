@@ -19,11 +19,19 @@ int main(int argc, char **argv)
     cout << "extracted first number: " << no1 << '\n';
 
     istr.str(argv[2]);
+    istr.clear();
     size_t no2 = 0;
     istr >> no2;
   
     cout << "extracted second number: " << no2 << '\n';
 }
+/*
+Second try:
+if we insert istr.clear() in line 22. We reset all the status flags of the stream
+hence also setting the ios::eofbit to 0. Thereby making it possible to extract 
+information from the stream again.
+
+*/
 /*
 What is wrong with the version we got:
 15:     initialize istr with argv[1] as contents

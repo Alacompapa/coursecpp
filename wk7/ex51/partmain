@@ -1,7 +1,7 @@
 // more code
 
     istr.str(argv[2]);
-    istr.seekg(0);
+    istr.clear();
     size_t no2 = 0;
     istr >> no2;
 
