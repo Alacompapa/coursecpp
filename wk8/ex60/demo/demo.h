@@ -1,7 +1,7 @@
 #ifndef INCLUDED_DEMO_
 #define INCLUDED_DEMO_
 
-// TODO: Define members in this file?
+
 
 class Demo
 {
