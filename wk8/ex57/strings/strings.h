@@ -2,13 +2,14 @@
 #define INCLUDED_STRINGS_
 
 #include <iosfwd>
-
+#include <string>
 class Strings
 {
-    size_t d_size;
-    std::string *d_str;
-
+    size_t d_size = 0;
+    size_t d_capacity = 1;
+    
     public:
+	std::string *d_str;
         struct POD
         {
             size_t      size;
@@ -17,7 +18,7 @@ class Strings
 
         Strings();
         Strings(int argc, char *argv[]);
-        Strings(char *environLike[]);
+        Strings(char **environLike);
         Strings(std::istream &in);
         ~Strings();
         void swap(Strings &other);

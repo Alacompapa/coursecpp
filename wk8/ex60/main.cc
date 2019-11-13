@@ -1,7 +1,10 @@
 #include "main.ih"
 
-int main(int argc, char **argv)
+int main()
 {
-    Demo demo1;
+    Demo demo1 = factory();
+
     Demo demo2{ demo1 };
+
+    demo2 = move(demo);
 }

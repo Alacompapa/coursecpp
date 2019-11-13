@@ -12,7 +12,7 @@ class Demo
         ~Demo();
         Demo &operator=(Demo const &other);
         Demo &operator=(Demo &&tmp);
-        static Demo factory();
+        void swap(Demo &other)
 
     private:
 };
