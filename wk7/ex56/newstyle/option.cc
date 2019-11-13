@@ -2,7 +2,6 @@
 
 data::Options option(int argc, char **argv)
 {
-// XXX: Questionable
     if (argc == 3)                  // only filesnames given 
         return data::WRITEHUMAN;
     

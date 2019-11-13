@@ -1,6 +1,5 @@
 #include "main.ih"
 
-// XXX: LONG
 ReturnCodes writeBinary(istream &infile, ostream &outfile)
 {
                                     // our files have this as header

@@ -6,8 +6,7 @@ int main(int argc, char **argv)
     ofstream outfile;
     switch (option(argc, argv))     // determine arguments
     {
-// XXX: cases where both in and out are HR/bin
-        case data::WRITEBINARY:        // human input -> binary output
+        case data::WRITEBINARY:     // human input -> binary output
             infile.open(argv[1]); 
             outfile.open(argv[2]);
             return writeBinary(infile, outfile);

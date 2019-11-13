@@ -14,7 +14,7 @@ data::Options option(int argc, char **argv);
 
 void usage(char const *program);
 
-enum ReturnCodes { NOERROR, NOBINARY, NOHEADER, NOHUMAN };
+enum ReturnCodes { NOERROR, NOBINARY, WRONGHEADER, NOHUMAN };
 ReturnCodes writeBinary(istream &infile, ostream &outfile);
 ReturnCodes writeHuman(istream &infile, ostream &outfile);
 
