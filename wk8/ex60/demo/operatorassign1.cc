@@ -2,8 +2,8 @@
 
 Demo &Demo::operator=(Demo const &other)
 {
-    cout << "Calling : Assign1 op  on " << this << '\n';
-    Demo tmp(other);
+    cout << "Copy assignment operator\n";
+    Demo tmp{ other };
     swap(tmp);
     return *this;
 }

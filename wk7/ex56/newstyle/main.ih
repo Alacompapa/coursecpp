@@ -1,0 +1,21 @@
+#include <fstream>
+#include <iostream>
+
+using namespace std;
+
+namespace data
+{
+    char const overhead[] = "HUMANGENOME";
+    enum Bases { A, C, G, T };
+    enum Options { USAGE, WRITEBINARY, WRITEHUMAN };
+}
+
+data::Options option(int argc, char **argv);
+
+void usage(char const *program);
+
+enum ReturnCodes { NOERROR, NOBINARY, NOHEADER, NOHUMAN };
+ReturnCodes writeBinary(istream &infile, ostream &outfile);
+ReturnCodes writeHuman(istream &infile, ostream &outfile);
+
+void writeLetter(ostream &outfile, unsigned char base);

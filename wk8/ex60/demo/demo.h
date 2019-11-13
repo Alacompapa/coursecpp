@@ -7,14 +7,14 @@ class Demo
 {
     public:
         Demo();
-        Demo(Demo const &other);
-        Demo(Demo &&tmp);
+        Demo(Demo const &other); // copy constructor
+        Demo(Demo &&tmp); // move constructor
         ~Demo();
-        Demo &operator=(Demo const &other);
-        Demo &operator=(Demo &&tmp);
-        static Demo factory();
+        Demo &operator=(Demo const &other); // copy assignment
+        Demo &operator=(Demo &&tmp);    // move assignment
+        void swap(Demo &other);
 
-    private:
+        static Demo factory();
 };
         
 #endif

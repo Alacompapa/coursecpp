@@ -2,7 +2,7 @@
 
 Demo &Demo::operator=(Demo &&tmp)
 {
-    cout << "Calling : Assign2 op  on " << this << '\n';
+    cout << "Move assignment operator\n";
     swap(tmp);
     return *this;
 }
