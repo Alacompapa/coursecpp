@@ -1,18 +1,16 @@
 #ifndef INCLUDED_DEMO_
 #define INCLUDED_DEMO_
 
-
-
 class Demo
 {
     public:
         Demo();
-        Demo(Demo const &other);
-        Demo(Demo &&tmp);
+        Demo(Demo const &other); // copy constructor
+        Demo(Demo &&tmp); // move constructor
         ~Demo();
-        Demo &operator=(Demo const &other);
-        Demo &operator=(Demo &&tmp);
-        void swap(Demo &other)
+        Demo &operator=(Demo const &other); // copy
+        Demo &operator=(Demo &&tmp); // move
+        void swap(Demo &other);
 
     private:
 };

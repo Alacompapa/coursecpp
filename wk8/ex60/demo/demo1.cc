@@ -3,5 +3,5 @@
 Demo::Demo()
 //: 		//(jashiel= what is this for?)
 {
-    cout << "Calling : Constructor on " << this << '\n';
+    cout << "Default constructor\n";
 }

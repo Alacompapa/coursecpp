@@ -4,3 +4,5 @@
 #include "demo/demo.h"
 
 using namespace std;
+
+Demo factory();

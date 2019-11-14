@@ -1,10 +1,33 @@
 #include "main.ih"
 
+Demo localVariableReturn()
+{
+    Demo local_demo;                // local variable is not copied when
+    return local_demo;              // returned
+}
+
 int main()
 {
-    Demo demo1 = factory();
+// copy elision example: returning a local variable
+    //Demo elidedDemo = localVariableReturn();
 
-    Demo demo2{ demo1 };
+// move constructor used
+// doesnt work
+    Demo moveConstructed{ localVariableReturn() }; 
 
-    demo2 = move(demo);
+// copy assignment used
+    //Demo normal;
+    //Demo copied;
+    //copied = normal;
+
+// move assignment used
+    //Demo moved;
+    //moved = factory();
+
+
+    //Demo demo1 = factory(); // copy elision
+
+    //Demo demo2{ demo1 }; // ??
+
+    //demo2 = move(demo1); // move assignment
 }
