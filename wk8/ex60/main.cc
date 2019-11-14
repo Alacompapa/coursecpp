@@ -1,19 +1,13 @@
 #include "main.ih"
 
-Demo localVariableReturn()
-{
-    Demo local_demo;                // local variable is not copied when
-    return local_demo;              // returned
-}
-
 int main()
 {
 // copy elision example: returning a local variable
-    //Demo elidedDemo = localVariableReturn();
+    //Demo elidedDemo = factory();
 
 // move constructor used
-// doesnt work
-    Demo moveConstructed{ localVariableReturn() }; 
+// only works when suppressing copy elision e.g. using std::move when returning
+    Demo moveConstructed{ factory() }; 
 
 // copy assignment used
     //Demo normal;
