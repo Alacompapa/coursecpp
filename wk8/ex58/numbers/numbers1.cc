@@ -1,6 +1,7 @@
 #include "numbers.ih"
 
-Numbers::Numbers()
+Numbers::~Numbers()
 //:
 {
+    delete[] d_numbers;
 }
