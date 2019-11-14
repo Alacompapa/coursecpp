@@ -19,15 +19,15 @@ Hint: not all of the above indicators are used.
                      ------------------     ---------------  
 define:              default copy move        copy    move   
 -----------------------------------------------------------
-no constructor:                                            
-default cons:           
-copy cons (CC):         
-move cons (MC):         
-other cons:             
+no constructor:         +     +    +           +       +             
+default cons:           -     +    +           +       + 
+copy cons (CC):         -     -    CC          CC      -
+move cons (MC):         -     -    -           -       MC
+other cons:             -     +    +           +       + 
                         
-no assignment:          
-copy assignmnt (C=):    
-move assignmnt (M=):    
-other assignmnt:                                             
+no assignment:          +     +    +           +       +
+copy assignmnt (C=):    +     -    -           -       C=
+move assignmnt (M=):    +     -    -           -       - 
+other assignmnt:        +     +    +           +       + 
 -------------------------------------------------------------
     
