@@ -1,5 +1,6 @@
 #include "numbers.ih"
 
-Numbers::length() const
+size_t Numbers::length() const
 {
+    return d_count;
 }
