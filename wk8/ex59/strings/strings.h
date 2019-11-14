@@ -7,6 +7,8 @@ class Strings
 {
     size_t d_size;
     std::string *d_str;
+    size_t d_nIterate;
+    std::string *(Strings::*d_copyOrMove)();
 
     public:
         struct POD
@@ -19,6 +21,7 @@ class Strings
         Strings(int argc, char *argv[]);
         Strings(char *environLike[]);
         Strings(std::istream &in);
+        Strings(size_t nIterate, bool copy=true);
         ~Strings();
         void swap(Strings &other);
 
@@ -30,12 +33,15 @@ class Strings
         std::string &at(size_t idx);
 
         void add(std::string const &next);          // add another element
+        
+        void iterate(char **environLike);
 
     private:
         void fill(char *ntbs[]);                    // fill prepared d_str
 
         std::string &safeAt(size_t idx) const;      // private backdoor
-        std::string *enlarge();
+        std::string *enlargeByMove();
+        std::string *enlargeByCopy();
         void destroy();
         static size_t count(char *environLike[]);   // # elements in env.like
 };
