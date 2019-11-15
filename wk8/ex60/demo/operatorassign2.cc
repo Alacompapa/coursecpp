@@ -3,5 +3,6 @@
 Demo &Demo::operator=(Demo &&tmp)
 {
     cout << "Move assignment operator\n";
+    swap(tmp);
     return *this;
 }
