@@ -1,6 +1,6 @@
 #include "strings.ih"
 
-void Strings::swap(Strings &other)
+void Strings::swap(Strings &other)      // Swap function for move assignment
 {
     string *tmp = d_str;
     d_str = other.d_str;

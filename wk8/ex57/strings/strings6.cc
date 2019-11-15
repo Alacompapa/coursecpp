@@ -1,6 +1,6 @@
 #include "strings.ih"
 
-Strings::Strings(Strings const &other)
+Strings::Strings(Strings const &other)      // Copy constructor
 :
     d_str(new string[other.d_size]),
     d_size(other.d_size)
