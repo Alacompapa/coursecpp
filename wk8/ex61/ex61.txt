@@ -1,5 +1,3 @@
-Purpuse of this exercise: understand the need for using the default keyword.
-We distinguish four constructors categories: default, copy, move, and other constructors (considered a single category in this exercise).
 
 Likewise we distinguish three categories of assignment operators:: the copy-assignment operator, the move assignment operator, and all other assignment operators (also considered a single category in this exercise).
 
