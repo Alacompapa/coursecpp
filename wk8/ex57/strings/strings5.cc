@@ -1,8 +1,10 @@
 #include "strings.ih"
-#include <iostream>
 
-Strings::~Strings()
+Strings::Strings(Strings const &other)      // Copy constructor
+:
+    d_str(new string[other.d_size]),
+    d_size(other.d_size)
 {
-    cout << "destructor called";
-    delete[] d_str;
+    for (size_t idx = 0; idx != d_size; ++idx)
+        d_str[idx] = other.d_str[idx];
 }

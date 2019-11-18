@@ -4,6 +4,7 @@
 #include <cstring>
 #include <iosfwd>
 #include <string>
+
 class Strings
 {
     std::string *d_str = 0;
@@ -22,14 +23,14 @@ class Strings
         Strings(int argc, char *argv[]);
         Strings(char **environLike);
         Strings(std::istream &in);
-        Strings(Strings const &other);              // Copy constructor
-        Strings(Strings &&tmp);                     // Move constructor
+        Strings(Strings const &other);              // copy constructor
+        Strings(Strings &&tmp);                     // move constructor
         void swap(Strings &other);
 
         ~Strings();
-        char *strdupnew(char const *src);           // Function for copying str
-        Strings &operator=(Strings const &other);       // Assign overload 1
-        Strings &operator=(Strings &&tmp);
+        char *strdupnew(char const *src);           // function for copying str
+        Strings &operator=(Strings const &other);   // copy assignment
+        Strings &operator=(Strings &&tmp);          // move assignment
 
         size_t size() const;
         std::string const *data() const;

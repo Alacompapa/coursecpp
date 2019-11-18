@@ -1,11 +1,11 @@
 #include "strings.ih"
 
-Strings::Strings(Strings const &other)      // Copy constructor
+Strings::Strings(Strings &&tmp)             // Move constructor
 :
-    d_str(new string[other.d_size]),
-    d_size(other.d_size)
+    d_str(tmp.d_str),
+    d_size(tmp.d_size),
+    d_capacity(tmp.d_capacity)
 {
-    for (size_t idx = 0; idx != d_size; ++idx) {
-        d_str[idx] = other.d_str[idx];
-    }
+    tmp.d_str = 0;
+    tmp.d_size = 0;
 }
