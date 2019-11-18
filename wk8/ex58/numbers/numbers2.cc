@@ -1,10 +1,10 @@
 #include "numbers.ih"
 
-Numbers::Numbers(Numbers const &other) // copy constructor
+Numbers::Numbers(Numbers &&tmp)             // move constructor
 :
-    d_numbers(new int[other.d_count]),
-    d_count(other.d_count)
+    d_numbers(tmp.d_numbers),
+    d_count(tmp.d_count)
 {
-    for (size_t idx = 0; idx != d_count; ++idx)
-        d_numbers[idx] = other.d_numbers[idx];
+    tmp.d_numbers = 0;
+    tmp.d_count = 0;
 }
