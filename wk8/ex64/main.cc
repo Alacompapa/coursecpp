@@ -1,3 +1,5 @@
+#include "main.ih"
+
 namespace
 {
     Arg::LongOption longOptions[] = 
@@ -7,7 +9,7 @@ namespace
         Arg::LongOption{"help", 'h'},
         Arg::LongOption{"version", 'v'},
     };
-    auto longEnd = longEnd = longOptions + std::size(longOptions)
+    auto longEnd = longOptions + std::size(longOptions);
 }
 
 int main(int argc, char **argv)

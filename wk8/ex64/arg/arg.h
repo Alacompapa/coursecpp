@@ -1,19 +1,27 @@
 #ifndef INCLUDED_ARG_
 #define INCLUDED_ARG_
 
+#include <string>
 
 class Arg
 {
     enum Type 
     {
-        NONE,
-        REQUIRED,
-        OPTIONAL
+        None,
+        Required,
+        Optional
     };
         
     static Arg *s_instance;             // singleton
     
     public:
+        class LongOption
+        {
+            public:
+                LongOption(char const *name, Arg::Type type = Arg::None);
+                LongOption(char const *name, int optionChar);
+        };
+
         Arg(Arg const &other) = delete; // no copy ctor
 
         static Arg &initialize(char const *optstring, int argc, char **argv);
