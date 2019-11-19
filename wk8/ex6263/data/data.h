@@ -33,7 +33,7 @@ union Data
         void destroy(Type type);        
 
                                             // accessors
-        double *doubles() const;
+        double const *doubles() const;
         std::string const &word() const;
         size_t value() const;
 
