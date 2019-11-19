@@ -1,6 +1,6 @@
-#include "handler.ih"
+#include "wrap.ih"
 
-Handler::Handler(size_t value)
+Wrap::Wrap(size_t value)
 :
     d_tag(Data::Type::VALUE),
     d_data(value)

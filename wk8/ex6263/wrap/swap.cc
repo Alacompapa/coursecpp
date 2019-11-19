@@ -1,6 +1,6 @@
-#include "handler.ih"
+#include "wrap.ih"
 
-void Handler::swap(Handler &other)
+void Wrap::swap(Wrap &other)
 {
     d_data.swap(d_tag, other.d_data, other.d_tag);
 

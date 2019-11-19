@@ -9,7 +9,7 @@ int main(int argc, char **argv)
         cout << dp[idx];
     }
 
-    Handler hand{ dp };
+    Wrap hand{ dp };
 
     cout << '\n' << *(hand.doubles()) << '\n';
 }

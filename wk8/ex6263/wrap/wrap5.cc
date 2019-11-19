@@ -1,6 +1,6 @@
-#include "handler.ih"
+#include "wrap.ih"
 
-Handler::Handler(Handler &&tmp)
+Wrap::Wrap(Wrap &&tmp)
 :
     d_tag(tmp.d_tag),
     d_data(tmp.d_data, d_tag)

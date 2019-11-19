@@ -1,6 +1,6 @@
-#include "handler.ih"
+#include "wrap.ih"
 
-Handler::Handler(double *doubles)
+Wrap::Wrap(double *doubles)
 :
     d_tag(Data::Type::DOUBLES),
     d_data(doubles)
