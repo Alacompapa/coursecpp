@@ -6,5 +6,8 @@ Strings::Strings(size_t nIterate, bool copy)
     d_str(0),
     d_nIterate( nIterate )
 {
-    d_copyOrMove = copy ? &Strings::enlargeByCopy : &Strings::enlargeByMove; 
+    	if (copy)
+		d_enlarge = &Strings::enlargeByCopy;
+    	else	
+		d_enlarge = &Strings::enlargeByMove;
 }
