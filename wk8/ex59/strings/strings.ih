@@ -3,7 +3,5 @@
 #include <istream>
 #include <string>
 
-#include <iostream> // XXX
-
 using namespace std;
 

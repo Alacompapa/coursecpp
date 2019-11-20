@@ -25,8 +25,8 @@ class Strings
         Strings(std::istream &in);
         Strings(size_t nIterate, bool copy=true);
         ~Strings();
-        void swap(Strings &other);
 
+        void swap(Strings &other);
         size_t size() const;
         std::string const *data() const;
         POD release();
@@ -44,7 +44,7 @@ class Strings
         std::string &safeAt(size_t idx) const;      // private backdoor
         std::string *enlargeByMove();
         std::string *enlargeByCopy();
-        void destroy();
+
         static size_t count(char *environLike[]);   // # elements in env.like
 };
 
