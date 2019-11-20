@@ -1,8 +1,5 @@
 #include "demo.h"
 
 #include <iostream>
-#include <utility>
-#include <cstring>
 
 using namespace std;
-

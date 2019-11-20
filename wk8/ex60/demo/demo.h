@@ -5,13 +5,12 @@ class Demo
 {
     public:
         Demo();
-        Demo(Demo const &other); // copy constructor
-        Demo(Demo &&tmp); // move constructor
+        Demo(Demo const &other);            // Copy ctor
+        Demo(Demo &&tmp);                   // Move ctor
         ~Demo();
-        Demo &operator=(Demo const &other); // copy
-        Demo &operator=(Demo &&tmp); // move
-        void swap(Demo &other);
-
+        Demo &operator=(Demo const &other); // Copy assign
+        Demo &operator=(Demo &&tmp);        // Move assign
+        
     private:
 };
         

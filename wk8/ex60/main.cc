@@ -2,26 +2,18 @@
 
 int main()
 {
- copy elision example: returning a local variable
-    Demo elidedDemo = factory();
-
- //move constructor used
- //only works when suppressing copy elision e.g. using std::move when returning
-    Demo moveConstructed{ factory() }; 
-
- copy assignment used
+                                        // Copy elision applied 
+                                        // factory returns local variable 
+    Demo elided = factory();
+                                        // Move constructor used
+                                        // Argument to ctor needs to be 
+                                        // rvalue reference: use std::move
+    Demo moveConstructed{ std::move(factory()) }; 
+                                        // Copy assignment used
     Demo normal;
     Demo copied;
     copied = normal;
-
- move assignment used
+                                        // Move assignment used
     Demo moved;
     moved = factory();
-
-
-    Demo demo1 = factory(); // copy elision
-
-    Demo demo2{ demo1 }; // copy assignment
-
-    demo2 = move(demo1); // move assignment
 }
