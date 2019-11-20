@@ -2,13 +2,15 @@
 
 void Strings::add(string const &next)
 {
-    string *tmp = enlarge();            // make room for the next string,
-                                        // tmp is the new string *
+    string **tmp = storageArea();
 
-    tmp[d_size] = next;                 // store next
+    tmp[d_size] = new string(next);
 
-    delete[] d_str;                     // return old memory
+    if (tmp != d_str)               // destroy old memory if new storageArea 
+    {                               // was allocated
+        destroy();                  // destroy the old string * array
+        d_str = tmp;
+    }
 
-    d_str = tmp;                        // update d_str and d_size
     ++d_size;
 }

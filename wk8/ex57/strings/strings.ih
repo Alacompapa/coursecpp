@@ -1,6 +1,4 @@
 #include "strings.h"
-
-#include <istream>
 #include <string>
 
 using namespace std;

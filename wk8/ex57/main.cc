@@ -1,12 +1,9 @@
 #include "main.ih"
+#include <iostream>
 
 int main(int argc, char **argv)
 {
-    Strings strings{ cin };
-
-    for (size_t idx = 0, end = strings.size();
-
-            idx != end; ++idx)
-
-        cout << "line " << idx + 1 << ": " << strings.at(idx) << '\n';
+    const Strings strings{ argc, argv };
+    Strings strings2{ strings };
+    cout << strings2.size();
 }
