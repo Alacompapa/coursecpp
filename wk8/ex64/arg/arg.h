@@ -2,12 +2,19 @@
 #define INCLUDED_ARG_
 
 #include <string>
+#include "argoption/argoption.h"            // XXX are these necessary?
+#include "arglongoption/arglongoption.h"
+#include "optstructarray/optstructarray.h"
 
 class Arg
 {
     public:
         class LongOption//TODO
         {
+            char *d_name;
+            Arg::Type d_type = Arg::None;
+            int d_optionChar = 0;
+
             public:
                 LongOption(char const *name, Arg::Type type = Arg::None);
                 LongOption(char const *name, int optionChar);
@@ -21,15 +28,12 @@ class Arg
             Optional
         };
 
-        char const *d_optstring;
-        int d_argc;
-        char **d_argv;
-
-        LongOption const *const d_begin;
-        LongOption const *const d_end;
+        
+        size_t d_nArgs;
+        size_t d_nOptions;
             
         static Arg *s_instance = 0;             // singleton//TODO
-    
+
     public:
 
         Arg(Arg const &other) = delete; // no copy ctor
