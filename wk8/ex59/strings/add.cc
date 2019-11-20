@@ -2,7 +2,7 @@
 
 void Strings::add(string const &next)
 {
-    string *tmp = (this->*d_copyOrMove)(); // make room for the next string,
+    string *tmp = (this->*d_enlarge) (); // make room for the next string,
                                         // tmp is the new string *
 
     tmp[d_size] = next;                 // store next
