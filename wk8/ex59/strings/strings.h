@@ -5,10 +5,12 @@
 
 class Strings
 {
+    typedef std::string* {Strings::*enlarge) ();
+
     size_t d_size;
     std::string *d_str;
     size_t d_nIterate;
-    std::string *(Strings::*d_copyOrMove)();
+    enlarge d_enlarge;
 
     public:
         struct POD
