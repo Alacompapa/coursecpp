@@ -1,3 +1,5 @@
 #include "arg.h"
 
+#include <libgen.h> // for basename and dirname
+
 using namespace std;
