@@ -2,5 +2,5 @@
 
 void Data::moveWord(Data &&other)
 {
-    u_word = other.u_word;
+    u_word = std::move(other.u_word);
 }
