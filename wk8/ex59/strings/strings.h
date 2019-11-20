@@ -5,12 +5,10 @@
 
 class Strings
 {
-    typedef std::string* {Strings::*enlarge) ();
-
     size_t d_size;
     std::string *d_str;
     size_t d_nIterate;
-    enlarge d_enlarge;
+    std::string *(Strings::*d_enlarge)();
 
     public:
         struct POD
@@ -44,7 +42,7 @@ class Strings
         std::string &safeAt(size_t idx) const;      // private backdoor
         std::string *enlargeByMove();
         std::string *enlargeByCopy();
-
+        void destroy();
         static size_t count(char *environLike[]);   // # elements in env.like
 };
 
