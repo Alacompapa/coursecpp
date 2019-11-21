@@ -8,4 +8,5 @@ Strings::Strings(Strings &&tmp)         // Move constructor
 {
     tmp.d_str = 0;
     tmp.d_size = 0;
+    tmp.d_capacity = 0;
 }

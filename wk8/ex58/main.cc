@@ -6,11 +6,11 @@ int main(int argc, char **argv)
     Numbers numbers2 { 10 }; // Default initialization
     int *numbers3 = new int[10](); // Initialize to 0
 
-    numbers.at(3, 4);
+    numbers.at(3) = 4;
     numbers.write(cout);
     cout << numbers.length() << '\n';
 
-    numbers2.at(3,4);
+    numbers3.at(3) = 4;
     numbers2.write(cout); // Will output 0004000000
     cout << numbers2.length() << '\n';
 

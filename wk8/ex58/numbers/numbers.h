@@ -17,10 +17,8 @@ class Numbers
         ~Numbers();
 
        								// at member function so ints can be inspected and/or modified
-        void at(size_t index) const; // for inspection
-        void at(size_t index, int value); // for modification
-        
-	int *at(size_t idx);					// write member writes it to an ostream TODO: What is 'it'
+        int &at(size_t index);
+
         void write(std::ostream &out);
         							// length member
         size_t length() const;
