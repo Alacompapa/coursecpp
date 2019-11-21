@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     cout << numbers2.length() << '\n';
 
     int *numbers3 = new int[10](); // Initialize to 0
-    
+
     for (size_t idx = 0; idx != 10; ++idx) {    // Will output 0000000000
         cout << numbers3[idx];
     }

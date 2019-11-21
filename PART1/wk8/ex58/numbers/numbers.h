@@ -9,7 +9,6 @@ class Numbers
     size_t d_count; // amount of ints allocated
 
     public:
-        Numbers();
         Numbers(Numbers const &other); // copy
         Numbers(Numbers &&tmp); // move
         Numbers(size_t d_count, size_t value); // init count ints to value
