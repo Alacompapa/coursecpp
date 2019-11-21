@@ -10,7 +10,7 @@ int main(int argc, char **argv)
     numbers.write(cout);
     cout << numbers.length() << '\n';
 
-    numbers3.at(3) = 4;
+    numbers2.at(3) = 4;
     numbers2.write(cout); // Will output 0004000000
     cout << numbers2.length() << '\n';
 

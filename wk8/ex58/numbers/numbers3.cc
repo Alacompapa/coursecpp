@@ -2,9 +2,7 @@
 
 Numbers::Numbers(Numbers &&tmp) // move constructor
 :
-    d_numbers(tmp.d_numbers),
-    d_count(tmp.d_count)
+    d_numbers( std::move(tmp.d_numbers) ),
+    d_count( std::move(tmp.d_count) )
 {
-    tmp.d_numbers = 0;
-    tmp.d_count = 0;
 }
